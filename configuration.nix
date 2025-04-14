@@ -15,6 +15,13 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  # Garbage collector
+  nix.gc = {
+    automatic = true;
+    dates = "daily";
+    options = "--delete-older-than 3d";
+  };
+
   # Hostname
   networking.hostName = "zenarch";
 
@@ -78,6 +85,7 @@
     gcc
     git
     grim
+    home-manager
     hyperfine
     hyperfine
     hypridle

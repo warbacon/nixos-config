@@ -1,4 +1,6 @@
 {
+  description = "My NixOS configuration.";
+
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
     home-manager = {
@@ -18,7 +20,7 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.warbacon = import ./home.nix;
+            home-manager.users.warbacon = ./home.nix;
           }
         ];
       };
