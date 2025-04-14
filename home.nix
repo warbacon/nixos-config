@@ -8,6 +8,9 @@
     enable = true;
     userName = "Joaquín Guerra";
     userEmail = "45147327+warbacon@users.noreply.github.com";
+    extraConfig = {
+      init.defaultBranch = "main";
+    };
   };
   programs.gh.enable = true;
 
@@ -44,16 +47,28 @@
     };
   };
 
-  qt = {
-    enable = true;
-    style = {
-      name = "breeze";
-      package = pkgs.kdePackages.breeze;
-    };
-  };
-
   xdg = {
-    userDirs.createDirectories = true;
+    userDirs = {
+      enable = true;
+      createDirectories = true;
+      desktop = null;
+      music = null;
+      templates = null;
+      publicShare = null;
+      documents = "${config.home.homeDirectory}/Documentos";
+      download = "${config.home.homeDirectory}/Descargas";
+      pictures = "${config.home.homeDirectory}/Descargas";
+      videos = "${config.home.homeDirectory}/Vídeos";
+    };
+    mimeApps = {
+      enable = true;
+      defaultApplications = {
+        "application/pdf" = [
+          "org.pwmt.zathura.desktop"
+          "firefox.desktop"
+        ];
+      };
+    };
   };
 
   fonts.fontconfig = {

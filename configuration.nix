@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ lib, config, pkgs, ... }:
 
 {
   imports = [
@@ -59,20 +59,22 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  environment.shellAliases = lib.mkForce {};
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    # (zathura.override { useMupdf = true; })
+    (zathura.override { useMupdf = true; })
     bluetui
     brightnessctl
     btop-rocm
+    bun
     cliphist
     dunst
     dust
     eza
     fastfetch
     fd
-    fishMinimal
     gcc
     git
     grim
@@ -82,16 +84,14 @@
     hyprlock
     hyprpaper
     hyprsunset
-    kdePackages.okular
     killall
     kitty
     lazygit
     libreoffice-fresh
     localsend
     mpv
-    neovim
     nodejs_22
-    php
+    php84
     php84Packages.composer
     pulsemixer
     python314
@@ -146,9 +146,16 @@
     withUWSM = true;
   };
 
+  programs.fish = {
+    enable = true;
+    package = pkgs.fishMinimal;
+  };
+
   programs.neovim = {
     enable = true;
     defaultEditor = true;
+    withRuby = false;
+    withPython3 = false;
   };
 
   programs.firefox = {
