@@ -8,6 +8,9 @@
     (ibm-plex.override { families = [ "mono" ]; })
     adwaita-fonts
     nerd-fonts.symbols-only
+    noto-fonts
+    noto-fonts-cjk-sans
+    noto-fonts-emoji
   ];
 
   programs.git = {
@@ -19,16 +22,6 @@
     };
   };
   programs.gh.enable = true;
-
-  programs.bash = {
-    enable = true;
-    profileExtra = # bash
-      ''
-        if uwsm check may-start; then
-          exec uwsm start hyprland-uwsm.desktop
-        fi
-      '';
-  };
 
   home.pointerCursor = {
     gtk.enable = true;
@@ -80,11 +73,13 @@
   fonts.fontconfig = {
     enable = true;
     defaultFonts = {
-      sansSerif = [ "Adwaita Sans" ];
+      emoji = [ "Noto Color Emoji" ];
       monospace = [
         "IBM Plex Mono"
         "Symbols Nerd Font"
       ];
+      sansSerif = [ "Adwaita Sans" ];
+      serif = [ "Noto Serif" ];
     };
   };
 

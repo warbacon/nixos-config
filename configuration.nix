@@ -1,10 +1,4 @@
-{
-  lib,
-  config,
-  pkgs,
-  ...
-}:
-
+{ lib, pkgs, ... }:
 {
   imports = [
     ./hardware-configuration.nix
@@ -71,10 +65,6 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  environment.shellAliases = lib.mkForce {
-    nrs = "sudo nixos-rebuild switch --flake /home/warbacon/Git/nixos-config/";
-  };
-
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -106,8 +96,8 @@
     localsend
     mpv
     nodejs_22
-    php84
-    php84Packages.composer
+    php
+    phpPackages.composer
     pulsemixer
     python314
     ripgrep
@@ -115,6 +105,7 @@
     rofimoji
     slurp
     starship
+    steam-run-free
     tealdeer
     trash-cli
     unzip
@@ -147,26 +138,19 @@
     yaml-language-server
   ];
 
-  fonts.packages = with pkgs; [
-    noto-fonts
-    noto-fonts-cjk-sans
-    noto-fonts-emoji
-  ];
-
   programs.hyprland = {
     enable = true;
     withUWSM = true;
   };
 
-  programs.nix-ld.enable = true;
-  programs.nix-ld.libraries = with pkgs; [
-    dbus
-  ];
-
   programs.command-not-found.enable = false;
   programs.fish = {
     enable = true;
     useBabelfish = true;
+    shellAliases = lib.mkForce { };
+    shellAbbrs = {
+      nrs = "sudo nixos-rebuild switch --flake /home/warbacon/Git/nixos-config/";
+    };
   };
 
   programs.neovim = {
