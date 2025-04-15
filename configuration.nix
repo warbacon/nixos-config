@@ -153,6 +153,15 @@
     };
   };
 
+  programs.bash = {
+    loginShellInit = # bash
+      ''
+        if uwsm check may-start; then
+          exec uwsm start hyprland-uwsm.desktop
+        fi
+      '';
+  };
+
   programs.neovim = {
     enable = true;
     defaultEditor = true;
