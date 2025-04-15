@@ -72,7 +72,7 @@
   nixpkgs.config.allowUnfree = true;
 
   environment.shellAliases = lib.mkForce {
-    rebuild = "sudo nixos-rebuild switch --flake /home/warbacon/Git/nixos-config/";
+    nrs = "sudo nixos-rebuild switch --flake /home/warbacon/Git/nixos-config/";
   };
 
   # List packages installed in system profile. To search, run:
@@ -86,6 +86,7 @@
     cliphist
     dunst
     dust
+    ear2ctl
     eza
     fastfetch
     fd
@@ -157,6 +158,12 @@
     withUWSM = true;
   };
 
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = with pkgs; [
+    dbus
+  ];
+
+  programs.command-not-found.enable = false;
   programs.fish = {
     enable = true;
     useBabelfish = true;
