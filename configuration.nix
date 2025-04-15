@@ -1,4 +1,9 @@
-{ lib, config, pkgs, ... }:
+{
+  lib,
+  config,
+  pkgs,
+  ...
+}:
 
 {
   imports = [
@@ -66,7 +71,9 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  environment.shellAliases = lib.mkForce {};
+  environment.shellAliases = lib.mkForce {
+    rebuild = "sudo nixos-rebuild switch --flake /home/warbacon/Git/nixos-config/";
+  };
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -85,7 +92,6 @@
     gcc
     git
     grim
-    home-manager
     hyperfine
     hyperfine
     hypridle
@@ -141,9 +147,6 @@
   ];
 
   fonts.packages = with pkgs; [
-    (ibm-plex.override { families = [ "mono" ]; })
-    adwaita-fonts
-    nerd-fonts.symbols-only
     noto-fonts
     noto-fonts-cjk-sans
     noto-fonts-emoji
@@ -156,7 +159,7 @@
 
   programs.fish = {
     enable = true;
-    package = pkgs.fishMinimal;
+    useBabelfish = true;
   };
 
   programs.neovim = {

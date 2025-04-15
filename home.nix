@@ -4,6 +4,12 @@
   home.homeDirectory = "/home/warbacon";
   home.stateVersion = "24.11";
 
+  home.packages = with pkgs; [
+    (ibm-plex.override { families = [ "mono" ]; })
+    adwaita-fonts
+    nerd-fonts.symbols-only
+  ];
+
   programs.git = {
     enable = true;
     userName = "Joaquín Guerra";
