@@ -95,11 +95,11 @@
     libreoffice-fresh
     localsend
     mpv
-    nodejs_22
+    nodejs
     php
     phpPackages.composer
     pulsemixer
-    python314
+    python3
     ripgrep
     rofi-wayland
     rofimoji
