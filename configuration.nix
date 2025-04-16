@@ -77,7 +77,6 @@
     (zathura.override { useMupdf = true; })
     bluetui
     brightnessctl
-    btop-rocm
     bun
     cliphist
     dunst
