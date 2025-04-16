@@ -112,7 +112,7 @@
     slurp
     starship
     steam-run-free
-    tealdeer
+    tlrc
     trash-cli
     unzip
     waybar
