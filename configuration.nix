@@ -30,6 +30,12 @@
   # Bluetooth
   hardware.bluetooth.enable = true;
 
+  # Printing
+  services.printing = {
+    enable = true;
+    drivers = with pkgs; [ hplipWithPlugin ];
+  };
+
   # Timezone
   time.timeZone = "Europe/Madrid";
 
