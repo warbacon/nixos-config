@@ -23,7 +23,6 @@
     git
     grim
     hyperfine
-    hyperfine
     hypridle
     hyprlock
     hyprpaper
@@ -53,7 +52,6 @@
     wget
     wl-clip-persist
     wl-clipboard
-    xdg-desktop-portal-gtk
     yazi
     zip
   ];
@@ -81,6 +79,14 @@
           exec uwsm start hyprland-uwsm.desktop
         fi
       '';
+  };
+
+  # Nix-ld
+  programs.nix-ld = {
+    enable = true;
+    libraries = with pkgs; [
+      stdenv.cc.cc.lib
+    ];
   };
 
   # Warbacon user
@@ -151,7 +157,6 @@
 
   # Configure console keymap
   console.keyMap = "es";
-
 
   # Garbage collector
   nix.gc = {
