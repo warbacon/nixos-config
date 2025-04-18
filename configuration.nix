@@ -87,6 +87,7 @@
     fd
     gcc
     git
+    chromium
     grim
     hyperfine
     hyperfine
@@ -176,11 +177,20 @@
 
   programs.firefox = {
     enable = true;
-    package = pkgs.firefox-bin;
-    languagePacks = [
-      "es-ES"
-      "en-US"
-    ];
+    languagePacks = [ "es-ES" ];
+    policies = {
+      DisableTelemetry = true;
+      DisablePocket = true;
+      DisableFirefoxStudies = true;
+      OverrideFirstRunPage = "";
+      OverridePostUpdatePage = "";
+      ExtensionSettings = {
+        "es-es@dictionaries.addons.mozilla.org" = {
+          install_url = "addons.mozilla.org/firefox/downloads/latest/diccionario-de-español-españa/latest.xpi";
+          installation_mode = "force_installed";
+        };
+      };
+    };
   };
 
   services.power-profiles-daemon.enable = true;
