@@ -4,80 +4,14 @@
     ./hardware-configuration.nix
   ];
 
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
-
-  # Bootloader
-  boot.loader.timeout = 0;
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-
-  # Garbage collector
-  nix.gc = {
-    automatic = true;
-    dates = "daily";
-    options = "--delete-older-than 3d";
-  };
-
-  # Hostname
-  networking.hostName = "zenarch";
-
-  # Enable networking
-  networking.networkmanager.enable = true;
-
-  # Bluetooth
-  hardware.bluetooth.enable = true;
-
-  # Printing
-  services.printing = {
-    enable = true;
-    drivers = with pkgs; [ hplipWithPlugin ];
-  };
-
-  # Timezone
-  time.timeZone = "Europe/Madrid";
-
-  # Locale
-  i18n.defaultLocale = "es_US.UTF-8";
-
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "es_ES.UTF-8";
-    LC_IDENTIFICATION = "es_ES.UTF-8";
-    LC_MEASUREMENT = "es_ES.UTF-8";
-    LC_MONETARY = "es_ES.UTF-8";
-    LC_NAME = "es_ES.UTF-8";
-    LC_NUMERIC = "es_ES.UTF-8";
-    LC_PAPER = "es_ES.UTF-8";
-    LC_TELEPHONE = "es_ES.UTF-8";
-    LC_TIME = "es_ES.UTF-8";
-  };
-
-  # Configure console keymap
-  console.keyMap = "es";
-
-  # Warbacon user
-  users.users.warbacon = {
-    isNormalUser = true;
-    description = "Joaquín Guerra";
-    extraGroups = [
-      "docker"
-      "networkmanager"
-      "wheel"
-    ];
-  };
-
-  # Allow unfree packages
+  # Packages
   nixpkgs.config.allowUnfree = true;
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
   environment.systemPackages = with pkgs; [
     (zathura.override { useMupdf = true; })
     bluetui
     brightnessctl
     bun
+    chromium
     cliphist
     dunst
     dust
@@ -87,7 +21,6 @@
     fd
     gcc
     git
-    chromium
     grim
     hyperfine
     hyperfine
@@ -101,6 +34,7 @@
     libreoffice-fresh
     localsend
     mpv
+    neovim
     nodejs
     php
     phpPackages.composer
@@ -120,35 +54,17 @@
     wl-clip-persist
     wl-clipboard
     xdg-desktop-portal-gtk
-    xdg-user-dirs
     yazi
     zip
-
-    astro-language-server
-    basedpyright
-    bash-language-server
-    clang-tools
-    docker-compose-language-service
-    dockerfile-language-server-nodejs
-    emmet-language-server
-    intelephense
-    lua-language-server
-    markdownlint-cli
-    nixd
-    nixfmt-rfc-style
-    shellcheck-minimal
-    stylua
-    tailwindcss-language-server
-    vscode-langservers-extracted
-    vtsls
-    yaml-language-server
   ];
 
+  # Hyprland
   programs.hyprland = {
     enable = true;
     withUWSM = true;
   };
 
+  # Shells
   programs.command-not-found.enable = false;
   programs.fish = {
     enable = true;
@@ -158,7 +74,6 @@
       nrs = "sudo nixos-rebuild switch --flake /home/warbacon/Git/nixos-config/";
     };
   };
-
   programs.bash = {
     loginShellInit = # bash
       ''
@@ -168,66 +83,88 @@
       '';
   };
 
-  programs.neovim = {
-    enable = true;
-    defaultEditor = true;
-    withRuby = false;
-    withPython3 = false;
+  # Warbacon user
+  users.users.warbacon = {
+    isNormalUser = true;
+    description = "Joaquín Guerra";
+    extraGroups = [
+      "docker"
+      "networkmanager"
+      "wheel"
+    ];
   };
 
-  programs.firefox = {
+  # Hostname
+  networking.hostName = "zenarch";
+
+  # Enable networking
+  networking.networkmanager.enable = true;
+
+  # Bluetooth
+  hardware.bluetooth.enable = true;
+
+  # Printing
+  services.printing = {
     enable = true;
-    languagePacks = [ "es-ES" ];
-    policies = {
-      DisableTelemetry = true;
-      DisablePocket = true;
-      DisableFirefoxStudies = true;
-      OverrideFirstRunPage = "";
-      OverridePostUpdatePage = "";
-      RequestedLocales = "es-ES";
-      ExtensionSettings = {
-        "es-es@dictionaries.addons.mozilla.org" = {
-          install_url = "addons.mozilla.org/firefox/downloads/latest/diccionario-de-español-españa/latest.xpi";
-          installation_mode = "force_installed";
-        };
-      };
-    };
+    drivers = with pkgs; [ hplipWithPlugin ];
   };
 
-  services.power-profiles-daemon.enable = true;
-  virtualisation.docker = {
-    enable = true;
-    enableOnBoot = false;
-  };
-
-  # rtkit is optional but recommended
-  security.rtkit.enable = true;
+  # Use PipeWire
   services.pipewire = {
     enable = true;
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
-    jack.enable = true;
+  };
+  security.rtkit.enable = true;
+
+  # PPD
+  services.power-profiles-daemon.enable = true;
+
+  # Docker
+  virtualisation.docker = {
+    enable = true;
+    enableOnBoot = false;
   };
 
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
+  # Bootloader
+  boot.loader.timeout = 0;
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
 
-  # List services that you want to enable:
+  # Timezone
+  time.timeZone = "Europe/Madrid";
 
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
+  # Locale
+  i18n.defaultLocale = "es_US.UTF-8";
+  i18n.extraLocaleSettings = {
+    LC_ADDRESS = "es_ES.UTF-8";
+    LC_IDENTIFICATION = "es_ES.UTF-8";
+    LC_MEASUREMENT = "es_ES.UTF-8";
+    LC_MONETARY = "es_ES.UTF-8";
+    LC_NAME = "es_ES.UTF-8";
+    LC_NUMERIC = "es_ES.UTF-8";
+    LC_PAPER = "es_ES.UTF-8";
+    LC_TELEPHONE = "es_ES.UTF-8";
+    LC_TIME = "es_ES.UTF-8";
+  };
 
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
+  # Configure console keymap
+  console.keyMap = "es";
+
+
+  # Garbage collector
+  nix.gc = {
+    automatic = true;
+    dates = "daily";
+    options = "--delete-older-than 3d";
+  };
+
+  # Experimental features
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
