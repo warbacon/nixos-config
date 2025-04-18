@@ -5,7 +5,7 @@
   home.stateVersion = "24.11";
 
   home.packages = with pkgs; [
-    (ibm-plex.override { families = [ "mono" ]; })
+    lilex
     adwaita-fonts
     nerd-fonts.symbols-only
     noto-fonts
@@ -86,7 +86,7 @@
     defaultFonts = {
       emoji = [ "Noto Color Emoji" ];
       monospace = [
-        "IBM Plex Mono"
+        "Lilex"
         "Symbols Nerd Font"
       ];
       sansSerif = [ "Adwaita Sans" ];
