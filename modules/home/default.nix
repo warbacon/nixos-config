@@ -90,6 +90,7 @@
       lua-language-server
       markdownlint-cli
       nixd
+      nixfmt-rfc-style
       shellcheck-minimal
       stylua
       tailwindcss-language-server

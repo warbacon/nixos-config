@@ -15,17 +15,19 @@
       system = "x86_64-linux";
     in
     {
-      nixosConfigurations.zenarch = nixpkgs.lib.nixosSystem {
-        inherit system;
-        modules = [
-          ./configuration.nix
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.warbacon = ./home.nix;
-          }
-        ];
+      nixosConfigurations = {
+        zenarch = nixpkgs.lib.nixosSystem {
+          inherit system;
+          modules = [
+            ./hosts/zenarch
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.users.warbacon = ./modules/home;
+            }
+          ];
+        };
       };
     };
 }
