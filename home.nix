@@ -123,12 +123,6 @@
       OverrideFirstRunPage = "";
       OverridePostUpdatePage = "";
       RequestedLocales = "es-ES";
-      ExtensionSettings = {
-        "es-es@dictionaries.addons.mozilla.org" = {
-          install_url = "addons.mozilla.org/firefox/downloads/latest/diccionario-de-español-españa/latest.xpi";
-          installation_mode = "force_installed";
-        };
-      };
     };
   };
 
