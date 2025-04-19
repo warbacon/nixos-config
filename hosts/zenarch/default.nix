@@ -62,6 +62,10 @@
     withUWSM = true;
   };
 
+  environment.variables = {
+    GDK_SCALE = 2;
+  };
+
   # Shells
   programs.command-not-found.enable = false;
   programs.fish = {
