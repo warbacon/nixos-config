@@ -81,6 +81,14 @@
       '';
   };
 
+  # Neovim
+  programs.neovim = {
+    enable = true;
+    defaultEditor = true;
+    withRuby = false;
+    withPython3 = false;
+  };
+
   # Nix-ld
   programs.nix-ld = {
     enable = true;
