@@ -3,7 +3,10 @@
   imports = [
     ./dunst.nix
     ./starship.nix
-    ./lazygit.nix
+    ./btop.nix
+    ./firefox.nix
+    ./neovim.nix
+    ./git.nix
   ];
 
   home.username = "warbacon";
@@ -64,71 +67,6 @@
     };
     "org/gnome/desktop/wm/preferences" = {
       button-layout = "appmenu:none";
-    };
-  };
-
-  # Git
-  programs.git = {
-    enable = true;
-    userName = "Joaquín Guerra";
-    userEmail = "45147327+warbacon@users.noreply.github.com";
-    extraConfig = {
-      init.defaultBranch = "main";
-    };
-  };
-  programs.gh.enable = true;
-
-  # Neovim
-  programs.neovim = {
-    enable = true;
-    defaultEditor = true;
-    withRuby = false;
-    withPython3 = false;
-    extraPackages = with pkgs; [
-      astro-language-server
-      basedpyright
-      bash-language-server
-      clang-tools
-      docker-compose-language-service
-      dockerfile-language-server-nodejs
-      emmet-language-server
-      intelephense
-      lua-language-server
-      markdownlint-cli
-      nixd
-      nixfmt-rfc-style
-      shellcheck-minimal
-      stylua
-      tailwindcss-language-server
-      vscode-langservers-extracted
-      vtsls
-      yaml-language-server
-    ];
-  };
-
-  # Btop
-  programs.btop = {
-    enable = true;
-    package = pkgs.btop-rocm;
-    settings = {
-      color_theme = "tokyo-night";
-      rounded_corners = false;
-      update_ms = 1000;
-      vim_keys = true;
-    };
-  };
-
-  # Firefox
-  programs.firefox = {
-    enable = true;
-    languagePacks = [ "es-ES" ];
-    policies = {
-      DisableTelemetry = true;
-      DisablePocket = true;
-      DisableFirefoxStudies = true;
-      OverrideFirstRunPage = "";
-      OverridePostUpdatePage = "";
-      RequestedLocales = "es-ES";
     };
   };
 
