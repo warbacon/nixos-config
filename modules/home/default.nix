@@ -1,5 +1,11 @@
 { config, pkgs, ... }:
 {
+  imports = [
+    ./dunst.nix
+    ./starship.nix
+    ./lazygit.nix
+  ];
+
   home.username = "warbacon";
   home.homeDirectory = "/home/warbacon";
   home.stateVersion = "24.11";

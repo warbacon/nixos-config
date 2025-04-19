@@ -13,7 +13,6 @@
     bun
     chromium
     cliphist
-    dunst
     dust
     ear2ctl
     eza
@@ -29,7 +28,6 @@
     hyprsunset
     killall
     kitty
-    lazygit
     libreoffice-fresh
     localsend
     mpv
@@ -43,7 +41,6 @@
     rofi-wayland
     rofimoji
     slurp
-    starship
     steam-run-free
     tlrc
     trash-cli
