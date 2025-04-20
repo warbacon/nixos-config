@@ -5,6 +5,10 @@
     defaultEditor = true;
     withRuby = false;
     withPython3 = false;
+  };
+
+  home-manager.users.warbacon.programs.neovim = {
+    enable = true;
     extraPackages = with pkgs; [
       astro-language-server
       basedpyright

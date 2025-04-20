@@ -1,11 +1,23 @@
-{ pkgs, ... }:
+{
+  pkgs,
+  config,
+  lib,
+  ...
+}:
 {
   imports = [
-    ./system/compat.nix
-    ./system/neovim.nix
-    ./system/shell.nix
-    ./system/users.nix
-    ./system/virtualisation.nix
+    ./audio.nix
+    ./bluetooth.nix
+    ./bootloader.nix
+    ./compat.nix
+    ./networking.nix
+    ./printing.nix
+    ./shell.nix
+    ./users.nix
+    ./virtualisation.nix
+    ./desktop.nix
+
+    ./programs
   ];
 
   # Packages
@@ -26,7 +38,6 @@
     phpPackages.composer
     python3
     ripgrep
-    steam-run-free
     tlrc
     trash-cli
     unzip
@@ -34,6 +45,16 @@
     yazi
     zip
   ];
+
+  # Home manager
+  home-manager = {
+    useGlobalPkgs = true;
+    useUserPackages = true;
+    users.warbacon = import ./home-manager {
+      inherit config pkgs lib;
+      isWsl = config.wsl.enable;
+    };
+  };
 
   # Garbage collector
   nix.gc = {

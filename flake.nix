@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+    nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -10,7 +11,12 @@
   };
 
   outputs =
-    { nixpkgs, home-manager, ... }:
+    {
+      nixpkgs,
+      home-manager,
+      nixos-wsl,
+      ...
+    }:
     {
       nixosConfigurations = {
         zenarch = nixpkgs.lib.nixosSystem {
@@ -18,11 +24,14 @@
           modules = [
             ./hosts/zenarch
             home-manager.nixosModules.home-manager
-            {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.users.warbacon = ./modules/user;
-            }
+          ];
+        };
+        wsl = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          modules = [
+            ./hosts/wsl
+            nixos-wsl.nixosModules.default
+            home-manager.nixosModules.home-manager
           ];
         };
       };

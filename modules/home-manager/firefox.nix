@@ -1,6 +1,7 @@
+{ desktop, ... }:
 {
   programs.firefox = {
-    enable = true;
+    enable = (desktop != "none");
     languagePacks = [ "es-ES" ];
     policies = {
       DisableTelemetry = true;

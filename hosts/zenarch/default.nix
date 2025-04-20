@@ -2,14 +2,15 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ../../modules/core.nix
-    ../../modules/system/audio.nix
-    ../../modules/system/bluetooth.nix
-    ../../modules/system/bootloader.nix
-    ../../modules/system/desktop.nix
-    ../../modules/system/networking.nix
-    ../../modules/system/printing.nix
+    ../../modules/core
+    ../../modules/core/audio.nix
+    ../../modules/core/bootloader.nix
   ];
+
+  desktop = "hyprland";
+
+  bluetooth.enable = true;
+  printing.enable = true;
 
   # PPD
   services.power-profiles-daemon.enable = true;
