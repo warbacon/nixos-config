@@ -23,6 +23,7 @@
           system = "x86_64-linux";
           modules = [
             ./hosts/zenarch
+            nixos-wsl.nixosModules.default
             home-manager.nixosModules.home-manager
           ];
         };

@@ -2,9 +2,7 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ../../modules/core
-    ../../modules/core/audio.nix
-    ../../modules/core/bootloader.nix
+    ../../modules
   ];
 
   desktop = "hyprland";
