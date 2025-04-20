@@ -21,7 +21,7 @@
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
-              home-manager.users.warbacon = ./modules/home;
+              home-manager.users.warbacon = ./modules/user;
             }
           ];
         };
