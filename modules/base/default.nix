@@ -14,6 +14,11 @@
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
+    users.warbacon = {
+      home.username = "warbacon";
+      home.homeDirectory = "/home/warbacon";
+      home.stateVersion = "24.11";
+    };
   };
 
   # Garbage collector

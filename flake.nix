@@ -17,6 +17,7 @@
       nixpkgs,
       home-manager,
       nixos-wsl,
+      ...
     }:
     let
       system = "x86_64-linux";
