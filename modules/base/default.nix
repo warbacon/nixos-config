@@ -36,7 +36,7 @@ in
           publicShare = null;
           documents = "${homeDir}/Documentos";
           download = "${homeDir}/Descargas";
-          pictures = "${homeDir}/Descargas";
+          pictures = "${homeDir}/Imágenes";
           videos = "${homeDir}/Vídeos";
         };
       };
