@@ -26,6 +26,7 @@
     trash-cli
     unzip
     wget
+    xh
     yazi
     zip
   ];
