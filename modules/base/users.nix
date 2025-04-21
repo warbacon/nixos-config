@@ -1,4 +1,3 @@
-{ ... }:
 {
   users.users.warbacon = {
     isNormalUser = true;

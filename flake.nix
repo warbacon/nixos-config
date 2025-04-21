@@ -1,13 +1,15 @@
 {
-  description = "My NixOS configuration.";
+  description = "My personal NixOS configuration.";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
-    nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
   };
 
   outputs =
@@ -15,24 +17,28 @@
       nixpkgs,
       home-manager,
       nixos-wsl,
-      ...
     }:
+    let
+      system = "x86_64-linux";
+    in
     {
       nixosConfigurations = {
         zenarch = nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
+          inherit system;
+          specialArgs = {
+            hostname = "zenarch";
+          };
           modules = [
             ./hosts/zenarch
-            nixos-wsl.nixosModules.default
             home-manager.nixosModules.home-manager
           ];
         };
         wsl = nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
+          inherit system;
           modules = [
-            ./hosts/wsl
-            nixos-wsl.nixosModules.default
+            ./hosts/wsl.nix
             home-manager.nixosModules.home-manager
+            nixos-wsl.nixosModules.default
           ];
         };
       };

@@ -1,6 +1,6 @@
 { lib, ... }:
 {
-  programs.starship = {
+  home-manager.users.warbacon.programs.starship = {
     enable = true;
     settings = {
       add_newline = false;

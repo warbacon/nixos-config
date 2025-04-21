@@ -1,15 +1,9 @@
-{ ... }:
 {
   imports = [
-    ./hardware-configuration.nix
-    ../../modules
+    ../../modules/base
+    ../../modules/system
+    ../../modules/graphical
   ];
 
-  desktop = "hyprland";
-
-  bluetooth.enable = true;
-  printing.enable = true;
-
-  # PPD
   services.power-profiles-daemon.enable = true;
 }

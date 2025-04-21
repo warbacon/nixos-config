@@ -1,6 +1,8 @@
 { pkgs, ... }:
 {
-  programs.btop = {
+  environment.systemPackages = with pkgs; [ btop-rocm ];
+
+  home-manager.users.warbacon.programs.btop = {
     enable = true;
     package = pkgs.btop-rocm;
     settings = {

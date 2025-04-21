@@ -1,59 +1,19 @@
 {
-  pkgs,
-  config,
-  lib,
-  ...
-}:
-{
   imports = [
-    ./audio.nix
-    ./bluetooth.nix
-    ./bootloader.nix
+    ./programs
+
     ./compat.nix
-    ./networking.nix
-    ./printing.nix
     ./shell.nix
     ./users.nix
-    ./virtualisation.nix
-    ./desktop.nix
-
-    ./programs
   ];
 
-  # Packages
+  # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-  environment.systemPackages = with pkgs; [
-    bun
-    dust
-    eza
-    fastfetch
-    fd
-    fzf
-    gcc
-    git
-    killall
-    neovim
-    nodejs
-    php
-    phpPackages.composer
-    python3
-    ripgrep
-    tlrc
-    trash-cli
-    unzip
-    wget
-    yazi
-    zip
-  ];
 
   # Home manager
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
-    users.warbacon = import ./home-manager {
-      inherit config pkgs lib;
-      isWsl = config.wsl.enable;
-    };
   };
 
   # Garbage collector
