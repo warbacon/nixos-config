@@ -1,3 +1,7 @@
+{ config, ... }:
+let
+  homeDir = config.home-manager.users.warbacon.home.homeDirectory;
+in
 {
   imports = [
     ./programs
@@ -14,10 +18,28 @@
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
+
     users.warbacon = {
       home.username = "warbacon";
       home.homeDirectory = "/home/warbacon";
       home.stateVersion = "24.11";
+      programs.home-manager.enable = true;
+
+      # XDG
+      xdg = {
+        userDirs = {
+          enable = true;
+          createDirectories = true;
+          desktop = null;
+          music = null;
+          templates = null;
+          publicShare = null;
+          documents = "${homeDir}/Documentos";
+          download = "${homeDir}/Descargas";
+          pictures = "${homeDir}/Descargas";
+          videos = "${homeDir}/Vídeos";
+        };
+      };
     };
   };
 

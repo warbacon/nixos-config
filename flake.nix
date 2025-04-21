@@ -36,6 +36,9 @@
         };
         wsl = nixpkgs.lib.nixosSystem {
           inherit system;
+          specialArgs = {
+            hostname = "wsl";
+          };
           modules = [
             ./hosts/wsl.nix
             home-manager.nixosModules.home-manager
