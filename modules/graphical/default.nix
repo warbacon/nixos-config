@@ -13,6 +13,7 @@
     (zathura.override { useMupdf = true; })
     chromium
     ear2ctl
+    imv
     kitty
     libreoffice-fresh
     localsend
