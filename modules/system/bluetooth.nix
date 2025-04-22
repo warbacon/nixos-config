@@ -15,6 +15,9 @@
   config = lib.mkIf config.nixi.bluetooth.enable {
     environment.systemPackages = [ pkgs.bluetui ];
 
-    hardware.bluetooth.enable = true;
+    hardware.bluetooth = {
+      enable = true;
+      powerOnBoot = false;
+    };
   };
 }
