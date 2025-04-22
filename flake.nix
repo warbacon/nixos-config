@@ -18,29 +18,29 @@
       home-manager,
       nixos-wsl,
       ...
-    }:
+    }@inputs:
     let
       system = "x86_64-linux";
     in
     {
       nixosConfigurations = {
-        zenarch = nixpkgs.lib.nixosSystem {
+        zenix = nixpkgs.lib.nixosSystem {
           inherit system;
           specialArgs = {
-            hostname = "zenarch";
+            inherit inputs;
           };
           modules = [
-            ./hosts/zenarch
+            ./hosts/zenix
             home-manager.nixosModules.home-manager
           ];
         };
-        wsl = nixpkgs.lib.nixosSystem {
+        nixwsl = nixpkgs.lib.nixosSystem {
           inherit system;
           specialArgs = {
-            hostname = "wsl";
+            inherit inputs;
           };
           modules = [
-            ./hosts/wsl.nix
+            ./hosts/nixwsl.nix
             home-manager.nixosModules.home-manager
             nixos-wsl.nixosModules.default
           ];

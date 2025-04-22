@@ -8,6 +8,12 @@
 
   nixi.bluetooth.enable = true;
   services.printing.enable = true;
+  networking.hostName = "zenix";
 
-  services.power-profiles-daemon.enable = true;
+  services.tlp = {
+    enable = true;
+    settings = {
+      CPU_ENERGY_PERF_POLICY_ON_AC = "performance";
+    };
+  };
 }

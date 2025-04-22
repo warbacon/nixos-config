@@ -7,4 +7,6 @@
     enable = true;
     defaultUser = "warbacon";
   };
+
+  networking.hostName = "nixwsl";
 }

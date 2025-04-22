@@ -1,4 +1,4 @@
-{ config, ... }:
+{ inputs, config, ... }:
 let
   homeDir = config.home-manager.users.warbacon.home.homeDirectory;
   stateVersion = "24.11";
@@ -43,12 +43,12 @@ in
     };
   };
 
-  # Garbage collector
-  nix.gc = {
-    automatic = true;
-    dates = "daily";
-    options = "--delete-older-than 3d";
-  };
+  # Documentation
+  documentation.nixos.enable = false;
+  documentation.man.generateCaches = false;
+
+  # NIX_PATH
+  nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
 
   # Experimental features
   nix.settings.experimental-features = [
