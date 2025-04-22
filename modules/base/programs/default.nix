@@ -9,7 +9,6 @@
   ];
 
   environment.systemPackages = with pkgs; [
-    bun
     dust
     eza
     fastfetch
@@ -17,10 +16,6 @@
     fzf
     gcc
     killall
-    nodejs
-    php
-    phpPackages.composer
-    python3
     ripgrep
     tlrc
     trash-cli
@@ -29,6 +24,14 @@
     xh
     yazi
     zip
+    # NodeJS
+    bun
+    nodejs
+    # Python
+    python3
+    # Php
+    (php.withExtensions ({ enabled, all }: enabled ++ [ all.pdo ]))
+    phpPackages.composer
   ];
 
   # NH
