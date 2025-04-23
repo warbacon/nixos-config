@@ -1,11 +1,12 @@
 { pkgs, ... }:
 {
   imports = [
-    ./neovim.nix
+    ./btop.nix
     ./docker.nix
     ./git.nix
+    ./neovim.nix
+    ./nh.nix
     ./starship.nix
-    ./btop.nix
   ];
 
   environment.systemPackages = with pkgs; [
@@ -33,15 +34,4 @@
     (php.withExtensions ({ enabled, all }: enabled ++ [ all.pdo ]))
     phpPackages.composer
   ];
-
-  # NH
-  programs.nh = {
-    enable = true;
-    flake = "/home/warbacon/Git/nixos-config";
-    clean = {
-      enable = true;
-      extraArgs = "--keep 5 --keep-since 3d";
-      dates = "daily";
-    };
-  };
 }
