@@ -10,13 +10,18 @@
   ];
 
   environment.systemPackages = with pkgs; [
+    _7zz-rar
     dust
     eza
     fastfetch
     fd
+    ffmpeg
     fzf
     gcc
+    jq
     killall
+    poppler
+    resvg
     ripgrep
     tlrc
     trash-cli
