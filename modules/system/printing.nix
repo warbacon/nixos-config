@@ -4,8 +4,8 @@
   ...
 }:
 {
-  # services.printing = {
-  #   enable = lib.mkDefault false;
-  #   drivers = with pkgs; [ hplipWithPlugin ];
-  # };
+  services.printing = {
+    enable = lib.mkDefault false;
+    drivers = with pkgs; [ hplipWithPlugin ];
+  };
 }
