@@ -8,7 +8,7 @@ let
 in
 {
   imports = [
-    ./btop.nix
+    ./bottom.nix
     ./docker.nix
     ./git.nix
     ./neovim.nix
