@@ -18,6 +18,7 @@
     libreoffice-fresh
     localsend
     mpv
+    nvtopPackages.amd
     wl-clipboard
   ];
 }
