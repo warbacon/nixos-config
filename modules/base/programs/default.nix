@@ -12,7 +12,6 @@ in
     ./docker.nix
     ./git.nix
     ./neovim.nix
-    ./nh.nix
     ./starship.nix
   ];
 

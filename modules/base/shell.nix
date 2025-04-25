@@ -1,7 +1,7 @@
 { config, lib, hostname, ... }:
 {
   environment.shellAliases = lib.mkForce {
-    nhs = "nh os switch -a";
+    nrs = "sudo nixos-rebuild switch --flake ~/Git/nixos-config#${hostname}";
   };
 
   programs.fish = {
