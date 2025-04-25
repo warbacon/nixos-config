@@ -5,6 +5,7 @@
       styles.widgets = {
         border_color = "#27a1b9";
         selected_border_color = "#ff9e64";
+        text.color = "white";
         selected_text = {
           color = "white";
           bg_color = "#283457";
