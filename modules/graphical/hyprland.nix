@@ -56,18 +56,18 @@
 
   # Packages
   environment.systemPackages = with pkgs; [
-      brightnessctl
-      cliphist
-      grim
-      hyperfine
-      hypridle
-      hyprlock
-      hyprpaper
-      hyprsunset
-      rofi-wayland
-      rofimoji
-      slurp
-      waybar
-      wl-clip-persist
-    ];
+    brightnessctl
+    cliphist
+    grim
+    hyperfine
+    hypridle
+    hyprlock
+    hyprpaper
+    hyprsunset
+    rofi-wayland
+    rofimoji
+    slurp
+    waybar
+    wl-clip-persist
+  ];
 }
