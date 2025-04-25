@@ -4,20 +4,13 @@
   config,
   ...
 }:
+let
+  cfg = config.hardware.bluetooth;
+in
 {
-  options.nixi = {
-    bluetooth.enable = lib.mkEnableOption {
-      description = "Enable bluetooth support";
-      default = false;
-    };
+  hardware.bluetooth = {
+    powerOnBoot = false;
   };
 
-  config = lib.mkIf config.nixi.bluetooth.enable {
-    environment.systemPackages = [ pkgs.bluetui ];
-
-    hardware.bluetooth = {
-      enable = true;
-      powerOnBoot = false;
-    };
-  };
+  environment.systemPackages = lib.mkIf cfg.enable [ pkgs.bluetui ];
 }

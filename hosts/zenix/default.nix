@@ -1,3 +1,4 @@
+{ hostname, ... }:
 {
   imports = [
     ../../modules/base
@@ -6,9 +7,9 @@
     ./hardware-configuration.nix
   ];
 
-  nixi.bluetooth.enable = true;
+  hardware.bluetooth.enable = true;
   services.printing.enable = true;
-  networking.hostName = "zenix";
+  networking.hostName = hostname;
 
   services.tlp = {
     enable = true;

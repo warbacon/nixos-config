@@ -28,6 +28,7 @@
           inherit system;
           specialArgs = {
             inherit inputs;
+            hostname = "zenix";
           };
           modules = [
             ./hosts/zenix
@@ -38,6 +39,7 @@
           inherit system;
           specialArgs = {
             inherit inputs;
+            hostname = "nixwsl";
           };
           modules = [
             ./hosts/nixwsl.nix

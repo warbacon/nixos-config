@@ -1,3 +1,4 @@
+{ hostname, ... }:
 {
   imports = [
     ../modules/base
@@ -8,5 +9,5 @@
     defaultUser = "warbacon";
   };
 
-  networking.hostName = "nixwsl";
+  networking.hostName = hostname;
 }

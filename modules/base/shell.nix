@@ -1,4 +1,4 @@
-{ config, lib, ... }:
+{ config, lib, hostname, ... }:
 {
   environment.shellAliases = lib.mkForce {
     nhs = "nh os switch -a";
@@ -10,7 +10,7 @@
     shellAliases = lib.mkForce { };
     shellAbbrs = config.environment.shellAliases;
     interactiveShellInit =
-      lib.mkIf (config.networking.hostName == "nixwsl") # fish
+      lib.mkIf (hostname == "nixwsl") # fish
         ''
           function code
             set code (which code)
