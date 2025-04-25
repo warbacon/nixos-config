@@ -1,5 +1,12 @@
 { pkgs, ... }:
 {
+  programs.neovim = {
+    enable = true;
+    defaultEditor = true;
+    withRuby = false;
+    withPython3 = false;
+  };
+
   # LSPs and tools
   environment.systemPackages = with pkgs; [
     astro-language-server
@@ -22,10 +29,4 @@
     yaml-language-server
   ];
 
-  programs.neovim = {
-    enable = true;
-    defaultEditor = true;
-    withRuby = false;
-    withPython3 = false;
-  };
 }
