@@ -1,11 +1,4 @@
 { pkgs, ... }:
-let
-  phpEnv = (
-    pkgs.php.buildEnv {
-      extensions = ({ enabled, all }: enabled ++ (with all; [ pdo ]));
-    }
-  );
-in
 {
   imports = [
     ./bottom.nix
@@ -42,7 +35,7 @@ in
     # Python
     python3
     # Php
-    phpEnv
-    phpEnv.packages.composer
+    php
+    phpPackages.composer
   ];
 }
