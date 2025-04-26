@@ -2,8 +2,8 @@
 {
   # Fonts
   fonts.packages = with pkgs; [
+    (ibm-plex.override { families = [ "mono" ]; })
     adwaita-fonts
-    lilex
     nerd-fonts.symbols-only
     noto-fonts
     noto-fonts-cjk-sans
@@ -12,29 +12,10 @@
 
   fonts.fontconfig = {
     enable = true;
-    localConf = # xml
-      ''
-        <?xml version="1.0"?>
-        <!DOCTYPE fontconfig SYSTEM "urn:fontconfig:fonts.dtd">
-        <fontconfig>
-          <alias>
-            <family>Segoe UI</family>
-            <prefer>
-              <family>sans-serif</family>
-            </prefer>
-          </alias>
-          <alias>
-            <family>Consolas</family>
-            <prefer>
-              <family>monospace</family>
-            </prefer>
-          </alias>
-        </fontconfig>
-      '';
     defaultFonts = {
       emoji = [ "Noto Color Emoji" ];
       monospace = [
-        "Lilex"
+        "IBM Plex Mono"
         "Symbols Nerd Font"
       ];
       sansSerif = [ "Adwaita Sans" ];
