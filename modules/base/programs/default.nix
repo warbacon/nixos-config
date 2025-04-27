@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   imports = [
-    ./bottom.nix
+    ./btop.nix
     ./docker.nix
     ./git.nix
     ./neovim.nix
