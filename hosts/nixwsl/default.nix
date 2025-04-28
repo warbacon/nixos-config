@@ -1,7 +1,7 @@
 { hostname, ... }:
 {
   imports = [
-    ../modules/base
+    ../../modules/base
   ];
 
   wsl = {

@@ -20,30 +20,31 @@
       ...
     }@inputs:
     let
-      system = "x86_64-linux";
+      mkSystem =
+        {
+          hostname,
+          extraModules ? [ ],
+        }:
+        nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          specialArgs = {
+            inherit inputs hostname;
+          };
+          modules = [
+            ./hosts/${hostname}
+            home-manager.nixosModules.home-manager
+          ] ++ extraModules;
+        };
     in
     {
       nixosConfigurations = {
-        zenix = nixpkgs.lib.nixosSystem {
-          inherit system;
-          specialArgs = {
-            inherit inputs;
-            hostname = "zenix";
-          };
-          modules = [
-            ./hosts/zenix
-            home-manager.nixosModules.home-manager
-          ];
+        zenix = mkSystem {
+          hostname = "zenix";
         };
-        nixwsl = nixpkgs.lib.nixosSystem {
-          inherit system;
-          specialArgs = {
-            inherit inputs;
-            hostname = "nixwsl";
-          };
-          modules = [
-            ./hosts/nixwsl.nix
-            home-manager.nixosModules.home-manager
+
+        nixwsl = mkSystem {
+          hostname = "nixwsl";
+          extraModules = [
             nixos-wsl.nixosModules.default
           ];
         };
