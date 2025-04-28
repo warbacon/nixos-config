@@ -17,6 +17,7 @@
     ffmpeg
     fzf
     gcc
+    hyperfine
     jq
     killall
     poppler

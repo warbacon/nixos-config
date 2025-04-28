@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   imports = [
-    ./hyprland.nix
+    ./hyprland
     ./audio.nix
     ./firefox.nix
     ./theming.nix
