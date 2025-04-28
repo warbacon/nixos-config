@@ -6,6 +6,7 @@
     ./git.nix
     ./neovim.nix
     ./starship.nix
+    ./yazi
   ];
 
   environment.systemPackages = with pkgs; [
@@ -20,15 +21,12 @@
     hyperfine
     jq
     killall
-    poppler
-    resvg
     ripgrep
     tlrc
     trash-cli
     unzip
     wget
     xh
-    yazi
     zip
     # NodeJS
     bun

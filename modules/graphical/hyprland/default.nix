@@ -5,6 +5,7 @@
     ./hyprpaper.nix
     ./hyprlock.nix
     ./dunst.nix
+    ./waybar
     ./scripts
   ];
 
@@ -36,7 +37,6 @@
     rofi-wayland
     rofimoji
     slurp
-    waybar
     wl-clip-persist
   ];
 
@@ -71,7 +71,6 @@
 
       # AUTOSTART ==============================================================
       exec-once = [
-        "waybar"
         "wl-clip-persist --clipboard regular"
       ];
 
@@ -228,13 +227,7 @@
         "SUPER, h, resizeactive, -50 0"
         "SUPER, l, resizeactive, 50 0"
 
-        # Backlight
-        ", XF86MonBrightnessUp, exec, change_brightness up"
-        ", XF86MonBrightnessDown, exec, change_brightness down"
-
         # Audio
-        ", XF86AudioRaiseVolume, exec, change_volume up"
-        ", XF86AudioLowerVolume, exec, change_volume down"
         ", XF86AudioMute, exec, change_volume muteaudio"
         ", XF86AudioMicMute, exec, change_volume mutemic"
 
@@ -265,6 +258,16 @@
         # Scroll through existing workspaces with mainMod + scroll
         "SUPER, mouse_down, workspace, e-1"
         "SUPER, mouse_up, workspace, e+1"
+      ];
+
+      binde = [
+        # Backlight
+        ", XF86MonBrightnessUp, exec, change_brightness up"
+        ", XF86MonBrightnessDown, exec, change_brightness down"
+
+        # Audio
+        ", XF86AudioRaiseVolume, exec, change_volume up"
+        ", XF86AudioLowerVolume, exec, change_volume down"
       ];
 
       bindm = [
