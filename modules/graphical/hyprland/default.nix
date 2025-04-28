@@ -230,7 +230,7 @@
 
         # Backlight
         ", XF86MonBrightnessUp, exec, change_brightness up"
-        ", XF86MonBrightnessDown, exec, change_brightnessdown"
+        ", XF86MonBrightnessDown, exec, change_brightness down"
 
         # Audio
         ", XF86AudioRaiseVolume, exec, change_volume up"
