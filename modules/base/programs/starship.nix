@@ -2,6 +2,9 @@
 {
   home-manager.users.warbacon.programs.starship = {
     enable = true;
+    enableFishIntegration = false;
+    enableBashIntegration = false;
+
     settings = {
       add_newline = false;
 
