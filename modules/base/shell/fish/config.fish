@@ -9,20 +9,6 @@ set -g GIT_DIR "$HOME/Git" # Used to show repo status in ll
 # -----------------------------------------------------------------------------
 
 # ABBREVIATIONS ---------------------------------------------------------------
-abbr -a rm rm -v
-abbr -a mv mv -iv
-abbr -a cp cp -iv
-
-if command -q trash
-    abbr -a rt trash
-else
-    printf "%sWARNING:%s trash-cli is not installed.\n" \
-        (set_color --bold yellow) (set_color normal)
-end
-
-command -q fastfetch; and abbr -a ff fastfetch
-command -q lazygit; and abbr -a lg lazygit
-
 if test "$TERM" = xterm-kitty; and command -q ssh
     abbr -a ssh kitten ssh
 end

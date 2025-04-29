@@ -3,10 +3,6 @@ bind -s "set completion-ignore-case on"
 bind -s "set colored-stats on"
 # ------------------------------------------------------------------------------
 
-# OPTIONS ----------------------------------------------------------------------
-shopt -s autocd
-# ------------------------------------------------------------------------------
-
 # ALIASES ----------------------------------------------------------------------
 if command_exists eza && [[ "$TERM" != "linux" ]]; then
     alias ls="eza --icons=auto --group-directories-first"
@@ -22,15 +18,6 @@ fi
 
 alias grep="grep --color=auto"
 
-alias rm="rm -v"
-alias mv="mv -iv"
-alias cp="cp -iv"
-
-command_exists trash \
-    && alias rt="trash" \
-    || echo "WARNING: trash-cli is not installed."
-
-command_exists lazygit && alias lg="lazygit"
 [[ "$TERM" = "xterm-kitty" ]] && alias icat="kitten icat"
 [[ -n "$WEZTERM_EXECUTABLE" ]] && alias icat="wezterm imgcat"
 # ------------------------------------------------------------------------------

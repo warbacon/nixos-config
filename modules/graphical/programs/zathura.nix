@@ -3,10 +3,9 @@ let
   zathura = (pkgs.zathura.override { useMupdf = true; });
 in
 {
-  environment.systemPackages = [ zathura ];
-
   home-manager.users.warbacon.programs.zathura = {
     enable = true;
+    package = zathura;
     options = {
       font = "monospace 13";
       statusbar-home-tilde = true;

@@ -1,10 +1,6 @@
 { pkgs, ... }:
 {
-  environment.systemPackages = with pkgs; [
-    gh
-    git
-    lazygit
-  ];
+  environment.systemPackages = [ pkgs.git ];
 
   home-manager.users.warbacon = {
     programs.git = {

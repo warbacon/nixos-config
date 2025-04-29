@@ -1,10 +1,8 @@
-{ pkgs, lib, ... }:
+{ lib, ... }:
 let
   foregroundColor = "#c0caf5";
 in
 {
-  environment.systemPackages = [ pkgs.waybar ];
-
   home-manager.users.warbacon.programs.waybar = {
     enable = true;
     systemd.enable = true;

@@ -1,7 +1,4 @@
-{ pkgs, ... }:
 {
-  environment.systemPackages = [ pkgs.hyprpaper ];
-
   home-manager.users.warbacon = {
     services.hyprpaper = {
       enable = true;

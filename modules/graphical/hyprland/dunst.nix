@@ -1,7 +1,4 @@
-{ pkgs, ... }:
 {
-  environment.systemPackages = [ pkgs.dunst ];
-
   home-manager.users.warbacon = {
     services.dunst = {
       enable = true;

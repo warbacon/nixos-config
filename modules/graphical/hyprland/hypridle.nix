@@ -1,7 +1,4 @@
-{ pkgs, ... }:
 {
-  environment.systemPackages = [ pkgs.hypridle ];
-
   home-manager.users.warbacon = {
     services.hypridle = {
       enable = true;

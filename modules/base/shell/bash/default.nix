@@ -3,5 +3,6 @@
     enable = true;
     initExtra = (builtins.readFile ./config.sh);
     bashrcExtra = (builtins.readFile ./init.sh);
+    shellOptions = [ "autocd" ];
   };
 }

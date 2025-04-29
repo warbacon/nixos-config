@@ -1,7 +1,4 @@
-{ pkgs, ... }:
 {
-  environment.systemPackages = [ pkgs.kitty ];
-
   home-manager.users.warbacon = {
     programs.kitty = {
       enable = true;

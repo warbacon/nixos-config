@@ -2,7 +2,6 @@
 {
 
   environment.systemPackages = with pkgs; [
-    yazi
     poppler
     resvg
   ];
@@ -12,10 +11,10 @@
     enableFishIntegration = true;
     enableBashIntegration = true;
 
+    theme.flavor.dark = "tokyonight";
     flavors = {
       tokyonight = ./flavors/tokyonight.yazi;
     };
-    theme.flavor.dark = "tokyonight";
 
     settings = {
       manager = {

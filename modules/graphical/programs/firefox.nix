@@ -1,7 +1,5 @@
 { pkgs, ... }:
 {
-  environment.systemPackages = [ pkgs.firefox-bin ];
-
   home-manager.users.warbacon.programs.firefox = {
     enable = true;
     package = pkgs.firefox-bin;

@@ -1,15 +1,10 @@
 {
-  pkgs,
   lib,
   config,
   hostname,
   ...
 }:
 {
-  environment.systemPackages = with pkgs; [
-    fish
-  ];
-
   programs.fish = {
     enable = true;
     useBabelfish = true;
