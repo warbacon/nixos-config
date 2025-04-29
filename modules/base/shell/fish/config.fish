@@ -46,23 +46,11 @@ bind alt-s prepend_sudo
 # APPEARANCE ------------------------------------------------------------------
 fish_config theme choose thunder
 
-if command -q starship; and test "$IS_LINUX_TTY" != true
-    if not test -d ~/.cache/starship
-        mkdir -p ~/.cache/starship
-    end
-
-    if not test -f ~/.cache/starship/init.fish
-        starship init fish --print-full-init >~/.cache/starship/init.fish
-    end
-
-    source ~/.cache/starship/init.fish
-
-    function prompt_newline --on-event fish_prompt
-        if test -z "$_add_newline"
-            set -g _add_newline true
-        else
-            echo
-        end
+function prompt_newline --on-event fish_prompt
+    if test -z "$_add_newline"
+        set -g _add_newline true
+    else
+        echo
     end
 end
 # -----------------------------------------------------------------------------
