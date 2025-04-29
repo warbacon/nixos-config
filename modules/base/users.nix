@@ -3,6 +3,7 @@
     isNormalUser = true;
     description = "Joaquín Guerra";
     extraGroups = [
+      "adbusers"
       "docker"
       "networkmanager"
       "wheel"
