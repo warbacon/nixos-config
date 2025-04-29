@@ -40,7 +40,6 @@
       enable = true;
       preferAbbrs = true;
       interactiveShellInit = (builtins.readFile ./config.fish);
-      shellInit = (builtins.readFile ./init.fish);
     };
   };
 }
