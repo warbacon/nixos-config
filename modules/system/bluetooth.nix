@@ -12,5 +12,10 @@ in
     powerOnBoot = false;
   };
 
-  environment.systemPackages = lib.mkIf cfg.enable [ pkgs.bluetui ];
+  environment.systemPackages =
+    with pkgs;
+    lib.mkIf cfg.enable [
+      bluetui
+      ear2ctl
+    ];
 }

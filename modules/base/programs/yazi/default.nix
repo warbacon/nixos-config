@@ -9,6 +9,8 @@
 
   home-manager.users.warbacon.programs.yazi = {
     enable = true;
+    enableFishIntegration = true;
+    enableBashIntegration = true;
 
     flavors = {
       tokyonight = ./flavors/tokyonight.yazi;

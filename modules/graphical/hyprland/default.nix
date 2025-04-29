@@ -5,6 +5,7 @@
     ./hyprpaper.nix
     ./hyprlock.nix
     ./dunst.nix
+    ./rofi
     ./waybar
     ./scripts
   ];
@@ -24,18 +25,11 @@
       '';
   };
 
-  home-manager.users.warbacon = {
-    services.cliphist.enable = true;
-  };
-
   # Packages
   environment.systemPackages = with pkgs; [
     brightnessctl
-    cliphist
     grim
     hyprsunset
-    rofi-wayland
-    rofimoji
     slurp
     wl-clip-persist
   ];
@@ -47,15 +41,6 @@
 
   home-manager.users.warbacon.wayland.windowManager.hyprland = {
     enable = true;
-    extraConfig = # hyprlang
-      ''
-        bind = SUPER, N, submap, notificaciones
-        submap = notificaciones
-        bind = , escape, submap, reset
-        bind = , O, exec, dunstctl context && hyprctl dispatch submap reset
-        bind = , C, exec, dunstctl close-all && hyprctl dispatch submap reset
-        submap = reset
-      '';
     settings = {
       # MONITORS: https://wiki.hyprland.org/Configuring/Monitors ===============
       monitor = [
@@ -315,5 +300,14 @@
         "animation popin 98%, rofi"
       ];
     };
+    extraConfig = # hyprlang
+      ''
+        bind = SUPER, N, submap, notificaciones
+        submap = notificaciones
+        bind = , escape, submap, reset
+        bind = , O, exec, dunstctl context && hyprctl dispatch submap reset
+        bind = , C, exec, dunstctl close-all && hyprctl dispatch submap reset
+        submap = reset
+      '';
   };
 }

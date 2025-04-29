@@ -1,14 +1,14 @@
-{ inputs, config, ... }:
+{ inputs, ... }:
 let
-  homeDir = config.home-manager.users.warbacon.home.homeDirectory;
+  homeDir = (builtins.getEnv "HOME");
   stateVersion = "24.11";
 in
 {
   imports = [
     ./programs
     ./compat.nix
-    ./shell.nix
     ./users.nix
+    ./shell
   ];
 
   # Allow unfree packages
@@ -20,9 +20,8 @@ in
     useUserPackages = true;
 
     users.warbacon = {
-      home.username = "warbacon";
-      home.homeDirectory = "/home/warbacon";
       home.stateVersion = stateVersion;
+      home.preferXdgDirectories = true;
       programs.home-manager.enable = true;
 
       # XDG
@@ -44,8 +43,8 @@ in
   };
 
   # Documentation
-  documentation.nixos.enable = false;
-  documentation.man.generateCaches = false;
+  # documentation.nixos.enable = false;
+  # documentation.man.generateCaches = false;
 
   # NIX_PATH
   nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
