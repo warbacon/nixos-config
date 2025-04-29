@@ -29,4 +29,15 @@ _add_newline() {
 PROMPT_COMMAND="_add_newline; $PROMPT_COMMAND"
 
 PS1='\[\e[1m\]\[\e[34m\]\w\[\e[0m\]\$ '
+
+if command_exists starship; then
+    [[ -d "$HOME/.cache/starship" ]] || mkdir -p "$HOME/.cache/starship"
+
+    if [[ ! -f "$HOME/.cache/starship/init.sh" ]]; then
+        starship init bash --print-full-init >"$HOME/.cache/starship/init.sh"
+        starship completions bash >>"$HOME/.cache/starship/init.sh"
+    fi
+
+    [[ "$TERM" != "linux" ]] && source "$HOME/.cache/starship/init.sh"
+fi
 # ------------------------------------------------------------------------------
