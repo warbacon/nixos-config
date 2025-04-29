@@ -1,6 +1,6 @@
-{ inputs, ... }:
+{ inputs, config, ... }:
 let
-  homeDir = (builtins.getEnv "HOME");
+  homeDir = config.home-manager.users.warbacon.home.homeDirectory;
   stateVersion = "24.11";
 in
 {
