@@ -1,5 +1,6 @@
 declare -a OPTIONS=(
     "Luz nocturna"
+    "Recogecolor"
     "Recargar waybar"
     "Suspender"
     "Apagar"
@@ -8,11 +9,14 @@ declare -a OPTIONS=(
 )
 
 STYLES="window { width: 500px; } listview { scrollbar: false; }"
-selected="$(printf "%s\n" "${OPTIONS[@]}" | rofi -dmenu -i -p Comandos -l 5 -theme-str "$STYLES")"
+selected="$(printf "%s\n" "${OPTIONS[@]}" | rofi -dmenu -i -p Comandos -l "${#OPTIONS[@]}" -theme-str "$STYLES")"
 
 case "$selected" in
     "Luz nocturna")
         pkill hyprsunset || hyprsunset -t 3500
+        ;;
+    "Recogecolor")
+        sleep 0.1 && hyprpicker -a
         ;;
     "Recargar waybar")
         pkill -u "$USER" -USR2 waybar || true

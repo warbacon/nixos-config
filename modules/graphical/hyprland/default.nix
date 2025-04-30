@@ -29,6 +29,7 @@
   environment.systemPackages = with pkgs; [
     brightnessctl
     grim
+    hyprpicker
     hyprsunset
     slurp
     wl-clip-persist

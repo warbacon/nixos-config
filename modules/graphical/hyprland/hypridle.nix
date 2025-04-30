@@ -6,11 +6,12 @@
         general = {
           lock_cmd = "pidof hyprlock || hyprlock";
           before_sleep_cmd = "loginctl lock-session";
+          after_sleep_cmd = "hyprctl dispatch dpms on";
         };
         listener = [
           {
             timeout = 60;
-            on-timeout = "~/.config/hypr/scripts/dim_screen.sh";
+            on-timeout = "dim_screen";
             on-resume = "brightnessctl -r";
           }
           {
