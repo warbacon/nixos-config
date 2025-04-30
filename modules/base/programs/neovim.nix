@@ -12,6 +12,7 @@
     astro-language-server
     basedpyright
     bash-language-server
+    blade-formatter
     clang-tools
     docker-compose-language-service
     dockerfile-language-server-nodejs
