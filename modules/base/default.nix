@@ -18,6 +18,7 @@ in
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
+    backupFileExtension = "bak";
 
     users.warbacon = {
       home.stateVersion = stateVersion;
@@ -41,10 +42,6 @@ in
       };
     };
   };
-
-  # Documentation
-  # documentation.nixos.enable = false;
-  # documentation.man.generateCaches = false;
 
   # NIX_PATH
   nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
