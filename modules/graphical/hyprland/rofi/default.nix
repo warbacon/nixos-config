@@ -18,5 +18,16 @@
       theme = ./themes/tokyonight.rasi;
     };
     services.cliphist.enable = true;
+
+    xdg.desktopEntries = {
+      rofi = {
+        name = "rofi";
+        noDisplay = true;
+      };
+      rofi-theme-selector = {
+        name = "rofi-theme-selector";
+        noDisplay = true;
+      };
+    };
   };
 }

@@ -1,7 +1,7 @@
 { lib, ... }:
 let
   foregroundColor = "#c0caf5";
-  terminal = "alacritty msg create-window";
+  terminal = "kitty -1";
 in
 {
   home-manager.users.warbacon.programs.waybar = {

@@ -12,7 +12,7 @@
       "image/png" = [ "imv.desktop" ];
       "image/jpeg" = [ "imv.desktop" ];
       "image/gif" = [ "imv.desktop" ];
-      "inode/directory" = [ "alacritty-open.desktop" ];
+      "inode/directory" = [ "kitty-open.desktop" ];
     };
   };
 }

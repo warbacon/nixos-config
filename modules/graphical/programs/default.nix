@@ -3,7 +3,7 @@
   imports = [
     ./firefox.nix
     ./zathura.nix
-    ./alacritty
+    ./kitty
   ];
 
   # Enable Wayland in Chromium/Electron
@@ -15,6 +15,7 @@
   # Packages
   environment.systemPackages = with pkgs; [
     chromium
+    discord
     imv
     libreoffice-fresh
     mpv

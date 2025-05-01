@@ -27,9 +27,6 @@
 
         # Performance
         wayland_enable_ime = "no";
-        repaint_delay = 11;
-        input_delay = 1;
-        sync_to_monitor = "no";
 
         # Tabs
         tab_bar_edge = "top";
@@ -75,11 +72,9 @@
       };
       extraConfig = # bash
         ''
-          # Font
           modify_font cell_height 8px
           modify_font strikethrough_position 4px
 
-          # Theme
           include ./Tokyo Night.conf
         '';
     };

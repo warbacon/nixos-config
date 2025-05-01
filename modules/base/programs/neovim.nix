@@ -30,4 +30,8 @@
     yaml-language-server
   ];
 
+  home-manager.users.warbacon.xdg.desktopEntries.nvim = {
+    name = "nvim";
+    noDisplay = true;
+  };
 }

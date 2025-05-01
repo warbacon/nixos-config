@@ -7,9 +7,15 @@
 {
   programs.fish = {
     enable = true;
+
     useBabelfish = true;
+    vendor = {
+      config.enable = false;
+    };
+
     shellAliases = lib.mkForce { };
     shellAbbrs = config.environment.shellAliases;
+
     interactiveShellInit =
       lib.mkIf (hostname == "nixwsl") # fish
         ''
@@ -40,6 +46,11 @@
       enable = true;
       preferAbbrs = true;
       interactiveShellInit = (builtins.readFile ./config.fish);
+    };
+
+    xdg.desktopEntries.fish = {
+      name = "fish";
+      noDisplay = true;
     };
   };
 }

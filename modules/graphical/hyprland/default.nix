@@ -35,6 +35,11 @@
     withUWSM = true;
   };
 
+  home-manager.users.warbacon.xdg.desktopEntries.uuctl = {
+    name = "uuctl";
+    noDisplay = true;
+  };
+
   home-manager.users.warbacon.wayland.windowManager.hyprland = {
     enable = true;
     settings = {
@@ -46,13 +51,12 @@
       ];
 
       # PROGRAMS ===============================================================
-      "$terminal" = "alacritty msg create-window";
+      "$terminal" = "kitty -1";
       "$fileManager" = "$terminal -e yazi";
       "$menu" = "rofi -show drun -show-icons";
 
       # AUTOSTART ==============================================================
       exec-once = [
-        "alacritty --daemon"
         "wl-clip-persist --clipboard regular"
       ];
 

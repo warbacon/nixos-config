@@ -11,7 +11,7 @@
 
   environment.systemPackages = with pkgs; [
     _7zz-rar
-    dua
+    dust
     eza
     fastfetch
     fd
