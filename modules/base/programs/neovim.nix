@@ -19,10 +19,10 @@
     emmet-language-server
     intelephense
     lua-language-server
-    markdownlint-cli
     nixd
     nixfmt-rfc-style
     shellcheck-minimal
+    shfmt
     stylua
     tailwindcss-language-server
     vscode-langservers-extracted
