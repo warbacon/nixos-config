@@ -26,22 +26,6 @@
           showBottomLine = false;
           showRandomTip = false;
 
-          spinner = {
-            rate = 80;
-            frames = [
-              "⠋"
-              "⠙"
-              "⠹"
-              "⠸"
-              "⠼"
-              "⠴"
-              "⠦"
-              "⠧"
-              "⠇"
-              "⠏"
-            ];
-          };
-
           theme = {
             activeBorderColor = [
               "#ff9e64"
