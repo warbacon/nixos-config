@@ -8,6 +8,12 @@
   ];
 
   home-manager.users.warbacon.xdg.desktopEntries = {
+    alacritty-open = {
+      name = "alacritty-open";
+      exec = "alacritty --working-directory %U";
+      mimeType = [ "inode/directory" ];
+      noDisplay = true;
+    };
     nvim = {
       name = "nvim";
       noDisplay = true;

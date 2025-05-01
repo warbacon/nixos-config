@@ -16,12 +16,12 @@
   };
 
   # Autostart Hyprland
-  programs.bash = {
-    loginShellInit = # bash
+  programs.fish = {
+    loginShellInit = # fish
       ''
-        if uwsm check may-start; then
+        if uwsm check may-start; and command -q Hyprland
           exec uwsm start hyprland-uwsm.desktop
-        fi
+        end
       '';
   };
 
@@ -51,12 +51,13 @@
       ];
 
       # PROGRAMS ===============================================================
-      "$terminal" = "kitty -1";
+      "$terminal" = "alacritty msg create-window";
       "$fileManager" = "$terminal -e yazi";
       "$menu" = "rofi -show drun -show-icons";
 
       # AUTOSTART ==============================================================
       exec-once = [
+        "alacritty --daemon"
         "wl-clip-persist --clipboard regular"
       ];
 
@@ -202,6 +203,7 @@
         "SUPER, V, exec, cliphist list | rofi -dmenu -d -p Portapapeles | cliphist decode | wl-copy"
         "SUPER, B, exec, killall -s1 bluetui || $terminal --class floatterm -e bluetui"
         "SUPER, P, exec, command_palette"
+        "SUPER, O, exec, command_palette powermenu"
         ", Print, exec, screenshot fullscreen"
         "SHIFT, Print, exec, screenshot select"
 
