@@ -202,7 +202,6 @@
         "SUPER, V, exec, cliphist list | rofi -dmenu -d -p Portapapeles | cliphist decode | wl-copy"
         "SUPER, B, exec, killall -s1 bluetui || $terminal --class floatterm -e bluetui"
         "SUPER, P, exec, command_palette"
-        "SUPER, O, exec, command_palette powermenu"
         ", Print, exec, screenshot fullscreen"
         "SHIFT, Print, exec, screenshot select"
 
