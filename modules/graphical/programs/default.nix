@@ -2,7 +2,6 @@
 {
   imports = [
     ./firefox.nix
-    ./zathura.nix
     ./kitty
   ];
 
@@ -16,6 +15,7 @@
   environment.systemPackages = with pkgs; [
     chromium
     discord
+    evince
     imv
     libreoffice-fresh
     mpv
