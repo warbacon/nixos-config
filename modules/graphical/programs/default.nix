@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 {
   imports = [
     ./firefox.nix
@@ -17,6 +17,7 @@
     discord
     evince
     imv
+    inputs.zen-browser.packages."${system}".default
     libreoffice-fresh
     mpv
     vscode-fhs
