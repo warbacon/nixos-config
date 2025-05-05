@@ -53,6 +53,10 @@
             nixos-wsl.nixosModules.default
           ];
         };
+
+        nixvm = mkSystem {
+          hostname = "nixvm";
+        };
       };
     };
 }
