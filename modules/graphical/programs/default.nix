@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }:
+{ pkgs, ... }:
 {
   imports = [
     ./firefox.nix
@@ -15,9 +15,7 @@
   environment.systemPackages = with pkgs; [
     chromium
     discord
-    evince
     imv
-    inputs.zen-browser.packages."${system}".default
     libreoffice-fresh
     mpv
     vscode-fhs
