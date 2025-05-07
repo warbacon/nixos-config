@@ -1,7 +1,6 @@
 declare -a OPTIONS=(
     "Luz nocturna"
     "Recogecolor"
-    "Recargar waybar"
     "Suspender"
     "Apagar"
     "Reiniciar"
@@ -16,10 +15,7 @@ case "$selected" in
         pkill hyprsunset || hyprsunset -t 3500
         ;;
     "Recogecolor")
-        sleep 0.1 && hyprpicker -a
-        ;;
-    "Recargar waybar")
-        pkill -u "$USER" -USR2 waybar || true
+        sleep 0.2 && hyprpicker -a
         ;;
     "Suspender")
         systemctl suspend
