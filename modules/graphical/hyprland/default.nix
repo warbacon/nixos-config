@@ -12,11 +12,6 @@
     ./scripts
   ];
 
-  # Environment variables
-  environment.variables = {
-    GDK_SCALE = 2;
-  };
-
   # Autostart Hyprland
   programs.fish = {
     loginShellInit = # fish
@@ -37,9 +32,17 @@
     withUWSM = true;
   };
 
-  home-manager.users.warbacon.xdg.desktopEntries.uuctl = {
-    name = "uuctl";
-    noDisplay = true;
+  home-manager.users.warbacon = {
+    # Environment variables
+    xdg.configFile."uwsm/env".text = # bash
+      ''
+        export GDK_SCALE=2
+      '';
+
+    xdg.desktopEntries.uuctl = {
+      name = "uuctl";
+      noDisplay = true;
+    };
   };
 
   home-manager.users.warbacon.wayland.windowManager.hyprland = {
@@ -78,8 +81,8 @@
 
       # wiki: https://wiki.hyprland.org/Configuring/Variables/#decoration
       decoration = {
-        rounding = 6;
-        rounding_power = 4;
+        rounding = 0;
+        # rounding_power = 4;
 
         # wiki: https://wiki.hyprland.org/Configuring/Variables/#blur
         blur = {
@@ -95,7 +98,7 @@
 
       # wiki: https://wiki.hyprland.org/Configuring/Variables/#animations
       animations = {
-        enabled = true;
+        enabled = false;
 
         # wiki: https://wiki.hyprland.org/Configuring/Animations/
         bezier = [
@@ -212,8 +215,6 @@
         "SUPER, k, layoutmsg, cycleprev"
         "SUPER SHIFT, j, layoutmsg, swapnext"
         "SUPER SHIFT, k, layoutmsg, swapprev"
-        "SUPER, h, resizeactive, -50 0"
-        "SUPER, l, resizeactive, 50 0"
 
         # Audio
         ", XF86AudioMute, exec, change_volume muteaudio"
@@ -249,6 +250,10 @@
       ];
 
       binde = [
+        # Master-Layout
+        "SUPER, h, resizeactive, -50 0"
+        "SUPER, l, resizeactive, 50 0"
+
         # Backlight
         ", XF86MonBrightnessUp, exec, change_brightness up"
         ", XF86MonBrightnessDown, exec, change_brightness down"
