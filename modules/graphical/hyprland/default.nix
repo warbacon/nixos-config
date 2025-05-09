@@ -5,6 +5,8 @@
     ./hyprpaper.nix
     ./hyprlock.nix
     ./dunst.nix
+    ./theming.nix
+    ./mimeapps.nix
     ./rofi
     ./waybar
     ./scripts
