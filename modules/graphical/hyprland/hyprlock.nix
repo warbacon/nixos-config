@@ -10,6 +10,10 @@
           ignore_empty_input = true;
         };
 
+        animations = {
+          animation = "fade, 0";
+        };
+
         background = {
           path = "~/.config/hypr/wallpaper.png";
           blur_passes = 4;
