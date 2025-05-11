@@ -243,10 +243,6 @@
         "SUPER SHIFT, 8, movetoworkspace, 8"
         "SUPER SHIFT, 9, movetoworkspace, 9"
         "SUPER SHIFT, 0, movetoworkspace, 10"
-
-        # Scroll through existing workspaces with mainMod + scroll
-        "SUPER, mouse_down, workspace, e-1"
-        "SUPER, mouse_up, workspace, e+1"
       ];
 
       binde = [
