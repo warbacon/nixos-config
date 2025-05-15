@@ -62,7 +62,7 @@ in
 
         pulseaudio = {
           on-click = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
-          on-click-right = "killall -s1 pulsemixer || ${terminal} --class floatterm -e pulsemixer";
+          on-click-right = "killall -s1 pulsemixer || ${terminal} --class=float.term -e pulsemixer";
           format = "{icon} <span color='${foregroundColor}'>{volume} %</span>";
           format-muted = "󰝟";
           format-icons = {
@@ -111,7 +111,7 @@ in
 
         network = {
           format = "{icon} <span color='${foregroundColor}'>{essid}</span>";
-          on-click = "killall -s1 nmtui || ${terminal} --class floatterm -e nmtui";
+          on-click = "killall -s1 nmtui || ${terminal} --class=float.term -e nmtui";
           tooltip-format = "{ifname}: {ipaddr}";
           format-disconnected = "{icon} sin conexión";
           format-icons = {

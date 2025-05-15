@@ -205,7 +205,7 @@
         "SUPER, F, fullscreen, 0"
         "SUPER, period, exec, rofimoji -r Emojis"
         "SUPER, V, exec, cliphist list | rofi -dmenu -d -p Portapapeles | cliphist decode | wl-copy"
-        "SUPER, B, exec, killall -s1 bluetui || $terminal --class floatterm -e bluetui"
+        "SUPER, B, exec, killall -s1 bluetui || $terminal --class=float.term -e bluetui"
         "SUPER, P, exec, command_palette"
         ", Print, exec, screenshot fullscreen"
         "SHIFT, Print, exec, screenshot select"
@@ -291,8 +291,8 @@
         "rounding 0, floating:0, onworkspace:f[1]"
 
         # Terminal floating window
-        "float, class:(floatterm)"
-        "size 1000 600, class:(floatterm)"
+        "float, class:(float.term)"
+        "size 1000 600, class:(float.term)"
       ];
       workspace = [
         # Smart gaps
