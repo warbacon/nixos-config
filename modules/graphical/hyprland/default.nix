@@ -74,7 +74,7 @@
         border_size = 2;
 
         "col.active_border" = "rgb(ff9e64)";
-        "col.inactive_border" = "rgb(27a1b9)";
+        "col.inactive_border" = "rgb(292e42)";
 
         layout = "master";
       };
@@ -98,7 +98,7 @@
 
       # wiki: https://wiki.hyprland.org/Configuring/Variables/#animations
       animations = {
-        enabled = false;
+        enabled = true;
 
         # wiki: https://wiki.hyprland.org/Configuring/Animations/
         bezier = [
@@ -111,7 +111,6 @@
 
         animation = [
           "global, 1, 10, default"
-          "border, 1, 5.39, easeOutQuint"
           "windows, 1, 4.79, easeOutQuint"
           "windowsIn, 1, 4.1, easeOutQuint, popin 87%"
           "windowsOut, 1, 1.49, linear, popin 87%"
@@ -123,7 +122,9 @@
           "layersOut, 1, 1.5, linear, fade"
           "fadeLayersIn, 1, 1.79, almostLinear"
           "fadeLayersOut, 1, 1.39, almostLinear"
-          "workspaces, 1, 3, easeOutQuint, slidefade 20%"
+
+          "border, 0, 5.39, easeOutQuint"
+          "workspaces, 0, 3, easeOutQuint, slidefade 20%"
         ];
       };
 
@@ -284,6 +285,9 @@
         "suppressevent fullscreen, initialTitle:Picture-in-Picture, initialClass:firefox"
         "size 512 288, initialTitle:Picture-in-Picture, initialClass:firefox"
 
+        # Disable border in unnamed GTK floating windows
+        "noborder, initialClass:GTK Application, floating:1"
+
         # Smart gaps
         "bordersize 0, floating:0, onworkspace:w[tv1]"
         "rounding 0, floating:0, onworkspace:w[tv1]"
@@ -302,6 +306,7 @@
       layerrule = [
         # Rofi animation
         "animation popin 98%, rofi"
+        "animation slide, notifications"
       ];
     };
     extraConfig = # hyprlang
