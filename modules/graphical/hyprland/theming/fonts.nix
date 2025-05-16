@@ -2,7 +2,7 @@
 {
   fonts.packages = with pkgs; [
     adwaita-fonts
-    jetbrains-mono
+    (ibm-plex.override { families = [ "mono" ]; })
     nerd-fonts.symbols-only
     noto-fonts
     noto-fonts-cjk-sans
@@ -23,7 +23,7 @@
     defaultFonts = {
       emoji = [ "Noto Color Emoji" ];
       monospace = [
-        "JetBrains Mono"
+        "IBM Plex Mono"
         "Symbols Nerd Font"
       ];
       sansSerif = [ "Adwaita Sans" ];
