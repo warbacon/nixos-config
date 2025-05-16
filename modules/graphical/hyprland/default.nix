@@ -102,29 +102,27 @@
 
         # wiki: https://wiki.hyprland.org/Configuring/Animations/
         bezier = [
-          "easeOutQuint,0.23,1,0.32,1"
-          "easeInOutCubic,0.65,0.05,0.36,1"
           "linear,0,0,1,1"
           "almostLinear,0.5,0.5,0.75,1.0"
           "quick,0.15,0,0.1,1"
+          "easeOutExpo,0.16,1,0.3,1"
         ];
 
         animation = [
           "global, 1, 10, default"
-          "windows, 1, 4.79, easeOutQuint"
-          "windowsIn, 1, 4.1, easeOutQuint, popin 87%"
-          "windowsOut, 1, 1.49, linear, popin 87%"
+          "border, 0, 5.39, easeOutExpo"
+          "windows, 1, 4.79, easeOutExpo"
+          "windowsIn, 1, 3.5, easeOutExpo, slide"
+          "windowsOut, 1, 1.6, linear, slide"
           "fadeIn, 1, 1.73, almostLinear"
           "fadeOut, 1, 1.46, almostLinear"
           "fade, 1, 3.03, quick"
-          "layers, 1, 3.81, easeOutQuint"
-          "layersIn, 1, 4, easeOutQuint, fade"
+          "layers, 1, 3.81, easeOutExpo"
+          "layersIn, 1, 4, easeOutExpo, fade"
           "layersOut, 1, 1.5, linear, fade"
           "fadeLayersIn, 1, 1.79, almostLinear"
           "fadeLayersOut, 1, 1.39, almostLinear"
-
-          "border, 0, 5.39, easeOutQuint"
-          "workspaces, 0, 3, easeOutQuint, slidefade 20%"
+          "workspaces, 0, 1.94, almostLinear, fade"
         ];
       };
 
@@ -149,11 +147,6 @@
         force_zero_scaling = true;
       };
 
-      # wiki: https://wiki.hyprland.org/Configuring/Variables/#cursor
-      cursor = {
-        enable_hyprcursor = false;
-      };
-
       # wiki: https://wiki.hyprland.org/Configuring/Variables/#ecosystem
       ecosystem = {
         no_update_news = true;
@@ -171,9 +164,8 @@
 
         touchpad = {
           natural_scroll = true;
-          tap-to-click = false;
-          middle_button_emulation = false;
-          clickfinger_behavior = true;
+          # middle_button_emulation = false;
+          # clickfinger_behavior = true;
         };
       };
 
@@ -192,7 +184,6 @@
       # wiki: https://wiki.hyprland.org/Configuring/Variables/#binds
       binds = {
         allow_pin_fullscreen = true;
-        scroll_event_delay = 100;
       };
 
       # KEYBINDINGS: https://wiki.hyprland.org/Configuring/Binds ===============
@@ -293,6 +284,10 @@
         "rounding 0, floating:0, onworkspace:w[tv1]"
         "bordersize 0, floating:0, onworkspace:f[1]"
         "rounding 0, floating:0, onworkspace:f[1]"
+
+        # Use popin in floating windows
+        "animation popin 90%, floating:1"
+        "animation popin 90%, floating:1"
 
         # Terminal floating window
         "float, class:(float.term)"
