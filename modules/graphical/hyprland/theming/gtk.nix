@@ -11,10 +11,6 @@
         name = "Adwaita Sans";
         size = 10;
       };
-      iconTheme = {
-        name = "Adwaita";
-        package = pkgs.adwaita-icon-theme;
-      };
       theme = {
         name = "Adwaita-dark";
         package = pkgs.gnome-themes-extra;
