@@ -22,6 +22,7 @@
       };
       Interface = {
         dialog_buttons_have_icons = 0;
+        underline_shortcut = 0;
       };
     };
 
@@ -34,6 +35,10 @@
       Fonts = {
         fixed = "\"IosevkaBrain,10,-1,5,50,0,0,0,0,0,Regular\"";
         general = "\"Adwaita Sans,10,-1,5,50,0,0,0,0,0\"";
+      };
+      Interface = {
+        dialog_buttons_have_icons = 0;
+        underline_shortcut = 0;
       };
     };
   };
