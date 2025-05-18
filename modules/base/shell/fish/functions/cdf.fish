@@ -5,7 +5,7 @@ function cdf
         --exclude .cache \
         --exclude .local/share/Trash \
         --exclude .vscode \
-        | fzf --border --layout=reverse)
+        | fzf --border --layout=reverse --preview="eza --tree --color=always --level 3 --icons=always {}")
 
     if test -n "$dir"
         cd "$dir"
