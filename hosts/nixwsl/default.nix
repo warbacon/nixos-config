@@ -1,4 +1,3 @@
-{ hostname, ... }:
 {
   imports = [
     ../../modules/base
@@ -8,6 +7,4 @@
     enable = true;
     defaultUser = "warbacon";
   };
-
-  networking.hostName = hostname;
 }

@@ -1,4 +1,3 @@
-{ hostname, ... }:
 {
   imports = [
     ../../modules/base
@@ -9,7 +8,6 @@
 
   hardware.bluetooth.enable = true;
   services.printing.enable = true;
-  networking.hostName = hostname;
 
   services.tlp = {
     enable = true;

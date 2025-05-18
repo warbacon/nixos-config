@@ -31,6 +31,7 @@
             inherit inputs hostname;
           };
           modules = [
+            { networking.hostName = hostname; }
             ./hosts/${hostname}
             home-manager.nixosModules.home-manager
           ] ++ extraModules;
