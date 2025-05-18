@@ -1,4 +1,6 @@
+{ pkgs, ... }:
 {
+  environment.systemPackages = [ pkgs.chafa ];
   home-manager.users.warbacon = {
     programs.ghostty = {
       enable = true;
