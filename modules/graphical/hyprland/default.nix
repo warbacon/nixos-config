@@ -62,6 +62,7 @@
 
       # AUTOSTART ==============================================================
       exec-once = [
+        "kitty --start-as=hidden"
         "wl-clip-persist --clipboard regular"
       ];
 
