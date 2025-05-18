@@ -164,8 +164,8 @@
 
         touchpad = {
           natural_scroll = true;
-          # middle_button_emulation = false;
-          # clickfinger_behavior = true;
+          middle_button_emulation = false;
+          clickfinger_behavior = true;
         };
       };
 
