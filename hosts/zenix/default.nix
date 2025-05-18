@@ -9,10 +9,5 @@
   hardware.bluetooth.enable = true;
   services.printing.enable = true;
 
-  services.tlp = {
-    enable = true;
-    settings = {
-      CPU_ENERGY_PERF_POLICY_ON_BAT = "balance_performance";
-    };
-  };
+  services.power-profiles-daemon.enable = true;
 }
