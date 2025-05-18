@@ -24,6 +24,7 @@
     shellcheck-minimal
     shfmt
     stylua
+    svelte-language-server
     tailwindcss-language-server
     vscode-langservers-extracted
     vtsls
