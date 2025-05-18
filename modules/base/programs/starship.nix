@@ -16,12 +16,19 @@
         "$git_state"
         "$git_status"
         "$python"
+        "$nix_shell"
         "$cmd_duration"
         "$line_break"
         "$jobs"
         "$status"
         "$character"
       ];
+
+      nix_shell = {
+        format = "via [$symbol $name]($style) ";
+        symbol = "󰜗";
+        style = "bold cyan";
+      };
 
       shell = {
         disabled = false;

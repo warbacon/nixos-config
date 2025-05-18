@@ -47,6 +47,7 @@
     '';
   };
 
+  programs.direnv.enable = true;
   programs.command-not-found.enable = false;
   home-manager.users.warbacon.programs.dircolors.enable = true;
 }
