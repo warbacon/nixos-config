@@ -1,9 +1,9 @@
 { pkgs, ... }:
 {
 
-  environment.systemPackages = with pkgs; [
-    poppler
-    resvg
+  environment.systemPackages = [
+    pkgs.poppler
+    pkgs.resvg
   ];
 
   home-manager.users.warbacon.programs.yazi = {

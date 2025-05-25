@@ -23,8 +23,8 @@
   };
 
   # Packages
-  environment.systemPackages = with pkgs; [
-    wl-clip-persist
+  environment.systemPackages = [
+    pkgs.wl-clip-persist
   ];
 
   programs.hyprland = {

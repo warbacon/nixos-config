@@ -1,12 +1,12 @@
 { pkgs, ... }:
 {
-  fonts.packages = with pkgs; [
-    adwaita-fonts
-    (ibm-plex.override { families = [ "mono" ]; })
-    nerd-fonts.symbols-only
-    noto-fonts
-    noto-fonts-cjk-sans
-    noto-fonts-emoji
+  fonts.packages = [
+    pkgs.adwaita-fonts
+    (pkgs.ibm-plex.override { families = [ "mono" ]; })
+    pkgs.nerd-fonts.symbols-only
+    pkgs.noto-fonts
+    pkgs.noto-fonts-cjk-sans
+    pkgs.noto-fonts-emoji
   ];
 
   fonts.fontconfig = {

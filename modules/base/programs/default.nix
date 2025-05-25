@@ -9,33 +9,33 @@
     ./yazi
   ];
 
-  environment.systemPackages = with pkgs; [
-    _7zz-rar
-    dust
-    eza
-    fastfetch
-    fd
-    ffmpeg
-    fzf
-    gcc
-    hyperfine
-    jq
-    killall
-    ripgrep
-    tlrc
-    trash-cli
-    unzip
-    wget
-    xdg-utils
-    xh
-    zip
+  environment.systemPackages = [
+    pkgs._7zz-rar
+    pkgs.dust
+    pkgs.eza
+    pkgs.fastfetch
+    pkgs.fd
+    pkgs.ffmpeg
+    pkgs.fzf
+    pkgs.gcc
+    pkgs.hyperfine
+    pkgs.jq
+    pkgs.killall
+    pkgs.ripgrep
+    pkgs.tlrc
+    pkgs.trash-cli
+    pkgs.unzip
+    pkgs.wget
+    pkgs.xdg-utils
+    pkgs.xh
+    pkgs.zip
     # NodeJS
-    bun
-    nodejs
+    pkgs.bun
+    pkgs.nodejs
     # Python
-    python3
+    pkgs.python3
     # Php
-    php
-    phpPackages.composer
+    pkgs.php
+    pkgs.phpPackages.composer
   ];
 }

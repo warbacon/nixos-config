@@ -1,9 +1,7 @@
 { pkgs, lib, ... }:
 {
   home-manager.users.warbacon = {
-    home.packages = with pkgs; [
-      kdePackages.breeze-icons
-    ];
+    home.packages = [ pkgs.kdePackages.breeze-icons ];
 
     qt = {
       enable = true;

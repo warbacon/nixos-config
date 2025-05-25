@@ -12,13 +12,13 @@
   programs.localsend.enable = true;
 
   # Packages
-  environment.systemPackages = with pkgs; [
-    chromium
-    discord
-    imv
-    libreoffice-fresh
-    mpv
-    vscode-fhs
-    wl-clipboard
+  environment.systemPackages = [
+    pkgs.chromium
+    pkgs.discord
+    pkgs.imv
+    pkgs.libreoffice-fresh
+    pkgs.mpv
+    pkgs.vscode-fhs
+    pkgs.wl-clipboard
   ];
 }

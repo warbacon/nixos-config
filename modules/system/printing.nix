@@ -1,6 +1,6 @@
 { pkgs, ... }:
 {
   services.printing = {
-    drivers = with pkgs; [ hplipWithPlugin ];
+    drivers = [ pkgs.hplipWithPlugin ];
   };
 }

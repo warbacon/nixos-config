@@ -18,15 +18,12 @@ let
   );
 in
 {
-  environment.systemPackages =
-    with pkgs;
-    [
-      brightnessctl
-      grim
-      hyprpicker
-      hyprsunset
-      libcanberra-gtk3
-      slurp
-    ]
-    ++ scripts;
+  environment.systemPackages = [
+    pkgs.brightnessctl
+    pkgs.grim
+    pkgs.hyprpicker
+    pkgs.hyprsunset
+    pkgs.libcanberra-gtk3
+    pkgs.slurp
+  ] ++ scripts;
 }

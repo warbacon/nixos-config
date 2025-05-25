@@ -1,8 +1,8 @@
 { pkgs, ... }:
 {
-  environment.systemPackages = with pkgs; [
-    cliphist
-    rofimoji
+  environment.systemPackages = [
+    pkgs.cliphist
+    pkgs.rofimoji
   ];
 
   home-manager.users.warbacon = {
