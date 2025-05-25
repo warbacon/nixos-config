@@ -7,32 +7,36 @@
     withPython3 = false;
   };
 
-  # LSPs and tools
-  environment.systemPackages = with pkgs; [
-    astro-language-server
-    basedpyright
-    bash-language-server
-    blade-formatter
-    clang-tools
-    docker-compose-language-service
-    dockerfile-language-server-nodejs
-    emmet-language-server
-    intelephense
-    lua-language-server
-    nixd
-    nixfmt-rfc-style
-    shellcheck-minimal
-    shfmt
-    stylua
-    svelte-language-server
-    tailwindcss-language-server
-    vscode-langservers-extracted
-    vtsls
-    yaml-language-server
-  ];
-
-  home-manager.users.warbacon.xdg.desktopEntries.nvim = {
-    name = "nvim";
-    noDisplay = true;
+  home-manager.users.warbacon = {
+    programs.neovim = {
+      enable = true;
+      extraPackages = [
+        pkgs.astro-language-server
+        pkgs.basedpyright
+        pkgs.bash-language-server
+        pkgs.blade-formatter
+        pkgs.clang-tools
+        pkgs.docker-compose-language-service
+        pkgs.dockerfile-language-server-nodejs
+        pkgs.emmet-language-server
+        pkgs.intelephense
+        pkgs.lua-language-server
+        pkgs.nixd
+        pkgs.nixfmt-rfc-style
+        pkgs.shellcheck-minimal
+        pkgs.shfmt
+        pkgs.stylua
+        pkgs.svelte-language-server
+        pkgs.tailwindcss-language-server
+        pkgs.tree-sitter
+        pkgs.vscode-langservers-extracted
+        pkgs.vtsls
+        pkgs.yaml-language-server
+      ];
+    };
+    xdg.desktopEntries.nvim = {
+      name = "nvim";
+      noDisplay = true;
+    };
   };
 }
