@@ -11,7 +11,6 @@
 
     nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
   };
-
   outputs =
     {
       nixpkgs,
@@ -20,15 +19,16 @@
       ...
     }@inputs:
     let
+      system = "x86_64-linux";
       mkSystem =
         {
           hostname,
           extraModules ? [ ],
         }:
         nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
+          system = system;
           specialArgs = {
-            inherit inputs hostname;
+            inherit inputs hostname system;
           };
           modules = [
             { networking.hostName = hostname; }
