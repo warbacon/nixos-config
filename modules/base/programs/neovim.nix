@@ -19,7 +19,6 @@
         pkgs.docker-compose-language-service
         pkgs.dockerfile-language-server-nodejs
         pkgs.emmet-language-server
-        pkgs.intelephense
         pkgs.lua-language-server
         pkgs.nixd
         pkgs.nixfmt-rfc-style
