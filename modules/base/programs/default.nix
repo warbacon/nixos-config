@@ -34,8 +34,5 @@
     pkgs.nodejs
     # Python
     pkgs.python3
-    # Php
-    pkgs.php
-    pkgs.phpPackages.composer
   ];
 }
