@@ -1,4 +1,4 @@
-[manager]
+[mgr]
 hovered = { fg = "reset", bg = "#283457" }
 preview_hovered = { fg = "reset", bg = "#283457" }
 border_style  = { fg = "#27a1b9" }

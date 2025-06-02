@@ -17,7 +17,7 @@
     };
 
     settings = {
-      manager = {
+      mgr = {
         show_hidden = true;
         sort_by = "natural";
         sort_translit = false;
@@ -48,7 +48,7 @@
     };
 
     keymap = {
-      manager.prepend_keymap = [
+      mgr.prepend_keymap = [
         {
           on = [
             "g"
