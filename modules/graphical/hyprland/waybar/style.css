@@ -70,7 +70,8 @@ window#waybar.empty #window {
 #network,
 #clock,
 #submap,
-#window {
+#window,
+#power-profiles-daemon {
   margin: 5px 0;
   background-color: @bg1;
   border: 1px solid @border0;
@@ -88,6 +89,7 @@ window#waybar.empty #window {
 
 #pulseaudio:hover,
 #clock:hover,
+#power-profiles-daemon:hover,
 #network:hover {
   background-color: @bg2;
   border: 1px solid @border1;
@@ -122,8 +124,17 @@ window#waybar.empty #window {
   color: @battery-low;
 }
 
-#clock {
+#power-profiles-daemon {
+  color: @accent;
   margin-right: 5px;
+}
+
+#power-profiles-daemon.performance {
+  color: @battery-low;
+}
+
+#power-profiles-daemon.power-saver {
+  color: @green;
 }
 
 #tray menu {

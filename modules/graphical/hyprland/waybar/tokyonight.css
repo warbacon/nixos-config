@@ -10,6 +10,7 @@
 
 @define-color accent  #449dab;
 @define-color red     #f7768e;
+@define-color green   #9ece6a;
 
 @define-color battery-low    @red;
 @define-color battery-warn   #ff9e64;

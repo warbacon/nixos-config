@@ -34,6 +34,7 @@ in
           "battery"
           "network"
           "clock"
+          "power-profiles-daemon"
         ];
 
         "hyprland/workspaces" = {
@@ -142,6 +143,17 @@ in
             on-click-right = "mode";
             on-scroll-up = "shift_up";
             on-scroll-down = "shift_down";
+          };
+        };
+
+        power-profiles-daemon = {
+          format = "{icon}";
+          tooltip-format = "Perfil de energía: {profile}";
+          format-icons = {
+            default = "";
+            performance = "";
+            balanced = "";
+            power-saver = "";
           };
         };
       };
