@@ -6,6 +6,9 @@ function cdf
         --exclude .local/share/Trash \
         --exclude .vscode \
         --exclude .npm \
+        --exclude .docker \
+        --exclude .mozilla \
+        --exclude vendor \
         | fzf --border --layout=reverse --preview="eza --tree --color=always --level 3 --icons=always {}")
 
     if test -n "$dir"
