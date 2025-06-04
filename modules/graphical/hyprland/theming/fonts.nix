@@ -2,7 +2,7 @@
 {
   nixpkgs.overlays = [
     (final: prev: {
-      geist-font = import ../../../../packages/geist-font {
+      geist-font = import ../../../../overlays/geist-font.nix {
         inherit (prev) lib stdenvNoCC fetchzip;
       };
     })
