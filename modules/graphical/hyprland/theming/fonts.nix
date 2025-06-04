@@ -1,8 +1,18 @@
 { pkgs, ... }:
 {
+  nixpkgs.overlays = [
+    (final: prev: {
+      geist-font = import ../../../../packages/geist-font {
+        inherit (prev) lib stdenvNoCC fetchzip;
+      };
+    })
+  ];
+
   fonts.packages = [
+    # (pkgs.ibm-plex.override { families = [ "mono" ]; })
     pkgs.adwaita-fonts
-    (pkgs.ibm-plex.override { families = [ "mono" ]; })
+    pkgs.cascadia-code
+    pkgs.geist-font
     pkgs.nerd-fonts.symbols-only
     pkgs.noto-fonts
     pkgs.noto-fonts-cjk-sans
@@ -23,10 +33,10 @@
     defaultFonts = {
       emoji = [ "Noto Color Emoji" ];
       monospace = [
-        "IBM Plex Mono"
+        "Geist Mono"
         "Symbols Nerd Font"
       ];
-      sansSerif = [ "Adwaita Sans" ];
+      sansSerif = [ "Geist" ];
       serif = [ "Noto Serif" ];
     };
   };

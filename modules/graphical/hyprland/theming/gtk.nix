@@ -8,7 +8,7 @@
     gtk = {
       enable = true;
       font = {
-        name = "Adwaita Sans";
+        name = "Geist";
         size = 10;
       };
       theme = {
