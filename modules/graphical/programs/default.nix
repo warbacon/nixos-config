@@ -22,6 +22,7 @@
     pkgs.chromium
     pkgs.discord
     pkgs.imv
+    pkgs.inkscape
     pkgs.libreoffice-fresh
     pkgs.mpv
     pkgs.vscode-fhs
