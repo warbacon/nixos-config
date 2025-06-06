@@ -2,7 +2,6 @@
   networking = {
     networkmanager = {
       enable = true;
-      # wifi.backend = "iwd";
     };
     nameservers = [
       "1.1.1.1"
