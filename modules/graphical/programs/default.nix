@@ -25,7 +25,6 @@
     pkgs.inkscape
     pkgs.libreoffice-fresh
     pkgs.mpv
-    pkgs.vscode-fhs
     pkgs.wl-clipboard
   ];
 }
