@@ -1,8 +1,8 @@
-{ pkgs, hostname, ... }:
+{ pkgs, hostName, ... }:
 {
   home-manager.users.warbacon.programs.btop = {
     enable = true;
-    package = if hostname != "nixwsl" then pkgs.btop-rocm else pkgs.btop;
+    package = if hostName != "nixwsl" then pkgs.btop-rocm else pkgs.btop;
     settings = {
       color_theme = "TTY";
       theme_background = false;

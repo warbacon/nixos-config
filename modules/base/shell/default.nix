@@ -1,8 +1,4 @@
-{
-  lib,
-  hostname,
-  ...
-}:
+{ lib, hostName, ... }:
 {
   imports = [
     ./fish
@@ -14,7 +10,7 @@
     ff = "fastfetch";
     lg = "lazygit";
     mv = "mv -iv";
-    nrs = "sudo nixos-rebuild switch --flake \"$HOME/Git/nixos-config#${hostname}\"";
+    nrs = "sudo nixos-rebuild switch --flake \"$HOME/Git/nixos-config#${hostName}\"";
     rm = "rm -v";
     rt = "trash";
   };

@@ -1,7 +1,7 @@
 {
   lib,
   config,
-  hostname,
+  hostName,
   ...
 }:
 {
@@ -17,7 +17,7 @@
     shellAbbrs = config.environment.shellAliases;
 
     interactiveShellInit =
-      lib.mkIf (hostname == "nixwsl") # fish
+      lib.mkIf (hostName == "nixwsl") # fish
         ''
           function code
             set code (which code)

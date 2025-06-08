@@ -27,17 +27,17 @@
       system = "x86_64-linux";
       mkSystem =
         {
-          hostname,
+          hostName,
           extraModules ? [ ],
         }:
         nixpkgs.lib.nixosSystem {
           system = system;
           specialArgs = {
-            inherit inputs hostname system;
+            inherit inputs hostName system;
           };
           modules = [
-            { networking.hostName = hostname; }
-            ./hosts/${hostname}
+            { networking.hostName = hostName; }
+            ./hosts/${hostName}
             home-manager.nixosModules.home-manager
           ] ++ extraModules;
         };
@@ -45,11 +45,11 @@
     {
       nixosConfigurations = {
         zenix = mkSystem {
-          hostname = "zenix";
+          hostName = "zenix";
         };
 
         nixwsl = mkSystem {
-          hostname = "nixwsl";
+          hostName = "nixwsl";
           extraModules = [
             nixos-wsl.nixosModules.default
           ];
