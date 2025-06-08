@@ -1,7 +1,7 @@
 ID=1000
 TIMEOUT=2000
 
-get-volume() {
+get_volume() {
     wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{print int($2 * 100)}'
 }
 
@@ -10,13 +10,13 @@ main() {
         up)
             wpctl set-mute @DEFAULT_AUDIO_SINK@ 0
             wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+ --limit 1.0
-            dunstify "Volumen" -h int:value:"$(get-volume)" -r $ID -t $TIMEOUT
+            dunstify "Volumen" -h int:value:"$(get_volume)" -r $ID -t $TIMEOUT
             canberra-gtk-play -i audio-volume-change -d "changeVolume"
             ;;
         down)
             wpctl set-mute @DEFAULT_AUDIO_SINK@ 0
             wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
-            dunstify "Volumen" -h int:value:"$(get-volume)" -r $ID -t $TIMEOUT
+            dunstify "Volumen" -h int:value:"$(get_volume)" -r $ID -t $TIMEOUT
             canberra-gtk-play -i audio-volume-change -d "changeVolume"
             ;;
         muteaudio)
