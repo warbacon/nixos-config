@@ -6,7 +6,7 @@
     ./git.nix
     ./neovim.nix
     ./starship.nix
-    ./vim.nix
+    # ./vim.nix
     ./yazi
   ];
 
