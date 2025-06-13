@@ -19,6 +19,6 @@
     pkgs.inkscape
     pkgs.libreoffice-fresh
     pkgs.mpv
-    pkgs.wl-clipboard
+    pkgs.wl-clipboard-rs
   ];
 }
