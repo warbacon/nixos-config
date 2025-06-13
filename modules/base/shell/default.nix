@@ -10,7 +10,9 @@
     ff = "fastfetch";
     lg = "lazygit";
     mv = "mv -iv";
+    nrb = "sudo nixos-rebuild test --flake \"$HOME/Git/nixos-config#${hostName}\"";
     nrs = "sudo nixos-rebuild switch --flake \"$HOME/Git/nixos-config#${hostName}\"";
+    nrt = "sudo nixos-rebuild test --flake \"$HOME/Git/nixos-config#${hostName}\"";
     rm = "rm -v";
     rt = "trash";
   };
