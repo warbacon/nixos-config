@@ -1,9 +1,4 @@
-{
-  pkgs,
-  system,
-  inputs,
-  ...
-}:
+{ pkgs, ... }:
 {
   imports = [
     ./firefox.nix
@@ -18,7 +13,6 @@
 
   # Packages
   environment.systemPackages = [
-    inputs.zen-browser.packages."${system}".default
     pkgs.chromium
     pkgs.discord
     pkgs.imv
