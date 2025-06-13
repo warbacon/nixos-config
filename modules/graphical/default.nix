@@ -1,6 +1,6 @@
 {
   imports = [
-    ./hyprland
+    ./wm
     ./audio.nix
     ./programs
   ];

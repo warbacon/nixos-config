@@ -19,7 +19,9 @@ in
 
         modules-left = [
           "hyprland/workspaces"
+          "niri/workspaces"
           "hyprland/window"
+          "niri/window"
         ];
 
         modules-center = [
@@ -46,6 +48,12 @@ in
         };
 
         "hyprland/window" = {
+          separate-outputs = true;
+          icon = true;
+          icon-size = 16;
+        };
+
+        "niri/window" = {
           separate-outputs = true;
           icon = true;
           icon-size = 16;

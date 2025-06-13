@@ -12,25 +12,21 @@
     ./scripts
   ];
 
-  # Autostart Hyprland
-  programs.fish = {
-    loginShellInit = # fish
-      ''
-        if uwsm check may-start; and command -q Hyprland
-          exec uwsm start hyprland-uwsm.desktop
-        end
-      '';
-  };
-
   # Packages
   environment.systemPackages = [
+    pkgs.nautilus
     pkgs.wl-clip-persist
+    pkgs.xwayland-satellite
   ];
 
-  programs.hyprland = {
-    enable = true;
-    withUWSM = true;
-  };
+  services.gnome.sushi.enable = true;
+
+  # programs.hyprland = {
+  #   enable = true;
+  #   withUWSM = true;
+  # };
+
+  programs.niri.enable = true;
 
   home-manager.users.warbacon = {
     # Environment variables
@@ -46,7 +42,7 @@
   };
 
   home-manager.users.warbacon.wayland.windowManager.hyprland = {
-    enable = true;
+    # enable = true;
     settings = {
       # MONITORS: https://wiki.hyprland.org/Configuring/Monitors ===============
       monitor = [
@@ -72,23 +68,17 @@
         gaps_in = 3;
         gaps_out = 6;
 
-        border_size = 2;
-
         "col.active_border" = "rgb(ff9e64)";
-        "col.inactive_border" = "rgb(292e42)";
+        "col.inactive_border" = "rgb(424b6b)";
 
         layout = "master";
       };
 
       # wiki: https://wiki.hyprland.org/Configuring/Variables/#decoration
       decoration = {
-        rounding = 0;
-        # rounding_power = 4;
-
         # wiki: https://wiki.hyprland.org/Configuring/Variables/#blur
         blur = {
           enabled = false;
-          passes = 3;
         };
 
         # https://wiki.hyprland.org/Configuring/Variables/#shadow
@@ -111,7 +101,7 @@
 
         animation = [
           "global, 1, 10, default"
-          "border, 0, 5.39, easeOutExpo"
+          "border, 1, 3, easeOutExpo"
           "windows, 1, 4.79, easeOutExpo"
           "windowsIn, 1, 3.5, easeOutExpo, slide"
           "windowsOut, 1, 1.6, linear, slide"
@@ -194,7 +184,7 @@
         "SUPER, C, killactive,"
         "SUPER, E, exec, $fileManager"
         "SUPER, Space, togglefloating,"
-        "SUPER, R, exec, $menu"
+        "SUPER, D, exec, $menu"
         "SUPER, F, fullscreen, 0"
         "SUPER, period, exec, rofimoji -r Emojis"
         "SUPER, V, exec, cliphist list | rofi -dmenu -d -p Portapapeles | cliphist decode | wl-copy"
