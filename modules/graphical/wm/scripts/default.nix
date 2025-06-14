@@ -20,10 +20,15 @@ in
 {
   environment.systemPackages = [
     pkgs.brightnessctl
+    pkgs.gammastep
     pkgs.grim
     pkgs.hyprpicker
-    pkgs.hyprsunset
     pkgs.libcanberra-gtk3
     pkgs.slurp
   ] ++ scripts;
+
+  home-manager.users.warbacon.xdg.desktopEntries.gammastep-indicator = {
+    name = "gammastep-indicator";
+    noDisplay = true;
+  };
 }

@@ -12,7 +12,7 @@ selected="$(printf "%s\n" "${OPTIONS[@]}" | rofi -dmenu -i -p Comandos -l "${#OP
 
 case "$selected" in
     "Luz nocturna")
-        pkill hyprsunset || hyprsunset -t 3500
+        pkill gammastep || gammastep -O 3500
         ;;
     "Recogecolor")
         sleep 0.2 && hyprpicker -a
