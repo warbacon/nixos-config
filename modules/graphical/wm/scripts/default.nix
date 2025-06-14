@@ -23,6 +23,7 @@ in
     pkgs.gammastep
     pkgs.grim
     pkgs.hyprpicker
+    pkgs.entr
     pkgs.libcanberra-gtk3
     pkgs.slurp
   ] ++ scripts;
