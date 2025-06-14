@@ -14,7 +14,6 @@
     terminal = "kitty";
   };
 
-  services.gnome.sushi.enable = true;
   services.gvfs.enable = true;
   # home-manager.users.warbacon.programs.fish.loginShellInit = # fish
   #   ''
