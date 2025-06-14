@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ lib, config, ... }:
 let
   foregroundColor = "#c0caf5";
   terminal = "kitty -1";
@@ -17,16 +17,22 @@ in
         height = 38;
         spacing = 6;
 
-        modules-left = [
-          "hyprland/workspaces"
-          "niri/workspaces"
-          "hyprland/window"
-          "niri/window"
-        ];
+        modules-left =
+          [ ]
+          ++ lib.optionals config.programs.hyprland.enable [
+            "hyprland/workspaces"
+            "hyprland/window"
+          ]
+          ++ lib.optionals config.programs.niri.enable [
+            "niri/workspaces"
+            "niri/window"
+          ];
 
-        modules-center = [
-          "hyprland/submap"
-        ];
+        modules-center =
+          [ ]
+          ++ lib.optionals config.programs.hyprland.enable [
+            "hyprland/submap"
+          ];
 
         modules-right = [
           "privacy"
