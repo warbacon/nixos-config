@@ -27,7 +27,7 @@ case "$selected" in
         systemctl reboot
         ;;
     "Cerrar sesión")
-        uwsm stop || hyprctl dispatch exit || pkill -KILL -u "$USER"
+        pkill -KILL -u "$USER"
         ;;
     *)
         echo "Se ha liado."
