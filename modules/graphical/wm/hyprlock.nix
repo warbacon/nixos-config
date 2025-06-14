@@ -15,7 +15,7 @@
         };
 
         background = {
-          path = "~/.config/hypr/wallpaper.png";
+          path = "~/.config/background";
           blur_passes = 4;
           brightness = 0.75;
         };
