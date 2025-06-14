@@ -10,14 +10,15 @@
     ff = "fastfetch";
     lg = "lazygit";
     mv = "mv -iv";
-    nrb = "sudo nixos-rebuild test --flake \"$HOME/Git/nixos-config#${hostName}\"";
-    nrs = "sudo nixos-rebuild switch --flake \"$HOME/Git/nixos-config#${hostName}\"";
-    nrt = "sudo nixos-rebuild test --flake \"$HOME/Git/nixos-config#${hostName}\"";
+    nrb = "sudo nixos-rebuild boot --flake \"$FLAKE_DIR#${hostName}\"";
+    nrs = "sudo nixos-rebuild switch --flake \"$FLAKE_DIR#${hostName}\"";
+    nrt = "sudo nixos-rebuild test --flake \"$FLAKE_DIR#${hostName}\"";
     rm = "rm -v";
     rt = "trash";
   };
 
   environment.variables = {
+    FLAKE_DIR = "\"$HOME/Git/nixos-config\"";
     MANPAGER = "nvim +Man!";
     FZF_DEFAULT_OPTS = ''
       --highlight-line \
