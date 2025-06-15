@@ -79,12 +79,13 @@
           modify_font cell_height 8px
           modify_font strikethrough_position 4px
 
-          include ./Tokyo Night.conf
+          include ./themes/Tokyo Night.conf
         '';
     };
 
-    xdg.configFile."kitty/Tokyo Night.conf" = {
-      source = ./tokyonight.conf;
+    xdg.configFile."kitty/themes" = {
+      source = ./themes;
+      recursive = true;
     };
   };
 }
