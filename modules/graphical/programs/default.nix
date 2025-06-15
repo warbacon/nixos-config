@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, inputs, system, ... }:
 {
   imports = [
     ./firefox.nix
@@ -13,12 +13,12 @@
 
   # Packages
   environment.systemPackages = [
+    inputs.zen-browser.packages."${system}".default
     pkgs.chromium
     pkgs.discord
-    pkgs.imv
-    pkgs.inkscape
-    pkgs.libreoffice-fresh
+    pkgs.loupe
     pkgs.mpv
+    pkgs.obs-studio
     pkgs.wl-clipboard-rs
   ];
 }

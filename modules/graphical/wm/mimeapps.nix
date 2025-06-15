@@ -7,10 +7,10 @@
       "x-scheme-handler/http" = [ "firefox.desktop" ];
       "x-scheme-handler/https" = [ "firefox.desktop" ];
       "x-scheme-handler/mailto" = [ "firefox.desktop" ];
-      "image/png" = [ "imv.desktop" ];
-      "image/jpeg" = [ "imv.desktop" ];
-      "image/gif" = [ "imv.desktop" ];
-      "inode/directory" = [ "kitty-open.desktop" ];
+      "image/png" = [ "org.gnome.Loupe.desktop" ];
+      "image/jpeg" = [ "org.gnome.Loupe.desktop" ];
+      "image/gif" = [ "org.gnome.Loupe.desktop" ];
+      "inode/directory" = [ "org.gnome.Nautilus.desktop" ];
     };
   };
 }
