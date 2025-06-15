@@ -12,8 +12,7 @@
 }
 
 window {
-    location: north;
-    margin: 125 0 0 0;
+    location: center;
     padding: 16;
     background-color: var(background);
     width: 600px;
