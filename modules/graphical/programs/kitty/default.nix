@@ -6,10 +6,7 @@
 
     programs.kitty = {
       enable = true;
-      shellIntegration = {
-        enableBashIntegration = true;
-        enableFishIntegration = true;
-      };
+      shellIntegration.mode = null;
       font = {
         name = "monospace";
         size = 14;
@@ -18,6 +15,7 @@
         # Font
         disable_ligatures = "cursor";
         undercurl_style = "thick-sparse";
+        shell_integration = "enabled";
 
         # Shell
         shell = "fish";
