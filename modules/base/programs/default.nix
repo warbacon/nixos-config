@@ -7,7 +7,7 @@
     ./neovim.nix
     ./starship.nix
     # ./vim.nix
-    ./yazi
+    # ./yazi
   ];
 
   environment.systemPackages = [
