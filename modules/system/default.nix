@@ -6,4 +6,6 @@
     ./printing.nix
     ./networking.nix
   ];
+
+  zramSwap.enable = true;
 }
