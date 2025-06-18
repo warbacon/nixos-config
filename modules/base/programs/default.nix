@@ -16,12 +16,12 @@
     pkgs.eza
     pkgs.fastfetch
     pkgs.fd
-    pkgs.ffmpeg
     pkgs.fzf
     pkgs.gcc
     pkgs.hyperfine
     pkgs.jq
     pkgs.killall
+    pkgs.libqalculate
     pkgs.ripgrep
     pkgs.tlrc
     pkgs.trash-cli
