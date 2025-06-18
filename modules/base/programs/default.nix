@@ -18,7 +18,7 @@
     pkgs.fd
     pkgs.ffmpeg
     pkgs.fzf
-    pkgs.clang
+    pkgs.gcc
     pkgs.hyperfine
     pkgs.jq
     pkgs.killall
