@@ -21,11 +21,9 @@
     FLAKE_DIR = "\"$HOME/Git/nixos-config\"";
     MANPAGER = "nvim +Man!";
     FZF_DEFAULT_OPTS = ''
+      --ansi \
       --highlight-line \
       --info=inline-right \
-      --ansi \
-      --layout=reverse \
-      --border=none \
       --color=bg+:#283457 \
       --color=bg:#16161e \
       --color=border:#27a1b9 \
@@ -46,7 +44,5 @@
     '';
   };
 
-  programs.direnv.enable = true;
-  programs.command-not-found.enable = false;
   home-manager.users.warbacon.programs.dircolors.enable = true;
 }

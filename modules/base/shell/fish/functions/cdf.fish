@@ -1,4 +1,9 @@
 function cdf
+    set preview_cmd
+    if test $COLUMNS -gt 80
+        set preview_cmd "--preview=eza --tree --color=always --level 3 --icons=always {}"
+    end
+
     set dir (fd --type directory -H \
         --exclude .git \
         --exclude node_modules \
@@ -9,7 +14,7 @@ function cdf
         --exclude .docker \
         --exclude .mozilla \
         --exclude vendor \
-        | fzf --border --layout=reverse --preview="eza --tree --color=always --level 3 --icons=always {}")
+        | fzf --prompt=(prompt_pwd)/ --layout=reverse $preview_cmd)
 
     if test -n "$dir"
         cd "$dir"
