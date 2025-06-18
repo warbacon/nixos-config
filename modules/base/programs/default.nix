@@ -11,7 +11,7 @@
   ];
 
   environment.systemPackages = [
-    pkgs._7zz-rar
+    (pkgs.writeShellScriptBin "7z" ''exec ${pkgs._7zz-rar}/bin/7zz "$@"'')
     pkgs.dust
     pkgs.eza
     pkgs.fastfetch
