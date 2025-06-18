@@ -1,15 +1,6 @@
 { pkgs, ... }:
 {
-  nixpkgs.overlays = [
-    (final: prev: {
-      geist-font = import ../../../../overlays/geist-font.nix {
-        inherit (prev) lib stdenvNoCC fetchzip;
-      };
-    })
-  ];
-
   fonts.packages = [
-    # (pkgs.ibm-plex.override { families = [ "mono" ]; })
     pkgs.adwaita-fonts
     pkgs.cascadia-code
     pkgs.geist-font
