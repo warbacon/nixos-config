@@ -5,18 +5,18 @@ My Neovim configuration is in
 
 ## 🖥️ Hosts
 
-- **zenix:** my personal laptop. Offers a customized desktop using Hyprland as a
-  base.
+- **zenix:** my personal laptop. Offers a customized desktop using Niri or
+  Hyprland as a base.
 - **nixwsl:** configuration for wsl systems. Offers command line tools
   preinstalled with minimal configurations.
 
 ## ⚙️ Programs
 
-- **Window manager**: Hyprland
+- **Window manager**: niri
 - **Top bar**: waybar
 - **Application launcher**: rofi
-- **Terminal**: kitty
+- **Terminal**: alacritty
 - **Shell**: fish
 - **Text editor**: neovim
-- **File manager**: yazi
+- **File manager**: nautilus
 - **Notification daemon**: dunst
