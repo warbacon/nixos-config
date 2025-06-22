@@ -14,7 +14,6 @@
         pkgs.astro-language-server
         pkgs.basedpyright
         pkgs.bash-language-server
-        pkgs.blade-formatter
         pkgs.clang-tools
         pkgs.docker-compose-language-service
         pkgs.dockerfile-language-server-nodejs
@@ -22,7 +21,7 @@
         pkgs.lua-language-server
         pkgs.nixd
         pkgs.nixfmt-rfc-style
-        pkgs.shellcheck-minimal
+        pkgs.shellcheck
         pkgs.shfmt
         pkgs.stylua
         pkgs.svelte-language-server
