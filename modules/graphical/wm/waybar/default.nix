@@ -1,7 +1,7 @@
 { lib, config, ... }:
 let
   foregroundColor = "#c0caf5";
-  terminal = "kitty -1";
+  terminal = "alacritty msg create-window";
 in
 {
   home-manager.users.warbacon.programs.waybar = {
@@ -45,14 +45,6 @@ in
           "power-profiles-daemon"
         ];
 
-        "hyprland/workspaces" = {
-          show-special = true;
-          format = "{icon}";
-          format-icons = {
-            magic = "󰫢";
-          };
-        };
-
         "hyprland/window" = {
           separate-outputs = true;
           icon = true;
@@ -76,8 +68,8 @@ in
         };
 
         pulseaudio = {
-          on-click = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
-          on-click-right = "killall -s1 pulsemixer || ${terminal} --class=float.term -e pulsemixer";
+          on-click = "killall -s1 pulsemixer || ${terminal} --class=float.term -e pulsemixer";
+          on-click-right = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
           format = "{icon} <span color='${foregroundColor}'>{volume} %</span>";
           format-muted = "󰝟";
           format-icons = {

@@ -3,6 +3,7 @@
   imports = [
     ./firefox.nix
     ./kitty
+    ./alacritty
   ];
 
   # Enable Wayland in Chromium/Electron

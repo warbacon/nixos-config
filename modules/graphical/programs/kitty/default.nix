@@ -1,9 +1,5 @@
 {
   home-manager.users.warbacon = {
-    xdg.configFile."xdg-terminals.list" = {
-      text = "kitty.desktop";
-    };
-
     programs.kitty = {
       enable = true;
       shellIntegration.mode = null;
