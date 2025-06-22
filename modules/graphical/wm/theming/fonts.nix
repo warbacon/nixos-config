@@ -24,8 +24,9 @@
     defaultFonts = {
       emoji = [ "Noto Color Emoji" ];
       monospace = [
-        "Geist Mono"
+        "Cascadia Code"
         "Symbols Nerd Font"
+        "Noto Color Emoji"
       ];
       sansSerif = [ "Geist" ];
       serif = [ "Noto Serif" ];
