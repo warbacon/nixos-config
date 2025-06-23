@@ -1,7 +1,7 @@
 { lib, config, ... }:
 let
   foregroundColor = "#c0caf5";
-  terminal = "alacritty msg create-window";
+  terminal = "footclient";
 in
 {
   home-manager.users.warbacon.programs.waybar = {
@@ -68,7 +68,7 @@ in
         };
 
         pulseaudio = {
-          on-click = "killall -s1 pulsemixer || ${terminal} --class=float.term -e pulsemixer";
+          on-click = "killall -s1 pulsemixer || ${terminal} -e pulsemixer";
           on-click-right = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
           format = "{icon} <span color='${foregroundColor}'>{volume} %</span>";
           format-muted = "󰝟";
@@ -118,7 +118,7 @@ in
 
         network = {
           format = "{icon} <span color='${foregroundColor}'>{essid}</span>";
-          on-click = "killall -s1 nmtui || ${terminal} --class=float.term -e nmtui";
+          on-click = "killall -s1 nmtui || ${terminal} -e nmtui";
           tooltip-format = "{ifname}: {ipaddr}";
           format-disconnected = "{icon} sin conexión";
           format-icons = {
