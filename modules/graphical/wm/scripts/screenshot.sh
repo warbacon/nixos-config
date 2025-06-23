@@ -29,7 +29,7 @@ esac
 # If the screenshot was successfully saved, notify and copy to clipboard
 if [[ -f "$OUTPUT" ]]; then
     wl-copy < "$OUTPUT"
-    ACTION=$(dunstify "Captura de pantalla realizada" "Copiada y guardada en $OUTPUT." -i "$OUTPUT" -A "open,Abrir imagen")
+    ACTION=$(notify-send "Captura de pantalla realizada" "Copiada y guardada en $OUTPUT." -i "$OUTPUT" -A "open,Abrir imagen")
     if [[ "$ACTION" == "open" ]]; then
         # Open the image if user selects "open"
         xdg-open "$OUTPUT"

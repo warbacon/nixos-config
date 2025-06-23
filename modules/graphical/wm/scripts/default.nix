@@ -20,11 +20,12 @@ in
 {
   environment.systemPackages = [
     pkgs.brightnessctl
+    pkgs.entr
     pkgs.gammastep
     pkgs.grim
     pkgs.hyprpicker
-    pkgs.entr
     pkgs.libcanberra-gtk3
+    pkgs.libnotify
     pkgs.slurp
   ] ++ scripts;
 
