@@ -67,6 +67,11 @@
             mods = "Control|Shift";
             action = "PasteSelection";
           }
+          {
+            key = "D";
+            mods = "Control|Shift";
+            action = "CreateNewWindow";
+          }
         ];
       };
     };
