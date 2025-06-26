@@ -8,10 +8,11 @@
     enable = true;
     extraConfig = # vim
       ''
+        set nocompatible
         syntax enable
         filetype plugin indent on
 
-        if exists("$DISPLAY")
+        if $XDG_SESSION_TYPE != "tty"
             set termguicolors
             set background=dark
             colorscheme retrobox
