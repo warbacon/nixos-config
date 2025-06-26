@@ -27,6 +27,9 @@
           primary-paste = "Control+Shift+s";
           spawn-terminal = "Control+Shift+d";
         };
+        mouse-bindings = {
+          select-begin-block = "Alt+BTN_LEFT";
+        };
         tweak = {
           font-monospace-warn = "no";
         };
