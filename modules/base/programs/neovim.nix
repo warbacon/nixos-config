@@ -1,5 +1,13 @@
 { pkgs, ... }:
 {
+  nixpkgs.overlays = [
+    (self: super: {
+      tailwindcss-language-server = super.tailwindcss-language-server.override {
+        nodejs_latest = super.nodejs;
+      };
+    })
+  ];
+
   programs.neovim = {
     enable = true;
     defaultEditor = true;
