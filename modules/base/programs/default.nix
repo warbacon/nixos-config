@@ -6,8 +6,6 @@
     ./git.nix
     ./neovim.nix
     ./starship.nix
-    # ./vim.nix
-    # ./yazi
   ];
 
   environment.systemPackages = [
@@ -17,7 +15,6 @@
     pkgs.fastfetch
     pkgs.fd
     pkgs.fzf
-    pkgs.gcc
     pkgs.hyperfine
     pkgs.jq
     pkgs.killall
@@ -30,10 +27,10 @@
     pkgs.xdg-utils
     pkgs.xh
     pkgs.zip
-    # NodeJS
+    # Development
     pkgs.bun
+    pkgs.gcc
     pkgs.nodejs
-    # Python
     pkgs.python3
   ];
 }
