@@ -33,6 +33,7 @@
       directory = {
         read_only = " 󰌾";
         truncation_length = 0;
+        truncate_to_repo = false;
       };
 
       git_branch = {
