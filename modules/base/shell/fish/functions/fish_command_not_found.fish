@@ -1,8 +1,6 @@
 function fish_command_not_found
-    printf "%sERROR:%s command %s%s%s%s not found.\n" \
-        (set_color brred --bold) \
-        (set_color normal) \
-        (set_color --underline) \
-        (string escape -- $argv[1]) \
-        (set_color normal) >&2
+    set -l cmd (string escape -- $argv[1])
+    printf "%b\n" (string join "" \
+        (set_color red --bold) "ERROR:" (set_color normal) \
+        " command \e[58:5:1m\e[4:3m" $cmd "\e[59m\e[24m not found.")
 end
