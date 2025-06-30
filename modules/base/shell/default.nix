@@ -9,6 +9,7 @@
   environment.shellAliases = lib.mkForce {
     cp = "cp -iv";
     ff = "fastfetch";
+    gs = "git status";
     lg = "lazygit";
     mv = "mv -iv";
     nrb = "sudo nixos-rebuild boot --flake \"$FLAKE_DIR#${hostName}\"";
