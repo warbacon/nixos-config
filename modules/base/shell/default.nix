@@ -3,6 +3,7 @@
   imports = [
     ./fish
     ./bash
+    ./starship.nix
   ];
 
   environment.shellAliases = lib.mkForce {

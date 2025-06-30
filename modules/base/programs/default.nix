@@ -5,7 +5,6 @@
     ./docker.nix
     ./git.nix
     ./neovim.nix
-    ./starship.nix
   ];
 
   environment.systemPackages = [
