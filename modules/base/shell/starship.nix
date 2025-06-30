@@ -34,6 +34,8 @@
         read_only = " 󰌾";
         truncation_length = 0;
         truncate_to_repo = false;
+        style = "cyan";
+        repo_root_style = "bold bright-cyan";
       };
 
       git_branch = {
