@@ -10,6 +10,7 @@
 
       format = lib.concatStrings [
         "$username"
+        "$shell"
         "$directory"
         "$git_branch"
         "$git_commit"
@@ -18,6 +19,16 @@
         "$status"
         "$character"
       ];
+
+      shell = {
+        disabled = false;
+        style = "white";
+        fish_indicator = "󰈺";
+        bash_indicator = "";
+        zsh_indicator = "󰏰";
+        powershell_indicator = "󰨊";
+        nu_indicator = "󰞷";
+      };
 
       directory = {
         read_only = " 󰌾";
