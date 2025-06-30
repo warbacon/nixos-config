@@ -15,7 +15,7 @@ My Neovim configuration is in
 - **Window manager**: niri
 - **Top bar**: waybar
 - **Application launcher**: rofi
-- **Terminal**: alacritty
+- **Terminal**: foot
 - **Shell**: fish
 - **Text editor**: neovim
 - **File manager**: nautilus
