@@ -15,11 +15,11 @@
     pkgs.fd
     pkgs.fzf
     pkgs.hyperfine
-    pkgs.jq
     pkgs.killall
     pkgs.libqalculate
     pkgs.ripgrep
     pkgs.tlrc
+    pkgs.tmux
     pkgs.trash-cli
     pkgs.unzip
     pkgs.wget
