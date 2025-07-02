@@ -13,33 +13,23 @@
 
 window {
     location: center;
-    padding: 16;
     background-color: var(background);
-    width: 600px;
+    width: 550px;
     border: 1;
     border-radius: 10;
+    font: "monospace 13";
 }
 
 inputbar {
-    padding: 14 0;
-    children: [ "prompt", "entry" ];
-}
-
-prompt {
-    background-color: var(prompt-background);
-    color: var(background);
-    padding: 8 12;
-    border-radius: 5;
+    padding: 8px;
+    children: [ "entry" ];
 }
 
 entry {
-    padding: 8 12;
-    margin: 0 0 0 4;
-    border-radius: 5;
     background-color: var(lightbg);
+    border-radius: 5;
     border: 1;
-    placeholder: "Escribe para filtrar...";
-    placeholder-color: var(dimmed-foreground);
+    padding: 8 12;
     cursor: text;
 }
 
@@ -48,15 +38,8 @@ message {
 }
 
 listview {
-    lines: 8;
-    spacing: 3;
-    scrollbar: true;
-}
-
-scrollbar {
-    margin: 0 0 0 4;
-    handle-width: 4px ;
-    handle-color: var(selected-background);
+    lines: 7;
+    padding: 0 8px 8px 8px;
 }
 
 element {
