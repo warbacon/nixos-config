@@ -24,16 +24,15 @@
       ...
     }@inputs:
     let
-      system = "x86_64-linux";
       mkSystem =
         {
           hostName,
           extraModules ? [ ],
         }:
         nixpkgs.lib.nixosSystem {
-          system = system;
+          system = "x86_64-linux";
           specialArgs = {
-            inherit inputs hostName system;
+            inherit inputs hostName;
           };
           modules = [
             { networking.hostName = hostName; }
