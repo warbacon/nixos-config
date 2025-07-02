@@ -2,8 +2,7 @@
 {
   fonts.packages = [
     pkgs.adwaita-fonts
-    pkgs.cascadia-code
-    pkgs.geist-font
+    pkgs.iosevka-bin
     pkgs.nerd-fonts.symbols-only
     pkgs.noto-fonts
     pkgs.noto-fonts-cjk-sans
@@ -24,11 +23,11 @@
     defaultFonts = {
       emoji = [ "Noto Color Emoji" ];
       monospace = [
-        "Cascadia Code"
+        "Iosevka"
         "Symbols Nerd Font"
         "Noto Color Emoji"
       ];
-      sansSerif = [ "Geist" ];
+      sansSerif = [ "Adwaita Sans" ];
       serif = [ "Noto Serif" ];
     };
   };

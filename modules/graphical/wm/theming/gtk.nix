@@ -8,7 +8,7 @@
     gtk = {
       enable = true;
       font = {
-        name = "Geist";
+        name = "sans-serif";
         size = 10;
       };
       theme = {
