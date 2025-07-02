@@ -57,9 +57,9 @@
       };
 
       character = {
-        success_symbol = "[■](yellow)";
-        error_symbol = "[■](red)";
-        vimcmd_symbol = "[■](yellow)";
+        success_symbol = "[>](bold yellow)";
+        error_symbol = "[>](bold red)";
+        vimcmd_symbol = "[>](bold yellow)";
       };
     };
   };
