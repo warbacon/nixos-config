@@ -34,7 +34,6 @@
         pkgs.stylua
         pkgs.svelte-language-server
         pkgs.tailwindcss-language-server
-        pkgs.tree-sitter
         pkgs.vscode-langservers-extracted
         pkgs.vtsls
         pkgs.yaml-language-server
