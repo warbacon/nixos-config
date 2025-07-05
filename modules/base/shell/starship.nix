@@ -14,6 +14,7 @@
         "$directory"
         "$git_branch"
         "$git_commit"
+        "$git_status"
         "$jobs"
         "$line_break"
         "$status"
