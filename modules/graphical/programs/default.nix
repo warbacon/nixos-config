@@ -19,6 +19,7 @@
     pkgs.loupe
     pkgs.mpv
     pkgs.obs-studio
+    pkgs.pulsemixer
     pkgs.wl-clipboard-rs
   ];
 }
