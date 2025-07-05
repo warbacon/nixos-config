@@ -35,13 +35,12 @@
       ];
 
       # PROGRAMS ===============================================================
-      "$terminal" = "kitty -1";
-      "$fileManager" = "$terminal -e yazi";
+      "$terminal" = "footclient";
+      "$fileManager" = "nautilus";
       "$menu" = "rofi -show drun -show-icons";
 
       # AUTOSTART ==============================================================
       exec-once = [
-        "kitty --start-as=hidden --single-instance"
         "wl-clip-persist --clipboard regular"
       ];
 
@@ -177,7 +176,7 @@
         "SUPER, F, fullscreen, 0"
         "SUPER, period, exec, rofimoji -r Emojis"
         "SUPER, V, exec, cliphist list | rofi -dmenu -d -p Portapapeles | cliphist decode | wl-copy"
-        "SUPER, B, exec, killall -s1 bluetui || $terminal --class=float.term -e bluetui"
+        "SUPER, B, exec, killall -s1 bluetui || $terminal -e bluetui"
         "SUPER, P, exec, command_palette"
         ", Print, exec, screenshot fullscreen"
         "SHIFT, Print, exec, screenshot select"
@@ -264,14 +263,6 @@
         "rounding 0, floating:0, onworkspace:w[tv1]"
         "bordersize 0, floating:0, onworkspace:f[1]"
         "rounding 0, floating:0, onworkspace:f[1]"
-
-        # Use popin in floating windows
-        # "animation popin 90%, floating:1"
-        # "animation popin 90%, floating:1"
-
-        # Terminal floating window
-        "float, class:(float.term)"
-        "size 1000 600, class:(float.term)"
       ];
       workspace = [
         # Smart gaps
