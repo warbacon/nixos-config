@@ -27,7 +27,7 @@ case "$selected" in
         systemctl reboot
         ;;
     "Cerrar sesión")
-        pkill -KILL -u "$USER"
+        loginctl terminate-user ""
         ;;
     *)
         echo "Se ha liado."
