@@ -19,7 +19,7 @@ main() {
             ;;
     esac
 
-    notify-send "Brillo" -h int:value:"$(get_brightness)" -r $ID -t $TIMEOUT
+    notify-send "Brillo" "$(get_brightness) %" -h int:value:"$(get_brightness)" -r $ID -t $TIMEOUT
 }
 
 main "$@"
