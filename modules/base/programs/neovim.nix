@@ -15,8 +15,6 @@
         pkgs.basedpyright
         pkgs.bash-language-server
         pkgs.clang-tools
-        pkgs.docker-compose-language-service
-        pkgs.dockerfile-language-server-nodejs
         pkgs.emmet-language-server
         pkgs.lua-language-server
         pkgs.nixd
