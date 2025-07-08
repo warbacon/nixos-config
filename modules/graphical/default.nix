@@ -2,12 +2,8 @@
   imports = [
     ./wm
     ./programs
+    ./gaming.nix
   ];
-
-  hardware.graphics = {
-    enable = true;
-    enable32Bit = true;
-  };
 
   services.pipewire = {
     enable = true;
