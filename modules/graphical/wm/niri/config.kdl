@@ -162,6 +162,10 @@ layer-rule {
 layer-rule {
     match namespace="notifications"
     geometry-corner-radius 8
+
+    shadow {
+        draw-behind-window true
+    }
 }
 
 binds {

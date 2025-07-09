@@ -1,4 +1,3 @@
-ID=1000
 TIMEOUT=2000
 
 get_brightness() {
@@ -19,7 +18,7 @@ main() {
             ;;
     esac
 
-    notify-send "Brillo" "$(get_brightness) %" -h int:value:"$(get_brightness)" -r $ID -t $TIMEOUT
+    notify-send "Brillo" "$(get_brightness) %" -h int:value:"$(get_brightness)" -h int:transient:1 -h string:x-dunst-stack-tag:brightness -h string:synchronous:brightness -t $TIMEOUT
 }
 
 main "$@"

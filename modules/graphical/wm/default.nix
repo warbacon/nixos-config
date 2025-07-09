@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   imports = [
-    ./dunst.nix
+    ./mako
     ./hypridle.nix
     ./hyprlock.nix
     ./hyprpaper.nix
