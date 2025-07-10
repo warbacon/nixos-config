@@ -21,9 +21,9 @@ send_notification() {
     local urgency="${3:-normal}"
 
     if [[ "$urgency" == "critical" ]]; then
-        notify-send "$title" "$message" -u critical -t "$TIMEOUT"
+        fyi -u critical -t "$TIMEOUT" "$title" "$message"
     else
-        notify-send "$title" "$message" -h string:x-dunst-stack-tag:audio -h string:synchronous:audio -h int:transient:1 -t "$TIMEOUT" ${4:+-h int:value:"$4"}
+        fyi -H string:x-dunst-stack-tag:audio -H string:synchronous:audio -H int:transient:1 -t "$TIMEOUT" ${4:+-H int:value:"$4"} "$title" "$message"
     fi
 }
 

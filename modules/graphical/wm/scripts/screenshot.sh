@@ -13,26 +13,22 @@ OUTPUT="/tmp/$FILENAME"
 case "$MODE" in
     fullscreen)
         # Capture full screen: grim writes to stdout, redirected to the file
-        grim - > "$OUTPUT"
+        grim - >"$OUTPUT"
         ;;
     select)
         # Capture a selected area: get geometry with slurp
-        grim -g "$(slurp -b 00000077 -w 0)" - > "$OUTPUT"
+        grim -g "$(slurp -b 00000077 -w 0)" - >"$OUTPUT"
         ;;
     *)
         # Handle unknown mode
-        echo "Unknown mode: $MODE" >&2
+        fyi -u critical "screenshot.sh" "Unknown mode: $MODE"
         exit 1
         ;;
 esac
 
 # If the screenshot was successfully saved, notify and copy to clipboard
 if [[ -f "$OUTPUT" ]]; then
-    wl-copy < "$OUTPUT"
-    ACTION=$(notify-send "Captura de pantalla realizada" "Copiada y guardada en $OUTPUT." -i "$OUTPUT" -A "open,Abrir imagen")
-    if [[ "$ACTION" == "open" ]]; then
-        # Open the image if user selects "open"
-        xdg-open "$OUTPUT"
-    fi
+    wl-copy <"$OUTPUT"
+    ACTION=$(fyi -w -i "$OUTPUT" -A default:"Abrir imagen" "Captura de pantalla realizada" "Copiada y guardada en $OUTPUT.")
+    [[ "$ACTION" == "action=default" ]] && xdg-open "$OUTPUT"
 fi
-

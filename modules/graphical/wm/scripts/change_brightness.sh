@@ -13,12 +13,12 @@ main() {
             brightnessctl -e4 -n1 set 5%-
             ;;
         *)
-            notify-send "change_brightness.sh" "Argument \"$1\" is not valid." -u critical
+            fyi -u critical "change_brightness.sh" "Argument \"$1\" is not valid."
             exit 1
             ;;
     esac
 
-    notify-send "Brillo" "$(get_brightness) %" -h int:value:"$(get_brightness)" -h int:transient:1 -h string:x-dunst-stack-tag:brightness -h string:synchronous:brightness -t $TIMEOUT
+    fyi -H int:value:"$(get_brightness)" -H int:transient:1 -H string:x-dunst-stack-tag:brightness -H string:synchronous:brightness -t $TIMEOUT "Brillo" "$(get_brightness) %"
 }
 
 main "$@"

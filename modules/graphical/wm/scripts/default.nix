@@ -25,7 +25,7 @@ in
     pkgs.grim
     pkgs.hyprpicker
     pkgs.libcanberra-gtk3
-    pkgs.libnotify
+    pkgs.fyi
     pkgs.slurp
   ] ++ scripts;
 
