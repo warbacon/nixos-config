@@ -3,8 +3,8 @@
 set -g IS_LINUX_TTY (if test "$TERM" = "linux"; echo true; else; echo false; end)
 
 # For __eza_pwd_hook
-if not set -q GIT_DIR
-    printf '%s$GIT_DIR is not set%s\n' (set_color --bold yellow) (set_color reset)
+if not set -q GIT_REPOS_DIR
+    printf '%s$GIT_REPOS_DIR is not set%s\n' (set_color --bold yellow) (set_color reset)
 end
 # -----------------------------------------------------------------------------
 
@@ -20,7 +20,7 @@ if command -q eza; and test "$IS_LINUX_TTY" != true
     abbr -a lt eza --icons --group-directories-first -T --level 3
 
     function __update_ll_abbr
-        if test "$PWD" = "$GIT_DIR"
+        if test "$PWD" = "$GIT_REPOS_DIR"
             abbr -a ll eza --icons --group-directories-first -l --git-repos
         else
             abbr -a ll eza --icons --group-directories-first -l --git
@@ -29,7 +29,7 @@ if command -q eza; and test "$IS_LINUX_TTY" != true
 
     __update_ll_abbr
 
-    if test -d "$GIT_DIR"
+    if test -d "$GIT_REPOS_DIR"
         function __eza_pwd_hook --on-variable PWD
             __update_ll_abbr
         end
