@@ -1,6 +1,7 @@
 {
   imports = [
     ./wm
+    ./fonts.nix
     ./programs
     ./gaming.nix
   ];
