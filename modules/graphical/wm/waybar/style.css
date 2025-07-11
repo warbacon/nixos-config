@@ -142,7 +142,7 @@ window#waybar.empty #window {
   padding: 10px;
   border: 1px solid @border0;
   background-color: @bg0;
-  border-radius: 6px;
+  border-radius: 8px;
 }
 
 #tray menu menuitem {
