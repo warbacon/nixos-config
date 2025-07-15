@@ -1,8 +1,4 @@
-{
-  config,
-  pkgs,
-  ...
-}:
+{ config, pkgs, ... }:
 {
   home-manager.users.warbacon = {
     gtk = {
@@ -11,7 +7,11 @@
         name = "Adwaita Sans";
         size = 10;
       };
-      theme = {
+      iconTheme = {
+        name = "Adwaita";
+        package = pkgs.adwaita-icon-theme;
+      };
+      gtk3.theme = {
         name = "Adwaita-dark";
         package = pkgs.gnome-themes-extra;
       };

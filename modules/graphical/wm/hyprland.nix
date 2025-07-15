@@ -1,4 +1,9 @@
+{ pkgs, ... }:
 {
+  environment.systemPackages = [
+    pkgs.wl-clip-persist
+  ];
+
   programs.hyprland = {
     enable = true;
     withUWSM = true;
@@ -22,6 +27,13 @@
           exec uwsm start hyprland-uwsm.desktop
         end
       '';
+  };
+
+  home-manager.users.warbacon.xdg.portal = {
+    enable = true;
+    extraPortals = [
+      pkgs.xdg-desktop-portal-gtk
+    ];
   };
 
   home-manager.users.warbacon.wayland.windowManager.hyprland = {
@@ -69,7 +81,7 @@
 
         # https://wiki.hyprland.org/Configuring/Variables/#shadow
         shadow = {
-          enabled = true;
+          enabled = false;
           color = "rgba(0, 0 , 0, 0.6)";
           range = 6;
         };
@@ -101,7 +113,7 @@
           "layersOut, 1, 1.5, linear, fade"
           "fadeLayersIn, 1, 1.79, almostLinear"
           "fadeLayersOut, 1, 1.39, almostLinear"
-          "workspaces, 0, 1.94, almostLinear, fade"
+          "workspaces, 1, 3, easeOutExpo, slide"
         ];
       };
 
