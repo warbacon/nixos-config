@@ -17,7 +17,7 @@ if command -q eza; and test "$IS_LINUX_TTY" != true
     abbr -a ls eza --icons --group-directories-first
     abbr -a la eza --icons --group-directories-first -a
     abbr -a lla eza --icons --group-directories-first -la --git
-    abbr -a lt eza --icons --group-directories-first -T --level 3
+    abbr -a lt eza --icons --group-directories-first -T
 
     function __update_ll_abbr
         if test "$PWD" = "$GIT_REPOS_DIR"
