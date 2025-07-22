@@ -21,11 +21,11 @@ in
   environment.systemPackages = [
     pkgs.brightnessctl
     pkgs.entr
-    pkgs.gammastep
+    pkgs.fyi
     pkgs.grim
     pkgs.hyprpicker
+    pkgs.gammastep
     pkgs.libcanberra-gtk3
-    pkgs.fyi
     pkgs.slurp
   ] ++ scripts;
 
