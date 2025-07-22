@@ -2,7 +2,7 @@
 {
   fonts.packages = [
     pkgs.adwaita-fonts
-    pkgs.iosevka-bin
+    pkgs.cascadia-code
     pkgs.nerd-fonts.symbols-only
     pkgs.noto-fonts
     pkgs.noto-fonts-cjk-sans
@@ -13,19 +13,21 @@
     enable = true;
     localConf = # xml
       ''
-        <alias>
+        <?xml version="1.0"?>
+        <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+        <fontconfig>
+          <alias>
             <family>Consolas</family>
             <prefer>
               <family>monospace</family>
             </prefer>
-        </alias>
+          </alias>
+        </fontconfig>
       '';
     defaultFonts = {
-      emoji = [ "Noto Color Emoji" ];
       monospace = [
-        "Iosevka"
+        "Cascadia Code"
         "Symbols Nerd Font"
-        "Noto Color Emoji"
       ];
       sansSerif = [ "Adwaita Sans" ];
       serif = [ "Noto Serif" ];
