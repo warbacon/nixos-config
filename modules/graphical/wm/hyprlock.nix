@@ -10,10 +10,6 @@
           ignore_empty_input = true;
         };
 
-        animations = {
-          animation = "fade, 0";
-        };
-
         background = {
           path = "~/.config/background";
           blur_passes = 4;
