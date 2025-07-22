@@ -19,7 +19,6 @@
           normal.family = "monospace";
           size = 14;
         };
-        terminal.shell = "fish";
         cursor.style.blinking = "On";
         keyboard.bindings = [
           {
