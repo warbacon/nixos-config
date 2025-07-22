@@ -6,7 +6,6 @@
     languagePacks = [ "es-ES" ];
     policies = {
       DisableTelemetry = true;
-      DisablePocket = true;
       DisableFirefoxStudies = true;
       OverrideFirstRunPage = "";
       OverridePostUpdatePage = "";
