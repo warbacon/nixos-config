@@ -1,14 +1,14 @@
 {
   environment.sessionVariables = {
-    TERMINAL = "footclient";
+    TERMINAL = "kitty";
   };
 
   home-manager.users.warbacon.xdg = {
     configFile."xdg-terminals.list" = {
       text = ''
+        kitty.desktop
         footclient.desktop
         alacritty.desktop
-        kitty.desktop
       '';
     };
 

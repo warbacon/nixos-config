@@ -1,7 +1,7 @@
 { lib, config, ... }:
 let
   foregroundColor = "#c0caf5";
-  terminal = "footclient";
+  terminal = "kitty -1";
 in
 {
   home-manager.users.warbacon.programs.waybar = {
