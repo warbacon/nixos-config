@@ -11,7 +11,7 @@
     ./theming
     ./waybar
 
-    ./niri
+    ./hyprland.nix
   ];
 
   # Packages

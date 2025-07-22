@@ -47,7 +47,7 @@
       ];
 
       # PROGRAMS ===============================================================
-      "$terminal" = "footclient";
+      "$terminal" = "kitty -1";
       "$fileManager" = "nautilus";
       "$menu" = "rofi -show drun -show-icons";
 
@@ -64,7 +64,7 @@
 
         border_size = 2;
 
-        "col.active_border" = "rgb(ff9e64)";
+        "col.active_border" = "rgb(449dab)";
         "col.inactive_border" = "rgb(424b6b)";
 
         layout = "master";
@@ -72,7 +72,7 @@
 
       # wiki: https://wiki.hyprland.org/Configuring/Variables/#decoration
       decoration = {
-        rounding = 12;
+        rounding = 0;
 
         # wiki: https://wiki.hyprland.org/Configuring/Variables/#blur
         blur = {
@@ -81,10 +81,14 @@
 
         # https://wiki.hyprland.org/Configuring/Variables/#shadow
         shadow = {
-          enabled = false;
+          enabled = true;
           color = "rgba(0, 0 , 0, 0.6)";
           range = 6;
         };
+      };
+
+      render = {
+        new_render_scheduling = true;
       };
 
       # wiki: https://wiki.hyprland.org/Configuring/Variables/#animations
@@ -101,10 +105,10 @@
 
         animation = [
           "global, 1, 10, default"
-          "border, 0, 3, easeOutExpo"
-          "windows, 1, 4.79, easeOutExpo"
-          "windowsIn, 1, 3, easeOutExpo, popin 80%"
-          "windowsOut, 1, 1.5, linear, popin 80%"
+          "border, 1, 1, linear"
+          "windows, 1, 4, easeOutExpo"
+          "windowsIn, 1, 4, easeOutExpo, slide"
+          "windowsOut, 1, 4, almostLinear, slide"
           "fadeIn, 1, 1.73, almostLinear"
           "fadeOut, 1, 1.46, almostLinear"
           "fade, 1, 3.03, quick"
