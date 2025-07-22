@@ -70,9 +70,8 @@
       };
       extraConfig = # bash
         ''
-          modify_font cell_height 8px
           modify_font strikethrough_position 4px
-
+          resize_debounce_time 0.0 0.0
           include ./themes/Tokyo Night.conf
         '';
     };
