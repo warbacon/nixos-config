@@ -16,10 +16,8 @@
       settings = {
         main = {
           include = "~/.config/foot/themes/tokyonight_night.ini";
-          font = "Iosevka Term:size=16, Symbols Nerd Font:size=16";
-          font-italic = "Iosevka Term:size=16:style=Italic, Symbols Nerd Font:size=16:style=Regular";
-          font-bold = "Iosevka Term:size=16:style=Bold, Symbols Nerd Font:size=16,style=Regular";
-          font-bold-italic = "Iosevka Term:size=16:style=Bold Italic, Symbols Nerd Font:size=16,style=Regular";
+          font = "Cascadia Code:size=14, Symbols Nerd Font:size=14";
+          font-bold = "Cascadia Code:size=14:style=Bold, Symbols Nerd Font:size=14,style=Regular";
           font-size-adjustment = 2;
           resize-delay-ms = 0;
         };
