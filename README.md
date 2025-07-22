@@ -19,4 +19,4 @@ My Neovim configuration is in
 - **Shell**: fish
 - **Text editor**: neovim
 - **File manager**: nautilus
-- **Notification daemon**: dunst
+- **Notification daemon**: mako
