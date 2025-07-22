@@ -17,7 +17,7 @@ window {
     width: 550px;
     border: 1;
     border-radius: 10;
-    font: "monospace 13";
+    font: "monospace 12";
 }
 
 inputbar {
