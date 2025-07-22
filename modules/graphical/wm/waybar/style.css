@@ -1,7 +1,6 @@
 * {
   all: unset;
   font-family: "monospace", "Symbols Nerd Font";
-  font-size: 11pt;
 }
 
 window#waybar {
