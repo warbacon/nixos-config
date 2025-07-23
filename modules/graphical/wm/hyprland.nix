@@ -54,25 +54,27 @@
       # AUTOSTART ==============================================================
       exec-once = [
         "wl-clip-persist --clipboard regular"
+        "watch-background"
       ];
 
       # LOOK AND FEEL ==========================================================
       # wiki: https://wiki.hyprland.org/Configuring/Variables/#general
       general = {
-        gaps_in = 3;
-        gaps_out = 6;
+        gaps_in = 4;
+        gaps_out = 8;
 
-        border_size = 2;
+        border_size = 1;
 
         "col.active_border" = "rgb(449dab)";
-        "col.inactive_border" = "rgb(424b6b)";
+        "col.inactive_border" = "rgba(ffffff30)";
 
         layout = "master";
       };
 
       # wiki: https://wiki.hyprland.org/Configuring/Variables/#decoration
       decoration = {
-        rounding = 0;
+        rounding = 8;
+        rounding_power = 3;
 
         # wiki: https://wiki.hyprland.org/Configuring/Variables/#blur
         blur = {
@@ -82,8 +84,10 @@
         # https://wiki.hyprland.org/Configuring/Variables/#shadow
         shadow = {
           enabled = true;
-          color = "rgba(0, 0 , 0, 0.6)";
-          range = 6;
+          range = 30;
+          offset = "0 2";
+          render_power = 4;
+          color = "rgba(00000030)";
         };
       };
 
@@ -105,7 +109,7 @@
 
         animation = [
           "global, 1, 10, default"
-          "border, 1, 1, linear"
+          "border, 0, 1, linear"
           "windows, 1, 4, easeOutExpo"
           "windowsIn, 1, 4, easeOutExpo, slide"
           "windowsOut, 1, 4, almostLinear, slide"
@@ -117,7 +121,7 @@
           "layersOut, 1, 1.5, linear, fade"
           "fadeLayersIn, 1, 1.79, almostLinear"
           "fadeLayersOut, 1, 1.39, almostLinear"
-          "workspaces, 1, 3, easeOutExpo, slide"
+          "workspaces, 0, 3, easeOutExpo, slide"
         ];
       };
 
@@ -133,6 +137,7 @@
         vrr = 1;
         disable_hyprland_logo = true;
         focus_on_activate = true;
+        font_family = "monospace";
         new_window_takes_over_fullscreen = 2;
         background_color = "rgb(000000)";
       };
