@@ -1,6 +1,7 @@
 declare -a OPTIONS=(
     "Luz nocturna"
     "Recogecolor"
+    "Reiniciar waybar"
     "Suspender"
     "Apagar"
     "Reiniciar"
@@ -16,6 +17,9 @@ case "$selected" in
         ;;
     "Recogecolor")
         sleep 0.2 && hyprpicker -a
+        ;;
+    "Reiniciar waybar")
+        systemctl --user restart waybar
         ;;
     "Suspender")
         systemctl suspend
