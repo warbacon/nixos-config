@@ -23,7 +23,7 @@ send_notification() {
     if [[ "$urgency" == "critical" ]]; then
         fyi -u critical -t "$TIMEOUT" "$title" "$message"
     else
-        fyi -H string:x-dunst-stack-tag:audio -H string:synchronous:audio -H int:transient:1 -t "$TIMEOUT" ${4:+-H int:value:"$4"} "$title" "$message"
+        fyi -c osd -H string:x-dunst-stack-tag:osd -H string:synchronous:osd -H int:transient:1 -t "$TIMEOUT" ${4:+-H int:value:"$4"} "$title" "$message"
     fi
 }
 

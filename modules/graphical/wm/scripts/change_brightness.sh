@@ -18,7 +18,7 @@ main() {
             ;;
     esac
 
-    fyi -H int:value:"$(get_brightness)" -H int:transient:1 -H string:x-dunst-stack-tag:brightness -H string:synchronous:brightness -t $TIMEOUT "Brillo" "$(get_brightness) %"
+    fyi -c osd -H int:value:"$(get_brightness)" -H int:transient:1 -H string:x-dunst-stack-tag:osd -H string:synchronous:osd -t $TIMEOUT "Brillo" "$(get_brightness) %"
 }
 
 main "$@"
