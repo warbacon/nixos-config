@@ -84,10 +84,10 @@
         # https://wiki.hyprland.org/Configuring/Variables/#shadow
         shadow = {
           enabled = true;
-          range = 30;
+          range = 40;
           offset = "0 2";
           render_power = 4;
-          color = "rgba(00000030)";
+          color = "rgba(00000040)";
         };
       };
 
