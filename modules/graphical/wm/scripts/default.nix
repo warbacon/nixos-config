@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 let
   scriptDir = ./.;
   allFiles = builtins.readDir scriptDir;
@@ -24,10 +24,11 @@ in
     pkgs.fyi
     pkgs.grim
     pkgs.hyprpicker
-    pkgs.gammastep
     pkgs.libcanberra-gtk3
     pkgs.slurp
-  ] ++ scripts;
+  ]
+  ++ scripts
+  ++ [ (if config.programs.hyprland.enable then pkgs.hyprsunset else pkgs.gammastep) ];
 
   home-manager.users.warbacon.xdg.desktopEntries.gammastep-indicator = {
     name = "gammastep-indicator";
