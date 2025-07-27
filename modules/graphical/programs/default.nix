@@ -1,7 +1,6 @@
 { pkgs, inputs, ... }:
 {
   imports = [
-    ./firefox.nix
     ./kitty
   ];
 
