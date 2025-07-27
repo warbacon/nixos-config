@@ -1,18 +1,12 @@
 {
-  services.resolved = {
-    enable = true;
-    dnssec = "allow-downgrade";
-  };
-
   networking = {
-    firewall.enable = false;
+    # firewall.enable = false;
     networkmanager = {
-      dns = "systemd-resolved";
       enable = true;
+      insertNameservers = [
+        "1.1.1.1"
+        "1.0.0.1"
+      ];
     };
-    nameservers = [
-      "1.1.1.1#cloudflare-dns.com"
-      "1.0.0.1#cloudflare-dns.com"
-    ];
   };
 }
