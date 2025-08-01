@@ -101,27 +101,31 @@
 
         # wiki: https://wiki.hyprland.org/Configuring/Animations/
         bezier = [
+          "easeOutQuint,0.23,1,0.32,1"
+          "easeInOutCubic,0.65,0.05,0.36,1"
           "linear,0,0,1,1"
           "almostLinear,0.5,0.5,0.75,1.0"
           "quick,0.15,0,0.1,1"
-          "easeOutExpo,0.16,1,0.3,1"
         ];
 
         animation = [
           "global, 1, 10, default"
-          "border, 0, 1, linear"
-          "windows, 1, 4, easeOutExpo"
-          "windowsIn, 1, 4, easeOutExpo, slide"
-          "windowsOut, 1, 4, almostLinear, slide"
+          "border, 0, 5.39, easeOutQuint"
+          "windows, 1, 4.79, easeOutQuint"
+          "windowsIn, 1, 4.1, easeOutQuint, popin 87%"
+          "windowsOut, 1, 1.49, linear, popin 87%"
           "fadeIn, 1, 1.73, almostLinear"
           "fadeOut, 1, 1.46, almostLinear"
           "fade, 1, 3.03, quick"
-          "layers, 1, 3.81, easeOutExpo"
-          "layersIn, 1, 3, easeOutExpo, fade"
+          "layers, 1, 3.81, easeOutQuint"
+          "layersIn, 1, 4, easeOutQuint, fade"
           "layersOut, 1, 1.5, linear, fade"
           "fadeLayersIn, 1, 1.79, almostLinear"
           "fadeLayersOut, 1, 1.39, almostLinear"
-          "workspaces, 0, 3, easeOutExpo, slide"
+          "workspaces, 1, 1.94, almostLinear, fade"
+          "workspacesIn, 1, 1.21, almostLinear, fade"
+          "workspacesOut, 1, 1.94, almostLinear, fade"
+          "zoomFactor, 1, 7, quick"
         ];
       };
 
