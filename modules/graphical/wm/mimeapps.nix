@@ -1,17 +1,5 @@
 {
-  environment.sessionVariables = {
-    TERMINAL = "kitty";
-  };
-
   home-manager.users.warbacon.xdg = {
-    configFile."xdg-terminals.list" = {
-      text = ''
-        kitty.desktop
-        footclient.desktop
-        alacritty.desktop
-      '';
-    };
-
     mimeApps = {
       enable = true;
       defaultApplications = {
