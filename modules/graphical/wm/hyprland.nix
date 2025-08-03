@@ -272,13 +272,13 @@
         # Fix some dragging issues with XWayland
         "nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0"
 
-        # Firefox Picture-in-Picture
-        "float, initialTitle:Picture-in-Picture, initialClass:firefox"
-        "pin, initialTitle:Picture-in-Picture, initialClass:firefox"
-        "keepaspectratio, initialTitle:Picture-in-Picture, initialClass:firefox"
-        "suppressevent activate, initialTitle:Picture-in-Picture, initialClass:firefox"
-        "suppressevent fullscreen, initialTitle:Picture-in-Picture, initialClass:firefox"
-        "size 512 288, initialTitle:Picture-in-Picture, initialClass:firefox"
+        # Zen Picture-in-Picture
+        "float, initialTitle:Picture-in-Picture, initialClass:zen-beta"
+        "pin, initialTitle:Picture-in-Picture, initialClass:zen-beta"
+        "keepaspectratio, initialTitle:Picture-in-Picture, initialClass:zen-beta"
+        "suppressevent activate, initialTitle:Picture-in-Picture, initialClass:zen-beta"
+        "suppressevent fullscreen, initialTitle:Picture-in-Picture, initialClass:zen-beta"
+        "size 512 288, initialTitle:Picture-in-Picture, initialClass:zen-beta"
 
         # Disable border in unnamed GTK floating windows
         "noborder, initialClass:GTK Application, floating:1"
