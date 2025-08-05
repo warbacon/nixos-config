@@ -1,10 +1,11 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 {
   programs.neovim = {
     enable = true;
     defaultEditor = true;
     withRuby = false;
     withPython3 = false;
+    package = inputs.neovim-nightly-overlay.packages.${pkgs.system}.default;
   };
 
   home-manager.users.warbacon = {
@@ -12,6 +13,7 @@
       enable = true;
       withRuby = false;
       withPython3 = false;
+      package = inputs.neovim-nightly-overlay.packages.${pkgs.system}.default;
       extraPackages = [
         pkgs.astro-language-server
         pkgs.basedpyright
