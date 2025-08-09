@@ -29,6 +29,7 @@
     # Development
     pkgs.bun
     pkgs.gcc
+    pkgs.jdk
     pkgs.nodejs
     pkgs.python3
   ];
