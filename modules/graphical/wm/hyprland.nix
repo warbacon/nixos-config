@@ -305,8 +305,8 @@
         bind = SUPER, N, submap, notificaciones
         submap = notificaciones
         bind = , escape, submap, reset
-        bind = , O, exec, dunstctl context && hyprctl dispatch submap reset
-        bind = , C, exec, dunstctl close-all && hyprctl dispatch submap reset
+        bind = , O, exec, makoctl invoke && hyprctl dispatch submap reset
+        bind = , C, exec, makoctl dismiss -a && hyprctl dispatch submap reset
         submap = reset
       '';
   };
