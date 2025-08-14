@@ -17,7 +17,9 @@
         mouse_hide_wait = -1;
         strip_trailing_spaces = "always";
         notify_on_cmd_finish = "invisible 10.0";
+
         placement_strategy = "top-left";
+        window_padding_width = 4;
 
         # Performance
         wayland_enable_ime = "no";
