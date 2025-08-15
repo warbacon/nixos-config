@@ -2,7 +2,6 @@
 {
   imports = [
     ./kitty
-    # ./firefox
   ];
 
   # Enable Wayland in Chromium/Electron
