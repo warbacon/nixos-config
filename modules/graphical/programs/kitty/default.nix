@@ -23,6 +23,7 @@
 
         # Performance
         wayland_enable_ime = "no";
+        resize_debounce_time = "0.0 0.0";
 
         # Tabs
         tab_bar_edge = "top";
@@ -68,8 +69,6 @@
       };
       extraConfig = # bash
         ''
-          modify_font strikethrough_position 4px
-          resize_debounce_time 0.0 0.0
           include ./themes/tokyonight.conf
         '';
     };
