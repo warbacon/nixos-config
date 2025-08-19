@@ -21,6 +21,7 @@
         pkgs.clang-tools
         pkgs.emmet-language-server
         pkgs.jdt-language-server
+        pkgs.kdePackages.qtdeclarative
         pkgs.lua-language-server
         pkgs.nixd
         pkgs.nixfmt-rfc-style

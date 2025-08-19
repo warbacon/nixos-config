@@ -20,7 +20,6 @@ in
 {
   environment.systemPackages = [
     pkgs.brightnessctl
-    pkgs.entr
     pkgs.fyi
     pkgs.grim
     pkgs.hyprpicker

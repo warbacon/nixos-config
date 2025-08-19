@@ -7,6 +7,7 @@
         exec ${pkgs.app2unit}/bin/app2unit "$@"
       ''
     )
+    pkgs.quickshell
     pkgs.wl-clip-persist
   ];
 
@@ -60,8 +61,8 @@
 
       # AUTOSTART ==============================================================
       exec-once = [
-        "wl-clip-persist --clipboard regular"
-        "watch-background"
+        "app2unit -- quickshell"
+        "app2unit -- wl-clip-persist --clipboard regular"
       ];
 
       # LOOK AND FEEL ==========================================================

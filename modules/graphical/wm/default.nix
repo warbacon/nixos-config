@@ -4,12 +4,12 @@
     ./mako
     ./hypridle.nix
     ./hyprlock.nix
-    ./hyprpaper.nix
+    # ./hyprpaper.nix
     ./mimeapps.nix
     ./rofi
     ./scripts
     ./theming
-    ./waybar
+    # ./waybar
 
     ./hyprland.nix
   ];
