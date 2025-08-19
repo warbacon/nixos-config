@@ -1,6 +1,12 @@
 { pkgs, ... }:
 {
   environment.systemPackages = [
+    (pkgs.writeScriptBin "app2unit" # sh
+      ''
+        #!${pkgs.dash}/bin/dash
+        exec ${pkgs.app2unit}/bin/app2unit "$@"
+      ''
+    )
     pkgs.wl-clip-persist
   ];
 
@@ -47,9 +53,9 @@
       ];
 
       # PROGRAMS ===============================================================
-      "$terminal" = "kitty -1";
-      "$fileManager" = "nautilus";
-      "$menu" = "rofi -show drun -show-icons";
+      "$terminal" = "app2unit -- kitty --single-instance";
+      "$fileManager" = "app2unit -- nautilus";
+      "$menu" = "app2unit -- rofi -show drun -show-icons";
 
       # AUTOSTART ==============================================================
       exec-once = [

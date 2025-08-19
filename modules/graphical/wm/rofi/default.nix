@@ -10,10 +10,11 @@
       enable = true;
       package = pkgs.rofi-wayland;
       extraConfig = {
-        drun-display-format = "{name}";
         cycle = false;
-        hover-selected = true;
         display-drun = "Aplicaciones";
+        drun-display-format = "{name}";
+        hover-selected = true;
+        run-command = "app2unit -- {cmd}";
       };
       theme = ./themes/tokyonight.rasi;
     };
