@@ -20,6 +20,7 @@
     xdg.configFile."uwsm/env".text = # bash
       ''
         export GDK_SCALE=2
+        export APP2UNIT_SLICES='a=app-graphical.slice b=background-graphical.slice s=session-graphical.slice'
       '';
 
     xdg.desktopEntries.uuctl = {
