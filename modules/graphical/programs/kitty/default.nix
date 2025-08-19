@@ -19,7 +19,7 @@
         notify_on_cmd_finish = "invisible 10.0";
 
         placement_strategy = "top-left";
-        window_padding_width = 4;
+        window_padding_width = 2;
 
         # Performance
         wayland_enable_ime = "no";
