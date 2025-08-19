@@ -1,9 +1,4 @@
-{ pkgs, ... }:
 {
-  environment.systemPackages = [
-    pkgs.chafa
-  ];
-
   home-manager.users.warbacon = {
     xdg.configFile."foot/themes" = {
       source = ./themes;
