@@ -13,6 +13,7 @@
   # Packages
   environment.systemPackages = [
     inputs.zen-browser.packages."${pkgs.system}".default
+    pkgs.chafa
     pkgs.chromium
     pkgs.discord
     pkgs.loupe
