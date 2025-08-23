@@ -20,6 +20,6 @@
     pkgs.mpv
     pkgs.obs-studio
     pkgs.pulsemixer
-    pkgs.wl-clipboard-rs
+    pkgs.wl-clipboard
   ];
 }
