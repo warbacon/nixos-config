@@ -49,7 +49,7 @@
   home-manager.users.warbacon.wayland.windowManager.hyprland = {
     enable = true;
     settings = {
-      # MONITORS: https://wiki.hyprland.org/Configuring/Monitors ===============
+      # MONITORS: https://wiki.hypr.land/Configuring/Monitors ===============
       monitor = [
         "eDP-1, preferred, auto, 2"
         "desc:LG Electronics LG ULTRAGEAR 102NTZNG9205, preferred, auto-up, auto"
@@ -68,7 +68,7 @@
       ];
 
       # LOOK AND FEEL ==========================================================
-      # wiki: https://wiki.hyprland.org/Configuring/Variables/#general
+      # wiki: https://wiki.hypr.land/Configuring/Variables/#general
       general = {
         gaps_in = 4;
         gaps_out = 8;
@@ -81,17 +81,17 @@
         layout = "master";
       };
 
-      # wiki: https://wiki.hyprland.org/Configuring/Variables/#decoration
+      # wiki: https://wiki.hypr.land/Configuring/Variables/#decoration
       decoration = {
         rounding = 8;
         rounding_power = 3;
 
-        # wiki: https://wiki.hyprland.org/Configuring/Variables/#blur
+        # wiki: https://wiki.hypr.land/Configuring/Variables/#blur
         blur = {
           enabled = false;
         };
 
-        # https://wiki.hyprland.org/Configuring/Variables/#shadow
+        # https://wiki.hypr.land/Configuring/Variables/#shadow
         shadow = {
           enabled = true;
           range = 40;
@@ -105,11 +105,11 @@
         new_render_scheduling = true;
       };
 
-      # wiki: https://wiki.hyprland.org/Configuring/Variables/#animations
+      # wiki: https://wiki.hypr.land/Configuring/Variables/#animations
       animations = {
         enabled = true;
 
-        # wiki: https://wiki.hyprland.org/Configuring/Animations/
+        # wiki: https://wiki.hypr.land/Configuring/Animations/
         bezier = [
           "easeOutQuint,0.23,1,0.32,1"
           "easeInOutCubic,0.65,0.05,0.36,1"
@@ -139,14 +139,14 @@
         ];
       };
 
-      # wiki: https://wiki.hyprland.org/Configuring/Master-Layout
+      # wiki: https://wiki.hypr.land/Configuring/Master-Layout
       master = {
         new_on_top = true;
         new_status = "master";
         mfact = 0.5;
       };
 
-      # wiki: https://wiki.hyprland.org/Configuring/Variables/#misc
+      # wiki: https://wiki.hypr.land/Configuring/Variables/#misc
       misc = {
         vrr = 1;
         disable_hyprland_logo = true;
@@ -156,19 +156,19 @@
         background_color = "rgb(000000)";
       };
 
-      # wiki: https://wiki.hyprland.org/Configuring/Variables/#xwayland
+      # wiki: https://wiki.hypr.land/Configuring/Variables/#xwayland
       xwayland = {
         force_zero_scaling = true;
       };
 
-      # wiki: https://wiki.hyprland.org/Configuring/Variables/#ecosystem
+      # wiki: https://wiki.hypr.land/Configuring/Variables/#ecosystem
       ecosystem = {
         no_update_news = true;
         no_donation_nag = true;
       };
 
       # INPUT ========================================================================
-      # wiki: https://wiki.hyprland.org/Configuring/Variables/#input
+      # wiki: https://wiki.hypr.land/Configuring/Variables/#input
       input = {
         kb_layout = "es";
 
@@ -183,24 +183,24 @@
         };
       };
 
-      # wiki: https://wiki.hyprland.org/Configuring/Variables/#gestures
+      # wiki: https://wiki.hypr.land/Configuring/Variables/#gestures
       gestures = {
         workspace_swipe = true;
         workspace_swipe_cancel_ratio = 0.1;
       };
 
-      # wiki: https://wiki.hyprland.org/Configuring/Variables/#per-device-input-config
+      # wiki: https://wiki.hypr.land/Configuring/Variables/#per-device-input-config
       device = {
         name = "asue140d:00-04f3:31b9-touchpad";
         accel_profile = "adaptive";
       };
 
-      # wiki: https://wiki.hyprland.org/Configuring/Variables/#binds
+      # wiki: https://wiki.hypr.land/Configuring/Variables/#binds
       binds = {
         allow_pin_fullscreen = true;
       };
 
-      # KEYBINDINGS: https://wiki.hyprland.org/Configuring/Binds ===============
+      # KEYBINDINGS: https://wiki.hypr.land/Configuring/Binds ===============
       bind = [
         # General
         "SUPER, Q, exec, $terminal"
@@ -272,8 +272,8 @@
       ];
 
       ### WINDOWS AND WORKSPACES ===============================================
-      # wiki: https://wiki.hyprland.org/Configuring/Window-Rules
-      # wiki: https://wiki.hyprland.org/Configuring/Workspace-Rules
+      # wiki: https://wiki.hypr.land/Configuring/Window-Rules
+      # wiki: https://wiki.hypr.land/Configuring/Workspace-Rules
 
       windowrule = [
         # Ignore maximize requests from apps.
