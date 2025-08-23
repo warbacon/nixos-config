@@ -32,10 +32,6 @@
         tab_fade = 1;
         tab_title_template = "{index}:{title}";
 
-        remember_window_size = "no";
-        initial_window_width = 1200;
-        initial_window_height = 650;
-
         enabled_layouts = "fat,stack";
 
         mouse_map = "alt+left press ungrabbed mouse_selection rectangle";
