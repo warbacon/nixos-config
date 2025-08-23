@@ -5,7 +5,6 @@
     ./hypridle.nix
     ./hyprlock.nix
     # ./hyprpaper.nix
-    ./mimeapps.nix
     ./rofi
     ./scripts
     ./theming
