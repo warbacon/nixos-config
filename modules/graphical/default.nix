@@ -2,8 +2,9 @@
   imports = [
     ./wm
     ./fonts.nix
-    ./programs
     ./gaming.nix
+    ./mimeapps.nix
+    ./programs
   ];
 
   services.pipewire = {
