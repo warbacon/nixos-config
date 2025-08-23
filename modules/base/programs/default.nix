@@ -1,7 +1,6 @@
 { pkgs, ... }:
 {
   imports = [
-    ./btop.nix
     ./docker.nix
     ./git.nix
     ./neovim.nix
@@ -9,6 +8,7 @@
 
   environment.systemPackages = [
     (pkgs.writeShellScriptBin "7z" ''exec ${pkgs._7zz-rar}/bin/7zz "$@"'')
+    pkgs.bottom
     pkgs.dust
     pkgs.eza
     pkgs.fastfetch
