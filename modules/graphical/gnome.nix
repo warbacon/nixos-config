@@ -12,4 +12,11 @@
     pkgs.gnome-tour
     pkgs.orca
   ];
+
+  services.gnome.sushi.enable = true;
+  environment.systemPackages = [
+    pkgs.file-roller
+    pkgs.gnomeExtensions.pano
+    pkgs.nautilus
+  ];
 }
