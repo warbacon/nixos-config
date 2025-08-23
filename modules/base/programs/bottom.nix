@@ -5,7 +5,7 @@
     settings = {
       flags = {
         expanded = true;
-        battery = hostName == "nixwsl";
+        battery = hostName == "zenix";
         disable_gpu = hostName == "nixwsl";
         process_memory_as_value = true;
         network_use_bytes = true;
