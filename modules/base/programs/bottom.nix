@@ -4,7 +4,6 @@
     enable = true;
     settings = {
       flags = {
-        expanded = true;
         battery = hostName == "zenix";
         disable_gpu = hostName == "nixwsl";
         process_memory_as_value = true;
@@ -40,18 +39,18 @@
             ];
       };
       styles.widgets = {
-        widget_title = {
-          color = "white";
-          bold = true;
-        };
+        border_color = "#449dab";
+        selected_border_color = "#ff9e64";
         selected_text = {
           color = "white";
           bg_color = "#283457";
           bold = true;
         };
-        border_color = "#449dab";
-        selected_border_color = "#ff9e64";
         widget_border_type = "rounded";
+        widget_title = {
+          color = "white";
+          bold = true;
+        };
       };
     };
   };
