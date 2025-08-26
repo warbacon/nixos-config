@@ -1,4 +1,0 @@
-/* Reduce minimum window width */
-:root:not([chromehidden~="toolbar"]) {
-    min-width: 20px !important;
-}

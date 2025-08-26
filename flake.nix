@@ -1,5 +1,5 @@
 {
-  description = "My personal NixOS configuration.";
+  description = "My personal NixOS configuration";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
@@ -15,21 +15,13 @@
     };
 
     zen-browser = {
-      url = "github:0xc000022070/zen-browser-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.home-manager.follows = "home-manager";
-    };
-
-    neovim-nightly-overlay = {
-      url = "github:nix-community/neovim-nightly-overlay";
+      url = "github:youwen5/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # ghostty = {
-    #   url = "github:ghostty-org/ghostty";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
+    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
   };
+
   outputs =
     {
       nixpkgs,
@@ -38,6 +30,8 @@
       ...
     }@inputs:
     let
+      overlays = [ inputs.neovim-nightly-overlay.overlays.default ];
+
       mkSystem =
         {
           hostName,
@@ -49,25 +43,38 @@
             inherit inputs hostName;
           };
           modules = [
-            { networking.hostName = hostName; }
+            {
+              networking.hostName = hostName;
+              nixpkgs.overlays = overlays;
+            }
             ./hosts/${hostName}
+            ./modules/home-manager
             home-manager.nixosModules.home-manager
           ]
           ++ extraModules;
         };
-    in
-    {
-      nixosConfigurations = {
-        zenix = mkSystem {
-          hostName = "zenix";
-        };
 
-        nixwsl = mkSystem {
+      systems = [
+        { hostName = "zenix"; }
+        {
           hostName = "nixwsl";
           extraModules = [
             nixos-wsl.nixosModules.default
           ];
-        };
-      };
+        }
+        { hostName = "nixvm"; }
+      ];
+
+      generateSystems =
+        list:
+        nixpkgs.lib.listToAttrs (
+          builtins.map (systemArgs: {
+            name = systemArgs.hostName;
+            value = mkSystem systemArgs;
+          }) list
+        );
+    in
+    {
+      nixosConfigurations = generateSystems systems;
     };
 }

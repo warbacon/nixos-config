@@ -1,22 +1,25 @@
-# ❄️ Zenix and friends
+# ❄️ Zenix and Friends
 
-My Neovim configuration is in
-[warbacon/nvim-config](https://github.com/warbacon/nvim-config).
+> [!IMPORTANT]
+> This is my **PERSONAL** NixOS configuration. Use it as a reference to create
+> your own, if you want.
 
 ## 🖥️ Hosts
 
-- **zenix:** my personal laptop. Offers a customized desktop using Hyprland or
-  Niri as a base.
-- **nixwsl:** configuration for wsl systems. Offers command line tools
-  preinstalled with minimal configurations.
+- **zenix**: My personal laptop. It provides a customized desktop environment
+  based on Hyprland.
+- **nixwsl**: Configuration for WSL systems. It provides only preinstalled
+  command-line tools.
+- **nixvm**: Configuration for VMware VMs. It uses GNOME, since it is the most
+  reliable desktop environment in VMs.
 
 ## ⚙️ Programs
 
-- **Window manager**: hyprland
-- **Top bar**: waybar
-- **Application launcher**: rofi
-- **Terminal**: kitty
-- **Shell**: fish
-- **Text editor**: neovim
-- **File manager**: nautilus
-- **Notification daemon**: mako
+- **Window manager**: Hyprland
+- **Top bar**: Waybar (quickshell coming soon)
+- **Application launcher**: Rofi
+- **Terminal**: Kitty
+- **Shell**: Fish
+- **Text editor**: Neovim
+- **File manager**: Nautilus
+- **Notification daemon**: Mako
