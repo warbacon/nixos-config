@@ -12,7 +12,7 @@ is_muted() {
 }
 
 play_volume_sound() {
-    canberra-gtk-play -i audio-volume-change -d "changeVolume" 2>/dev/null &
+    play-sound audio-volume-change 2>/dev/null &
 }
 
 send_notification() {

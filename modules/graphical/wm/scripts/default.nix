@@ -23,8 +23,12 @@ in
     pkgs.fyi
     pkgs.grim
     pkgs.hyprpicker
-    pkgs.libcanberra-gtk3
     pkgs.slurp
+    (pkgs.writeShellScriptBin "play-sound" # bash
+      ''
+        ${pkgs.mpv}/bin/mpv "${pkgs.sound-theme-freedesktop}/share/sounds/freedesktop/stereo/$1.oga"
+      ''
+    )
   ]
   ++ scripts
   ++ [ (if config.programs.hyprland.enable then pkgs.hyprsunset else pkgs.gammastep) ];
