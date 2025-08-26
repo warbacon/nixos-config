@@ -13,11 +13,11 @@
       };
     };
     mime.defaultApplications = {
-      "application/pdf" = [ "zen-beta.desktop" ];
-      "text/html" = [ "zen-beta.desktop" ];
-      "x-scheme-handler/http" = [ "zen-beta.desktop" ];
-      "x-scheme-handler/https" = [ "zen-beta.desktop" ];
-      "x-scheme-handler/mailto" = [ "zen-beta.desktop" ];
+      "application/pdf" = [ "zen.desktop" ];
+      "text/html" = [ "zen.desktop" ];
+      "x-scheme-handler/http" = [ "zen.desktop" ];
+      "x-scheme-handler/https" = [ "zen.desktop" ];
+      "x-scheme-handler/mailto" = [ "zen.desktop" ];
       "image/png" = [ "org.gnome.Loupe.desktop" ];
       "image/jpeg" = [ "org.gnome.Loupe.desktop" ];
       "image/gif" = [ "org.gnome.Loupe.desktop" ];
