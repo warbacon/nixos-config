@@ -3,6 +3,7 @@
     ./hardware-configuration.nix
     ./../../modules/base
     ./../../modules/system.nix
+    ./../../modules/desktop
   ];
 
   hardware.bluetooth.enable = true;
