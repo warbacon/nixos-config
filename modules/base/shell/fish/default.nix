@@ -9,9 +9,7 @@
     enable = true;
 
     useBabelfish = true;
-    vendor = {
-      config.enable = false;
-    };
+    vendor.config.enable = false;
 
     shellAliases = lib.mkForce { };
     shellAbbrs = config.environment.shellAliases;
@@ -25,6 +23,8 @@
           end
         '';
   };
+
+  documentation.man.generateCaches = false;
 
   home-manager.users.warbacon = {
     xdg.configFile = {
