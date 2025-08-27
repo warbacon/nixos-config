@@ -6,9 +6,12 @@
       ''
         set -x LS_COLORS '${config.home.sessionVariables.LS_COLORS}'
       '';
-    shellInitLast = builtins.readFile ./config.fish;
+    interactiveShellInit = builtins.readFile ./config.fish;
     shellAbbrs = osConfig.environment.shellAliases;
+    preferAbbrs = true;
   };
+
+  programs.man.generateCaches = false;
 
   xdg = {
     configFile = {
