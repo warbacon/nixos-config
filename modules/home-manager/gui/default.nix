@@ -1,46 +1,57 @@
-{ pkgs, inputs, ... }:
+{
+  pkgs,
+  inputs,
+  osConfig,
+  lib,
+  hostName,
+  ...
+}:
 {
   imports = [
     ./kitty
     ./theming
+    ./mpv.nix
+    ./zen.nix
   ];
 
-  # Packages
-  home.packages = [
-    inputs.zen-browser.packages.${pkgs.system}.default
+  config = lib.mkIf (osConfig.this.desktop != "none") {
+    # Packages
+    home.packages = [
+      pkgs.chromium
+      pkgs.wl-clipboard
+    ]
+    ++ lib.optionals (hostName != "nixvm") [
+      pkgs.discord
 
-    pkgs.chafa
-    pkgs.chromium
-    pkgs.mpv
-    pkgs.wl-clipboard
-  ];
+    ];
 
-  # Default applications
-  xdg = {
-    mimeApps = {
-      enable = true;
-      defaultApplications = {
-        "application/pdf" = [ "zen.desktop" ];
-        "text/html" = [ "zen.desktop" ];
-        "x-scheme-handler/http" = [ "zen.desktop" ];
-        "x-scheme-handler/https" = [ "zen.desktop" ];
-        "x-scheme-handler/mailto" = [ "zen.desktop" ];
+    # Default applications
+    xdg = {
+      mimeApps = {
+        enable = true;
+        defaultApplications = {
+          "application/pdf" = [ "zen-beta.desktop" ];
+          "text/html" = [ "zen-beta.desktop" ];
+          "x-scheme-handler/http" = [ "zen-beta.desktop" ];
+          "x-scheme-handler/https" = [ "zen-beta.desktop" ];
+          "x-scheme-handler/mailto" = [ "zen-beta.desktop" ];
+        };
+      };
+      terminal-exec = {
+        enable = true;
+        settings = {
+          default = [
+            "kitty.desktop"
+            "ghostty.desktop"
+            "footclient.desktop"
+            "alacritty.desktop"
+            "wezterm.desktop"
+          ];
+        };
       };
     };
-    terminal-exec = {
-      enable = true;
-      settings = {
-        default = [
-          "kitty.desktop"
-          "ghostty.desktop"
-          "footclient.desktop"
-          "alacritty.desktop"
-          "wezterm.desktop"
-        ];
-      };
-    };
+
+    # Enable Wayland in Chromium/Electron
+    home.sessionVariables.NIXOS_OZONE_WL = "1";
   };
-
-  # Enable Wayland in Chromium/Electron
-  home.sessionVariables.NIXOS_OZONE_WL = "1";
 }
