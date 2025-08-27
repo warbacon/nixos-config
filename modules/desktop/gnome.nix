@@ -25,7 +25,9 @@
         pkgs.gnomeExtensions.appindicator
         pkgs.gnomeExtensions.pano
 
+        pkgs.file-roller
         pkgs.gnome-characters
+        pkgs.gnome-font-viewer
         pkgs.loupe
         pkgs.nautilus
       ];
