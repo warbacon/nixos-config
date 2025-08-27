@@ -1,4 +1,9 @@
-{ pkgs, osConfig, lib, ... }:
+{
+  pkgs,
+  osConfig,
+  lib,
+  ...
+}:
 {
   imports = [
     ./lazygit
@@ -11,6 +16,7 @@
   ];
 
   home.packages = [
+    pkgs.chafa
     pkgs.dust
     pkgs.eza
     pkgs.fastfetch
