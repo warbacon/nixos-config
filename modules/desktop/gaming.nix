@@ -14,7 +14,7 @@
     };
   };
 
-  config = {
+  config = lib.mkIf config.this.gaming.enable {
     hardware.graphics.enable32Bit = !config.this.gaming.nativeOnly;
   };
 }
