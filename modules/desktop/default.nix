@@ -8,6 +8,7 @@
   imports = [
     ./gnome.nix
     ./plasma.nix
+    ./gaming.nix
   ];
 
   options = {

@@ -12,4 +12,5 @@
   services.power-profiles-daemon.enable = true;
 
   this.desktop = "gnome";
+  this.gaming.enable = true;
 }

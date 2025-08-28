@@ -1,6 +1,5 @@
 {
   pkgs,
-  inputs,
   osConfig,
   lib,
   hostName,
@@ -20,9 +19,15 @@
       pkgs.chromium
       pkgs.wl-clipboard
     ]
+    ++ lib.optionals osConfig.this.gaming.enable [
+      pkgs.gamescope
+      pkgs.steam-run-free
+    ]
+    ++ lib.optionals (osConfig.this.gaming.enable && !osConfig.this.gaming.nativeOnly) [
+      pkgs.bottles
+    ]
     ++ lib.optionals (hostName != "nixvm") [
       pkgs.discord
-
     ];
 
     # Default applications
