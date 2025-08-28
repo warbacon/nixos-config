@@ -55,15 +55,16 @@
 
   # Programs
   environment.systemPackages = [
-    (pkgs.writeShellScriptBin "7z" ''exec ${pkgs._7zz-rar}/bin/7zz "$@"'')
     pkgs.fd
     pkgs.gcc
     pkgs.git
     pkgs.killall
     pkgs.ripgrep
     pkgs.tmux
+    pkgs.unrar
     pkgs.unzip
     pkgs.wget
+    pkgs.zip
   ];
 
   # Aliases
