@@ -72,6 +72,9 @@
     nrb = "sudo nixos-rebuild boot";
     nrs = "sudo nixos-rebuild switch";
     nrt = "sudo nixos-rebuild test";
+    rm = "rm -v";
+    cp = "cp -iv";
+    mv = "mv -iv";
   };
 
   # This value determines the NixOS release from which the default
