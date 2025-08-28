@@ -17,6 +17,8 @@
       # VIDEO
       vo = "gpu-next";
       gpu-api = "vulkan";
+      scale = "linear";
+      tscale = "oversample";
       video-sync = "display-resample";
     };
     scripts = [
