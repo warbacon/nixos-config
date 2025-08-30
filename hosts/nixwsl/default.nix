@@ -1,6 +1,7 @@
 {
   imports = [
     ./../../modules/base
+    ./../../modules/desktop
   ];
 
   wsl = {
