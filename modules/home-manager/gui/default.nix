@@ -5,7 +5,7 @@
   hostName,
   ...
 }:
-if (osConfig.this.desktop != "none") then
+if (osConfig.this.desktop != null) then
   {
     imports = [
       ./kitty

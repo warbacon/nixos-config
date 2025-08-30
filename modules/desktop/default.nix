@@ -13,12 +13,12 @@
 
   options = {
     this.desktop = lib.mkOption {
-      default = "none";
-      type = lib.types.str;
+      type = lib.types.enum [ "gnome" "plasma" "hyprland" ];
+      description = "The desktop environment to use.";
     };
   };
 
-  config = lib.mkIf (config.this.desktop != "none") {
+  config = lib.mkIf (config.this.desktop != null) {
     # Fonts
     fonts = {
       packages = [
