@@ -13,7 +13,8 @@
 
   options = {
     this.desktop = lib.mkOption {
-      type = lib.types.enum [ "gnome" "plasma" "hyprland" ];
+      default = null;
+      type = lib.types.enum [ null "gnome" "plasma" "hyprland" ];
       description = "The desktop environment to use.";
     };
   };
