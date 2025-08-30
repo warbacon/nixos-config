@@ -5,15 +5,15 @@
   hostName,
   ...
 }:
-{
-  imports = [
-    ./kitty
-    ./theming
-    ./mpv.nix
-    ./zen.nix
-  ];
+if (osConfig.this.desktop != "none") then
+  {
+    imports = [
+      ./kitty
+      ./theming
+      ./mpv
+      ./zen.nix
+    ];
 
-  config = lib.mkIf (osConfig.this.desktop != "none") {
     # Packages
     home.packages = [
       pkgs.chromium
@@ -27,7 +27,7 @@
       pkgs.bottles
     ]
     ++ lib.optionals (hostName != "nixvm") [
-      pkgs.discord
+      pkgs.legcord
     ];
 
     # Default applications
@@ -58,5 +58,6 @@
 
     # Enable Wayland in Chromium/Electron
     home.sessionVariables.NIXOS_OZONE_WL = "1";
-  };
-}
+  }
+else
+  { }
