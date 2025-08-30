@@ -30,7 +30,14 @@
       ...
     }@inputs:
     let
-      overlays = [ inputs.neovim-nightly-overlay.overlays.default ];
+      overlays = [
+        inputs.neovim-nightly-overlay.overlays.default
+        (final: prev: {
+          bricolage-grotesque =
+            nixpkgs.legacyPackages.x86_64-linux.callPackage ./packages/bricolage-grotesque.nix
+              { };
+        })
+      ];
 
       mkSystem =
         {
