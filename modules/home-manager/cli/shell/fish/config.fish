@@ -47,7 +47,7 @@ bind alt-c cdf
 # -----------------------------------------------------------------------------
 
 # APPEARANCE ------------------------------------------------------------------
-# fish_config theme choose thunder
+fish_config theme choose thunder
 
 if command -q starship; and test "$IS_LINUX_TTY" != true
     if not test -d ~/.cache/starship
