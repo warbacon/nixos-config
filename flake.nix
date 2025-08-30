@@ -19,7 +19,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
+    neovim-nightly.url = "github:nix-community/neovim-nightly-overlay";
   };
 
   outputs =
@@ -31,7 +31,6 @@
     }@inputs:
     let
       overlays = [
-        inputs.neovim-nightly-overlay.overlays.default
         (final: prev: {
           bricolage-grotesque =
             nixpkgs.legacyPackages.x86_64-linux.callPackage ./packages/bricolage-grotesque.nix

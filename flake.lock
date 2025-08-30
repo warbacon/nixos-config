@@ -51,7 +51,7 @@
     "flake-parts": {
       "inputs": {
         "nixpkgs-lib": [
-          "neovim-nightly-overlay",
+          "neovim-nightly",
           "nixpkgs"
         ]
       },
@@ -72,7 +72,7 @@
     "flake-parts_2": {
       "inputs": {
         "nixpkgs-lib": [
-          "neovim-nightly-overlay",
+          "neovim-nightly",
           "hercules-ci-effects",
           "nixpkgs"
         ]
@@ -95,7 +95,7 @@
         "flake-compat": "flake-compat_2",
         "gitignore": "gitignore",
         "nixpkgs": [
-          "neovim-nightly-overlay",
+          "neovim-nightly",
           "nixpkgs"
         ]
       },
@@ -116,7 +116,7 @@
     "gitignore": {
       "inputs": {
         "nixpkgs": [
-          "neovim-nightly-overlay",
+          "neovim-nightly",
           "git-hooks",
           "nixpkgs"
         ]
@@ -139,7 +139,7 @@
       "inputs": {
         "flake-parts": "flake-parts_2",
         "nixpkgs": [
-          "neovim-nightly-overlay",
+          "neovim-nightly",
           "nixpkgs"
         ]
       },
@@ -198,7 +198,7 @@
         "type": "github"
       }
     },
-    "neovim-nightly-overlay": {
+    "neovim-nightly": {
       "inputs": {
         "flake-compat": "flake-compat",
         "flake-parts": "flake-parts",
@@ -295,7 +295,7 @@
     "root": {
       "inputs": {
         "home-manager": "home-manager",
-        "neovim-nightly-overlay": "neovim-nightly-overlay",
+        "neovim-nightly": "neovim-nightly",
         "nixos-wsl": "nixos-wsl",
         "nixpkgs": "nixpkgs_2",
         "zen-browser": "zen-browser"
@@ -304,7 +304,7 @@
     "treefmt-nix": {
       "inputs": {
         "nixpkgs": [
-          "neovim-nightly-overlay",
+          "neovim-nightly",
           "nixpkgs"
         ]
       },

@@ -1,7 +1,8 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 {
   programs.neovim = {
     enable = true;
+    package = inputs.neovim-nightly.packages.${pkgs.system}.default;
     withRuby = false;
     withPython3 = false;
     extraPackages = [
