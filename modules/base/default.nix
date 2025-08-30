@@ -65,12 +65,21 @@
     pkgs.unzip
     pkgs.wget
     pkgs.zip
+    (pkgs.writeShellScriptBin "nrs" ''
+      OLD="$(sudo nix-env -p /nix/var/nix/profiles/system --list-generations | tail -1 | awk '{print $1}')"
+      sudo nixos-rebuild switch
+      CURRENT="$(sudo nix-env -p /nix/var/nix/profiles/system --list-generations | tail -1 | awk '{print $1}')"
+
+      if (( $OLD != $CURRENT )); then
+        ${pkgs.nvd}/bin/nvd diff "/nix/var/nix/profiles/system-$OLD-link" "/nix/var/nix/profiles/system-$CURRENT-link"
+      fi
+    '')
   ];
 
   # Aliases
   environment.shellAliases = lib.mkForce {
     nrb = "sudo nixos-rebuild boot";
-    nrs = "sudo nixos-rebuild switch";
+    # nrs = "sudo nixos-rebuild switch";
     nrt = "sudo nixos-rebuild test";
     rm = "rm -v";
     cp = "cp -iv";
