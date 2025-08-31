@@ -7,9 +7,11 @@ if not set -q GIT_REPOS_DIR
     printf '%s$GIT_REPOS_DIR is not set%s\n' (set_color --bold yellow) (set_color reset)
 end
 
-# Report the current working directory to the terminal via OSC7.
-function __osc7 --on-variable PWD
-    printf "\e]9;9;%s\e\\" "$PWD"
+# Report current directory to Windows Terminal via OSC7
+if set -q WT_SESSION
+    function __osc7 --on-variable PWD
+        printf "\e]9;9;\"%s\"\e\\" "$PWD"
+    end
 end
 # -----------------------------------------------------------------------------
 
