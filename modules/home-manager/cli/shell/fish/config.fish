@@ -1,4 +1,4 @@
-# DETECTION -------------------------------------------------------------------
+# UTILITIES -------------------------------------------------------------------
 # Detect if running in a real Linux TTY
 set -g IS_LINUX_TTY (if test "$TERM" = "linux"; echo true; else; echo false; end)
 
@@ -6,10 +6,15 @@ set -g IS_LINUX_TTY (if test "$TERM" = "linux"; echo true; else; echo false; end
 if not set -q GIT_REPOS_DIR
     printf '%s$GIT_REPOS_DIR is not set%s\n' (set_color --bold yellow) (set_color reset)
 end
+
+# Report the current working directory to the terminal via OSC7.
+function __osc7 --on-variable PWD
+    printf "\e]9;9;%s\e\\" "$PWD"
+end
 # -----------------------------------------------------------------------------
 
 # FISH SETTINGS ---------------------------------------------------------------
-set -g fish_greeting # Disable fish_greeting
+set fish_greeting # Disable fish_greeting
 # -----------------------------------------------------------------------------
 
 # ABBREVIATIONS ---------------------------------------------------------------
