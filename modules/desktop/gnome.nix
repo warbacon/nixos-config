@@ -23,6 +23,7 @@
     environment = {
       systemPackages = [
         pkgs.gnomeExtensions.appindicator
+        pkgs.gnomeExtensions.caffeine
         pkgs.gnomeExtensions.pano
 
         pkgs.file-roller
