@@ -1,7 +1,14 @@
-{ osConfig, config, ... }:
+{
+  osConfig,
+  config,
+  lib,
+  ...
+}:
 {
   imports = [
     ./cli
+  ]
+  ++ lib.optionals (osConfig.this.desktop != null) [
     ./gui
   ];
 
