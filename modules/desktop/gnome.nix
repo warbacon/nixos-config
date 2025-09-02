@@ -31,6 +31,8 @@
         pkgs.gnome-font-viewer
         pkgs.loupe
         pkgs.nautilus
+
+        pkgs.ffmpegthumbnailer
       ];
 
       gnome.excludePackages = [
