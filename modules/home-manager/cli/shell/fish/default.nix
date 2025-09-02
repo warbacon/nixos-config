@@ -5,6 +5,7 @@
     interactiveShellInit = builtins.readFile ./config.fish;
     shellAbbrs = osConfig.environment.shellAliases;
     preferAbbrs = true;
+    generateCompletions = false;
   };
 
   programs.man.generateCaches = false;
