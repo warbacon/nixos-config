@@ -8,13 +8,19 @@
   imports = [
     ./gnome.nix
     ./plasma.nix
+    ./hyprland.nix
     ./gaming.nix
   ];
 
   options = {
     this.desktop = lib.mkOption {
       default = null;
-      type = lib.types.enum [ null "gnome" "plasma" "hyprland" ];
+      type = lib.types.enum [
+        null
+        "gnome"
+        "plasma"
+        "hyprland"
+      ];
       description = "The desktop environment to use.";
     };
   };
