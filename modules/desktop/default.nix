@@ -63,6 +63,9 @@
       };
     };
 
+    # Enable Wayland in Chromium/Electron
+    environment.sessionVariables.NIXOS_OZONE_WL = "1";
+
     # Audio
     security.rtkit.enable = true;
     services.pipewire = {
