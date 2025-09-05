@@ -25,7 +25,7 @@
       };
       Interface = {
         dialog_buttons_have_icons = 0;
-        toolbutton_style=0;
+        toolbutton_style = 0;
         underline_shortcut = 0;
       };
     };
@@ -42,7 +42,7 @@
       };
       Interface = {
         dialog_buttons_have_icons = 0;
-        toolbutton_style=0;
+        toolbutton_style = 0;
         underline_shortcut = 0;
       };
     };
