@@ -51,21 +51,17 @@
       };
     };
 
-    programs = {
-      dconf = {
-        enable = true;
-        profiles = {
-          user.databases = [
-            {
-              settings = {
-                "org/gnome/desktop/wm/preferences" = {
-                  resize-with-right-button = true;
-                };
-              };
-            }
-          ];
-        };
-      };
+    programs.dconf = {
+      enable = true;
+      profiles.user.databases = [
+        {
+          settings = {
+            "org/gnome/desktop/wm/preferences" = {
+              resize-with-right-button = true;
+            };
+          };
+        }
+      ];
     };
   };
 }
