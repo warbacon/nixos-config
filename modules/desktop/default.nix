@@ -39,6 +39,19 @@
 
       fontconfig = {
         enable = true;
+        localConf = # xml
+          ''
+            <?xml version="1.0"?>
+            <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+            <fontconfig>
+              <alias>
+                <family>Consolas</family>
+                <prefer>
+                  <family>monospace</family>
+                </prefer>
+              </alias>
+            </fontconfig>
+          '';
         defaultFonts = {
           monospace = [
             "Cascadia Code"
