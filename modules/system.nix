@@ -12,13 +12,19 @@
   };
 
   # Network
+  services.resolved = {
+    enable = true;
+    dnsovertls = "true";
+  };
+
   networking = {
+    nameservers = [
+      "193.110.81.0#dns0.eu"
+      "185.253.5.0#dns0.eu"
+    ];
     networkmanager = {
       enable = true;
-      insertNameservers = [
-        "193.110.81.0"
-        "185.253.5.0"
-      ];
+      dns = "systemd-resolved";
     };
   };
 
