@@ -11,6 +11,7 @@
     ./theming
     ./mpv
     ./zen.nix
+    # ./ghostty.nix
   ];
 
   # Packages

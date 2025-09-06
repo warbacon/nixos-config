@@ -20,6 +20,11 @@
     };
 
     neovim-nightly.url = "github:nix-community/neovim-nightly-overlay";
+
+    # ghostty = {
+    #   url = "github:ghostty-org/ghostty";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
   };
 
   outputs =
