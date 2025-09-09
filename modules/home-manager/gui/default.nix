@@ -18,7 +18,6 @@
   # Packages
   home.packages = [
     pkgs.chromium
-    pkgs.wl-clipboard
   ]
   ++ lib.optionals osConfig.this.gaming.enable [
     pkgs.gamescope

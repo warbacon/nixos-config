@@ -1,3 +1,4 @@
+{ pkgs, ... }:
 {
   programs.neovim = {
     enable = true;
@@ -9,4 +10,6 @@
   environment.variables = {
     MANPAGER = "nvim +Man!";
   };
+
+  environment.systemPackages = [ pkgs.wl-clipboard ];
 }
