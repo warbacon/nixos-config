@@ -19,8 +19,8 @@
 
   networking = {
     nameservers = [
-      "193.110.81.0#dns0.eu"
-      "185.253.5.0#dns0.eu"
+      "9.9.9.9"
+      "149.112.112.112"
     ];
     networkmanager = {
       enable = true;
