@@ -12,19 +12,9 @@
   };
 
   # Network
-  services.resolved = {
-    enable = true;
-    dnsovertls = "true";
-  };
-
   networking = {
-    nameservers = [
-      "9.9.9.9"
-      "149.112.112.112"
-    ];
     networkmanager = {
       enable = true;
-      dns = "systemd-resolved";
     };
   };
 
