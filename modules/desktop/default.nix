@@ -30,7 +30,6 @@
     fonts = {
       packages = [
         pkgs.adwaita-fonts
-        pkgs.bricolage-grotesque
         pkgs.cascadia-code
         pkgs.nerd-fonts.symbols-only
         pkgs.noto-fonts-cjk-sans
