@@ -2,7 +2,7 @@
 {
   programs.neovim = {
     enable = true;
-    package = inputs.neovim-nightly.packages.${pkgs.system}.default;
+    package = inputs.neovim-nightly.packages.${pkgs.stdenv.system}.default;
     withRuby = false;
     withPython3 = false;
     extraPackages = [
