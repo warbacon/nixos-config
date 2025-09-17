@@ -11,6 +11,6 @@
 
   services.power-profiles-daemon.enable = true;
 
-  this.desktop = "gnome";
+  this.desktop = "hyprland";
   this.gaming.enable = true;
 }
