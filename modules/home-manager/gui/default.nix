@@ -13,6 +13,9 @@
     ./mpv
     ./zen.nix
     # ./ghostty.nix
+  ]
+  ++ lib.optionals (osConfig.this.desktop == "hyprland") [
+    ./hyprland
   ];
 
   # Packages
