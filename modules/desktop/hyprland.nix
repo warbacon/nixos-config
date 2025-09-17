@@ -22,7 +22,8 @@
       pkgs.ffmpegthumbnailer
       pkgs.nautilus
 
-      pkgs.pulsemixer
+      pkgs.brightnessctl
+      pkgs.wiremix
     ]
     ++ lib.optionals config.hardware.bluetooth.enable [
       pkgs.bluetui

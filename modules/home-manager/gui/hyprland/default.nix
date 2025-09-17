@@ -14,7 +14,6 @@
 
   home.packages = [
     pkgs.app2unit
-    pkgs.brightnessctl
     pkgs.grim
     pkgs.slurp
   ];
