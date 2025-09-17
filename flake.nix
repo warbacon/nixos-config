@@ -21,6 +21,8 @@
 
     neovim-nightly.url = "github:nix-community/neovim-nightly-overlay";
 
+    walker.url = "github:abenz1267/walker";
+
     # ghostty = {
     #   url = "github:ghostty-org/ghostty";
     #   inputs.nixpkgs.follows = "nixpkgs";
@@ -35,14 +37,6 @@
       ...
     }@inputs:
     let
-      overlays = [
-        (final: prev: {
-          bricolage-grotesque =
-            nixpkgs.legacyPackages.x86_64-linux.callPackage ./packages/bricolage-grotesque.nix
-              { };
-        })
-      ];
-
       mkSystem =
         {
           hostName,
@@ -56,7 +50,6 @@
           modules = [
             {
               networking.hostName = hostName;
-              nixpkgs.overlays = overlays;
             }
             ./hosts/${hostName}
             ./modules/home-manager
