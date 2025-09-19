@@ -22,11 +22,6 @@
     neovim-nightly.url = "github:nix-community/neovim-nightly-overlay";
 
     walker.url = "github:abenz1267/walker";
-
-    # ghostty = {
-    #   url = "github:ghostty-org/ghostty";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
   };
 
   outputs =
