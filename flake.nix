@@ -20,8 +20,6 @@
     };
 
     neovim-nightly.url = "github:nix-community/neovim-nightly-overlay";
-
-    walker.url = "github:abenz1267/walker";
   };
 
   outputs =

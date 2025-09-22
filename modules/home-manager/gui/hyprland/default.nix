@@ -1,7 +1,6 @@
 { pkgs, ... }:
 {
   imports = [
-    ./walker
     ./dunst.nix
   ];
 
@@ -15,11 +14,11 @@
   home.packages = [
     pkgs.app2unit
     pkgs.grim
+    pkgs.rofi
     pkgs.slurp
   ];
 
   programs.neovim.extraPackages = [
-    pkgs.hyprls
     pkgs.kdePackages.qtdeclarative
   ];
 
