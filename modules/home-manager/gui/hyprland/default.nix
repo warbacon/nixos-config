@@ -2,6 +2,7 @@
 {
   imports = [
     ./dunst.nix
+    ./waybar
   ];
 
   programs.bash.profileExtra = # bash
@@ -14,12 +15,9 @@
   home.packages = [
     pkgs.app2unit
     pkgs.grim
+    pkgs.hyprsunset
     pkgs.rofi
     pkgs.slurp
-  ];
-
-  programs.neovim.extraPackages = [
-    pkgs.kdePackages.qtdeclarative
   ];
 
   xdg.configFile."uwsm/env".text = # bash
@@ -44,14 +42,17 @@
     Install.WantedBy = [ "graphical-session.target" ];
   };
 
-  programs.quickshell = {
-    enable = true;
-    systemd.enable = true;
-  };
-
   wayland.windowManager.hyprland = {
     enable = true;
     extraConfig = builtins.readFile ./hyprland.conf;
+  };
+
+  services.hyprpaper = {
+    enable = true;
+    settings = {
+      preload = [ "~/.config/background" ];
+      wallpaper = [ ",~/.config/background" ];
+    };
   };
 
   xdg.portal = {
