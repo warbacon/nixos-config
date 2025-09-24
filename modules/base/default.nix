@@ -80,6 +80,9 @@
     '')
   ];
 
+  # Appimage support
+  programs.appimage.enable = true;
+
   # Aliases
   environment.shellAliases = lib.mkForce {
     nrb = "sudo nixos-rebuild boot";
