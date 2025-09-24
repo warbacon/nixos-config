@@ -11,10 +11,7 @@
       withUWSM = true;
     };
 
-    services = {
-      upower.enable = true;
-      gvfs.enable = true;
-    };
+    services.gvfs.enable = true;
 
     environment.systemPackages = [
       pkgs.loupe
@@ -23,7 +20,7 @@
       pkgs.nautilus
 
       pkgs.brightnessctl
-      pkgs.wiremix
+      pkgs.pulsemixer
     ]
     ++ lib.optionals config.hardware.bluetooth.enable [
       pkgs.bluetui
