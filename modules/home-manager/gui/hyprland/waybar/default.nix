@@ -14,7 +14,6 @@ in
     settings = {
       mainBar = {
         layer = "top";
-        height = 38;
         spacing = 6;
 
         modules-left = [

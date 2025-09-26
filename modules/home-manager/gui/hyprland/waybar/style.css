@@ -1,5 +1,6 @@
 * {
   all: unset;
+  font-size: 10pt;
   font-family: "monospace", "Symbols Nerd Font";
 }
 
@@ -9,35 +10,29 @@ window#waybar {
   color: @fg1;
 }
 
-#workspaces,
-#tags {
+.horizontal > * {
+  padding: 0px 3px;
+}
+
+#workspaces {
+  margin: 5px 0;
   background-color: @bg1;
   border: 1px solid @border0;
-  margin: 5px 0 5px 6px;
   border-radius: 6px;
 }
 
-#workspaces button,
-#tags button {
+#workspaces button {
   color: @fg0;
-  min-width: 18px;
   background: transparent;
-  padding: 0 6px;
+  padding: 0 8px;
   border-radius: 4px;
-  margin: 1px;
 }
 
-#workspaces button:not(:last-child),
-#tags button:not(:last-child) {
+#workspaces button:not(:last-child) {
   margin-right: 3px;
 }
 
-#tags button.occupied {
-  color: @fg1;
-}
-
-#workspaces button:hover,
-#tags button:hover {
+#workspaces button:hover {
   background-color: @bg2;
 }
 
@@ -46,8 +41,7 @@ window#waybar {
   color: @bg0;
 }
 
-#workspaces button.active,
-#tags button.focused {
+#workspaces button.active {
   color: @workspace-active-fg;
   font-weight: 700;
   background-color: @workspace-active-bg;
@@ -60,6 +54,10 @@ window#waybar {
 
 window#waybar.empty #window {
   opacity: 0;
+}
+
+#window * {
+  all: unset;
 }
 
 #privacy-item,
@@ -75,7 +73,7 @@ window#waybar.empty #window {
   margin: 5px 0;
   background-color: @bg1;
   border: 1px solid @border0;
-  padding: 0 10px;
+  padding: 3px 8px;
   border-radius: 6px;
 }
 
@@ -126,7 +124,6 @@ window#waybar.empty #window {
 
 #power-profiles-daemon {
   color: @accent;
-  margin-right: 6px;
 }
 
 #power-profiles-daemon.performance {
