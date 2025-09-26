@@ -1,0 +1,68 @@
+* {
+    text-color: #c0caf5;
+    alt-text-color: #a9b1d6;
+    background-color: transparent;
+    border-color: #232533;
+    selected-color: #283457;
+}
+
+window {
+    background-color: #111118;
+    border-radius: 12px;
+    border: 1.75px;
+    width: 700px;
+}
+
+mainbox {
+    children: [ "inputbar","listview" ];
+}
+
+inputbar {
+    children:   [ "entry","num-filtered-rows","textbox-num-sep","num-rows" ];
+    padding: 18px 14px;
+    border: 0 0 1.75px 0;
+    cursor: text;
+}
+
+num-filtered-rows {
+    expand:     false;
+    text-color: var(alt-text-color);
+}
+
+num-rows {
+    expand:     false;
+    text-color: var(alt-text-color);
+}
+
+textbox-num-sep {
+    expand:     false;
+    str:        "/";
+    text-color: var(alt-text-color);
+}
+
+listview {
+    padding: 6px;
+    lines: 7;
+    spacing: 5px;
+}
+
+element {
+    padding: 12px;
+    border-radius: 8px;
+    spacing: 10px;
+    cursor: pointer;
+}
+
+element selected {
+    background-color: var(selected-color);
+}
+
+element-icon {
+    size: 30px;
+    cursor: inherit;
+}
+
+element-text {
+    vertical-align: 0.5;
+    cursor: inherit;
+}

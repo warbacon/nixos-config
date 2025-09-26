@@ -2,6 +2,7 @@
 {
   imports = [
     ./dunst.nix
+    ./rofi
     ./waybar
   ];
 
@@ -16,7 +17,6 @@
     pkgs.app2unit
     pkgs.grim
     pkgs.hyprsunset
-    pkgs.rofi
     pkgs.slurp
   ];
 
