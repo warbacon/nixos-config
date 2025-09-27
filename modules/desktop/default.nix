@@ -8,6 +8,7 @@
   imports = [
     ./gnome.nix
     ./plasma.nix
+    ./cosmic.nix
     ./hyprland.nix
     ./gaming.nix
   ];
@@ -19,6 +20,7 @@
         null
         "gnome"
         "plasma"
+        "cosmic"
         "hyprland"
       ];
       description = "The desktop environment to use.";
