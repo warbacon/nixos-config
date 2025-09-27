@@ -1,16 +1,17 @@
 * {
     text-color: #c0caf5;
-    alt-text-color: #a9b1d6;
+    alt-text-color: #545C7E;
     background-color: transparent;
     border-color: #232533;
     selected-color: #283457;
+    match-color: #2ac3de;
 }
 
 window {
     background-color: #111118;
     border-radius: 12px;
     border: 1.75px;
-    width: 700px;
+    width: 650px;
 }
 
 mainbox {
@@ -18,9 +19,12 @@ mainbox {
 }
 
 inputbar {
-    children:   [ "entry","num-filtered-rows","textbox-num-sep","num-rows" ];
+    children: [ "entry","num-filtered-rows","textbox-num-sep","num-rows" ];
     padding: 18px 14px;
     border: 0 0 1.75px 0;
+}
+
+entry {
     cursor: text;
 }
 
@@ -65,4 +69,5 @@ element-icon {
 element-text {
     vertical-align: 0.5;
     cursor: inherit;
+    highlight: var(match-color);
 }
