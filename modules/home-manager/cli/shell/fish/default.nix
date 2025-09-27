@@ -1,8 +1,16 @@
-{ osConfig, ... }:
+{
+  lib,
+  config,
+  osConfig,
+  ...
+}:
 {
   programs.fish = {
     enable = true;
-    interactiveShellInit = builtins.readFile ./config.fish;
+    interactiveShellInit = lib.concatStrings [
+      "set -x LS_COLORS '${config.home.sessionVariables.LS_COLORS}'"
+      (builtins.readFile ./config.fish)
+    ];
     shellAbbrs = osConfig.environment.shellAliases;
     preferAbbrs = true;
     generateCompletions = false;
