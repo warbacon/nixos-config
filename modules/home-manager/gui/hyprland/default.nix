@@ -1,8 +1,9 @@
 { pkgs, ... }:
 {
   imports = [
-    ./dunst.nix
+    ./mako
     ./rofi
+    ./scripts
     ./waybar
   ];
 
@@ -17,6 +18,7 @@
     pkgs.app2unit
     pkgs.grim
     pkgs.hyprsunset
+    pkgs.rofimoji
     pkgs.slurp
   ];
 
@@ -54,6 +56,30 @@
       wallpaper = [ ",~/.config/background" ];
     };
   };
+
+  services.hypridle = {
+    enable = true;
+    settings = {
+      listener = [
+        {
+          timeout = 60;
+          on-timeout = "dim-screen";
+          on-resume = "brightnessctl -r";
+        }
+        {
+          timeout = 180;
+          on-timeout = "hyprctl dispatch dpms off";
+          on-resume = "hyprctl dispatch dpms on";
+        }
+        {
+          timeout = 300;
+          on-timeout = "systemctl suspend";
+        }
+      ];
+    };
+  };
+
+  services.cliphist.enable = true;
 
   xdg.portal = {
     enable = true;
