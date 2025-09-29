@@ -23,12 +23,13 @@ in
     pkgs.fyi
     pkgs.grim
     pkgs.hyprpicker
-    pkgs.satty
     pkgs.hyprsunset
+    pkgs.jq
+    pkgs.satty
     pkgs.slurp
     (pkgs.writeShellScriptBin "play-sound" # bash
       ''
-        ${pkgs.mpv}/bin/mpv "${pkgs.sound-theme-freedesktop}/share/sounds/freedesktop/stereo/$1.oga"
+        ${pkgs.mpv}/bin/mpv --really-quiet "${pkgs.sound-theme-freedesktop}/share/sounds/freedesktop/stereo/$1.oga"
       ''
     )
   ]
