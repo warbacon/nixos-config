@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 TIMEOUT=2000
 
 get_brightness() {

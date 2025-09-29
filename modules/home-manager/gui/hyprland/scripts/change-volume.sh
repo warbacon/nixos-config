@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 readonly TIMEOUT=2000
 readonly AUDIO_SINK="@DEFAULT_AUDIO_SINK@"
 readonly AUDIO_SOURCE="@DEFAULT_AUDIO_SOURCE@"

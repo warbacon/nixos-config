@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 current="$(brightnessctl get)"
 
 if [[ "$current" -gt 10 ]]; then

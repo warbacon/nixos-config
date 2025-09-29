@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 declare -a OPTIONS=(
     "Luz nocturna"
     "Suspender"

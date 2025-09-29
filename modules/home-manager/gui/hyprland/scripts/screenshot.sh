@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 if [[ $# -lt 1 ]]; then
     echo "Uso: $(basename "$0") <fullscreen|select>" >&2
     exit 1
