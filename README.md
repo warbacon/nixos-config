@@ -16,7 +16,7 @@
 ## ⚙️ Programs
 
 - **Window manager**: Hyprland
-- **Top bar**: Waybar (quickshell coming soon)
+- **Top bar**: Waybar
 - **Application launcher**: Rofi
 - **Terminal**: Kitty
 - **Shell**: Fish
