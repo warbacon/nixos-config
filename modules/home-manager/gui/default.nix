@@ -2,7 +2,6 @@
   pkgs,
   osConfig,
   lib,
-  hostName,
   config,
   ...
 }:
@@ -12,7 +11,6 @@
     ./theming
     ./mpv
     ./zen.nix
-    # ./ghostty.nix
   ]
   ++ lib.optionals (osConfig.this.desktop == "hyprland") [
     ./hyprland
@@ -28,9 +26,6 @@
   ]
   ++ lib.optionals (osConfig.this.gaming.enable && !osConfig.this.gaming.nativeOnly) [
     pkgs.bottles
-  ]
-  ++ lib.optionals (hostName != "nixvm") [
-    pkgs.discord
   ];
 
   # Default applications
