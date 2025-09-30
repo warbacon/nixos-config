@@ -2,7 +2,7 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 add_newline = false
-format = '$username$shell$directory$git_branch$git_commit$git_status$jobs$line_break$status$character'
+format = '$username$shell$directory$git_branch$git_commit$git_status$nix_shell$jobs$line_break$status$character'
 
 [shell]
 disabled = false
@@ -26,6 +26,11 @@ format = '[\($branch\)]($style) '
 [git_commit]
 tag_disabled = false
 tag_symbol = ' • '
+
+[nix_shell]
+format = '[$state(\($name\))]($style) '
+pure_msg = ''
+impure_msg = ''
 
 [status]
 disabled = false
