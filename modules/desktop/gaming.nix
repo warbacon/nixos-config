@@ -1,4 +1,9 @@
-{ lib, config, ... }:
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
 {
   options = {
     this.gaming = {
@@ -16,5 +21,8 @@
 
   config = lib.mkIf config.this.gaming.enable {
     hardware.graphics.enable32Bit = !config.this.gaming.nativeOnly;
+    environment.systemPackages = [
+      (pkgs.prismlauncher.override { jdks = [ pkgs.jdk21 ]; })
+    ];
   };
 }
