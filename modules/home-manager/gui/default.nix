@@ -18,7 +18,6 @@
 
   # Packages
   home.packages = [
-    pkgs.chromium
   ]
   ++ lib.optionals osConfig.this.gaming.enable [
     pkgs.gamescope
@@ -27,6 +26,12 @@
   ++ lib.optionals (osConfig.this.gaming.enable && !osConfig.this.gaming.nativeOnly) [
     pkgs.bottles
   ];
+
+  programs.chromium = {
+    enable = true;
+    package = pkgs.google-chrome;
+    commandLineArgs = [ "-no-default-browser-check" ];
+  };
 
   # Default applications
   xdg = {
