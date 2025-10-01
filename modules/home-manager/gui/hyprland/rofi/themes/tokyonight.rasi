@@ -14,10 +14,6 @@ window {
     width: 600px;
 }
 
-mainbox {
-    children: [ "inputbar","listview" ];
-}
-
 inputbar {
     children: [ "entry","num-filtered-rows","textbox-num-sep","num-rows" ];
     padding: 18px 14px;
@@ -42,6 +38,10 @@ textbox-num-sep {
     expand:     false;
     str:        "/";
     text-color: var(alt-text-color);
+}
+
+message {
+    padding: 20px 18px 14px 18px;
 }
 
 listview {
