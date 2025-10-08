@@ -21,7 +21,7 @@
   ]
   ++ lib.optionals osConfig.this.gaming.enable [
     pkgs.gamescope
-    pkgs.steam-run-free
+    # pkgs.steam-run-free
   ]
   ++ lib.optionals (osConfig.this.gaming.enable && !osConfig.this.gaming.nativeOnly) [
     pkgs.bottles
