@@ -30,7 +30,10 @@
   programs.chromium = {
     enable = true;
     package = pkgs.google-chrome;
-    commandLineArgs = [ "-no-default-browser-check" ];
+    commandLineArgs = [
+      "--enable-features=TouchpadOverscrollHistoryNavigation"
+      "-no-default-browser-check"
+    ];
   };
 
   # Default applications
