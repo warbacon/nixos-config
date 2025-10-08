@@ -46,7 +46,7 @@ message {
 
 listview {
     padding: 6px;
-    lines: 7;
+    lines: 6;
     spacing: 5px;
 }
 
