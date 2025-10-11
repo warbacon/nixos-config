@@ -1,3 +1,4 @@
+{ pkgs, ... }:
 {
   programs.git = {
     enable = true;
@@ -8,5 +9,8 @@
     };
   };
 
-  programs.gh.enable = true;
+  programs.gh = {
+    enable = true;
+    extensions = [ pkgs.gh-markdown-preview ];
+  };
 }
