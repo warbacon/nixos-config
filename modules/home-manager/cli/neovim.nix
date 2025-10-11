@@ -9,7 +9,6 @@
       pkgs.astro-language-server
       pkgs.basedpyright
       pkgs.bash-language-server
-      pkgs.biome
       pkgs.clang-tools
       pkgs.emmet-language-server
       pkgs.jdt-language-server
