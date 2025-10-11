@@ -4,6 +4,11 @@
     ./bash
   ];
 
+  programs.direnv = {
+    enable = true;
+    silent = true;
+    nix-direnv.enable = true;
+  };
   programs.dircolors.enable = true;
 
   home.sessionVariables = {
