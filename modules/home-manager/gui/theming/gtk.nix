@@ -2,6 +2,10 @@
 {
   gtk = {
     enable = true;
+    font = {
+      name = "Inter";
+      size = 10;
+    };
     gtk3.theme = {
       name = "Adwaita-dark";
       package = pkgs.gnome-themes-extra;

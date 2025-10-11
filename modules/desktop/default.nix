@@ -31,8 +31,8 @@
     # Fonts
     fonts = {
       packages = [
-        pkgs.adwaita-fonts
         pkgs.cascadia-code
+        pkgs.inter
         pkgs.nerd-fonts.symbols-only
         pkgs.noto-fonts-cjk-sans
         pkgs.noto-fonts-color-emoji
@@ -59,7 +59,7 @@
             "Symbols Nerd Font"
             "Noto Color Emoji"
           ];
-          sansSerif = [ "Adwaita Sans" ];
+          sansSerif = [ "Inter" ];
         };
       };
     };
