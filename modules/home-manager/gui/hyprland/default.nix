@@ -2,9 +2,9 @@
 {
   imports = [
     ./mako
-    ./rofi
     ./scripts
     ./waybar
+    ./walker
   ];
 
   programs.bash.profileExtra = # bash
@@ -16,10 +16,6 @@
 
   home.packages = [
     pkgs.app2unit
-    pkgs.grim
-    pkgs.hyprsunset
-    pkgs.rofimoji
-    pkgs.slurp
   ];
 
   xdg.configFile."uwsm/env".text = # bash
@@ -78,8 +74,6 @@
       ];
     };
   };
-
-  services.cliphist.enable = true;
 
   xdg.portal = {
     enable = true;
