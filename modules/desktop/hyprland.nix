@@ -15,6 +15,7 @@
 
     environment.systemPackages = [
       pkgs.loupe
+      pkgs.papers
 
       pkgs.ffmpegthumbnailer
       pkgs.nautilus
