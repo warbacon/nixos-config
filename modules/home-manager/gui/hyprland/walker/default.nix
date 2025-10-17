@@ -4,8 +4,6 @@
     inputs.walker.homeManagerModules.default
   ];
 
-  programs.elephant.enable = true;
-
   programs.walker = {
     enable = true;
     runAsService = true;
@@ -21,11 +19,12 @@
       };
 
       keybinds = {
-        close = "Escape";
-        quick_activate = [
-          "alt 1"
-          "alt 2"
-          "alt 3"
+        quick_activate = [ ];
+        "menus:commands" = [
+          {
+            action = "default";
+            bind = "Return";
+          }
         ];
 
       };
@@ -33,6 +32,7 @@
         default = [
           "desktopapplications"
           "calc"
+          "menus:commands"
         ];
         empty = [ "desktopapplications" ];
       };
@@ -41,6 +41,11 @@
 
   xdg.configFile."walker/themes" = {
     source = ./themes;
+    recursive = true;
+  };
+
+  xdg.configFile."elephant/menus" = {
+    source = ./menus;
     recursive = true;
   };
 }
