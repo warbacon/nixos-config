@@ -2,10 +2,12 @@
 {
   programs.git = {
     enable = true;
-    userName = "Joaquín Guerra";
-    userEmail = "45147327+warbacon@users.noreply.github.com";
-    extraConfig = {
+    settings = {
       init.defaultBranch = "main";
+      user = {
+        name = "Joaquín Guerra";
+        email = "45147327+warbacon@users.noreply.github.com";
+      };
     };
   };
 
