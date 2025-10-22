@@ -1,3 +1,4 @@
+{ pkgs, ... }:
 {
   imports = [
     ./hardware-configuration.nix
@@ -11,6 +12,13 @@
 
   services.power-profiles-daemon.enable = true;
 
-  this.desktop = "hyprland";
-  this.gaming.enable = true;
+  this.desktop = "niri";
+  this.gaming = {
+    enable = true;
+    nativeOnly = false;
+  };
+
+  environment.systemPackages = [
+    pkgs.conda
+  ];
 }

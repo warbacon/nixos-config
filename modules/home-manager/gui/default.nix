@@ -12,12 +12,14 @@
     ./mpv
     ./zen.nix
   ]
-  ++ lib.optionals (osConfig.this.desktop == "hyprland") [
-    ./hyprland
+  ++ lib.optionals (osConfig.this.desktop == "hyprland" || osConfig.this.desktop == "niri") [
+    ./wm
   ];
 
   # Packages
   home.packages = [
+    pkgs.jetbrains.idea-community
+    pkgs.vscode-fhs
   ]
   ++ lib.optionals osConfig.this.gaming.enable [
     pkgs.gamescope

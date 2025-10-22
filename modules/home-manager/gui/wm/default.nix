@@ -1,27 +1,21 @@
-{ pkgs, ... }:
+{ osConfig, pkgs, lib, ... }:
 {
   imports = [
     ./mako
     ./scripts
     ./waybar
     ./walker
+  ]
+  ++ lib.optionals (osConfig.this.desktop == "hyprland") [
+    ./hyprland
+  ]
+  ++ lib.optionals (osConfig.this.desktop == "niri") [
+    ./niri
   ];
-
-  programs.bash.profileExtra = # bash
-    ''
-      if uwsm check may-start; then
-        exec uwsm start hyprland-uwsm.desktop
-      fi
-    '';
 
   home.packages = [
     pkgs.app2unit
   ];
-
-  xdg.configFile."uwsm/env".text = # bash
-    ''
-      export GDK_SCALE=2
-    '';
 
   systemd.user.services.wl-clip-persist = {
     Unit = {
@@ -37,11 +31,6 @@
       Restart = "on-failure";
     };
     Install.WantedBy = [ "graphical-session.target" ];
-  };
-
-  wayland.windowManager.hyprland = {
-    enable = true;
-    extraConfig = builtins.readFile ./hyprland.conf;
   };
 
   services.hyprpaper = {
@@ -72,17 +61,5 @@
         }
       ];
     };
-  };
-
-  xdg.portal = {
-    enable = true;
-    config = {
-      hyprland = {
-        default = "hyprland;gnome";
-      };
-    };
-    extraPortals = [
-      pkgs.xdg-desktop-portal-gnome
-    ];
   };
 }

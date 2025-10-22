@@ -9,8 +9,8 @@
     ./gnome.nix
     ./plasma.nix
     ./cosmic.nix
-    ./hyprland.nix
     ./gaming.nix
+    ./wm
   ];
 
   options = {
@@ -22,6 +22,7 @@
         "plasma"
         "cosmic"
         "hyprland"
+        "niri"
       ];
       description = "The desktop environment to use.";
     };
