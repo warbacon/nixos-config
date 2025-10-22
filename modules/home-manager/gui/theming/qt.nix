@@ -20,8 +20,8 @@
         icon_theme = "breeze-dark";
       };
       Fonts = {
-        fixed = "\"monospace,11,-1,5,50,0,0,0,0,0,Regular\"";
-        general = "\"sans-serif,11,-1,5,50,0,0,0,0,0\"";
+        fixed = "\"monospace,10,-1,5,50,0,0,0,0,0,Regular\"";
+        general = "\"sans-serif,10,-1,5,50,0,0,0,0,0\"";
       };
       Interface = {
         dialog_buttons_have_icons = 0;
@@ -37,8 +37,8 @@
         icon_theme = "breeze-dark";
       };
       Fonts = {
-        fixed = "\"monospace,11,-1,5,50,0,0,0,0,0,Regular\"";
-        general = "\"sans-serif,11,-1,5,50,0,0,0,0,0\"";
+        fixed = "\"monospace,10,-1,5,50,0,0,0,0,0,Regular\"";
+        general = "\"sans-serif,10,-1,5,50,0,0,0,0,0\"";
       };
       Interface = {
         dialog_buttons_have_icons = 0;
