@@ -11,8 +11,8 @@
       pkgs.bash-language-server
       pkgs.clang-tools
       pkgs.emmet-language-server
+      pkgs.emmylua-ls
       pkgs.jdt-language-server
-      pkgs.lua-language-server
       pkgs.nixd
       pkgs.nixfmt-rfc-style
       pkgs.shellcheck
