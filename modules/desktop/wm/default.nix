@@ -1,48 +1,55 @@
-{ pkgs, config, lib, ... }:
+{
+  pkgs,
+  config,
+  lib,
+  ...
+}:
 {
   imports = [
     ./hyprland.nix
     ./niri.nix
   ];
 
-  services.gvfs.enable = true;
+  config = lib.mkIf (config.this.desktop == "hyprland" || config.this.desktop == "niri") {
+    services.gvfs.enable = true;
 
-  environment.systemPackages = [
-    pkgs.loupe
-    pkgs.papers
+    environment.systemPackages = [
+      pkgs.loupe
+      pkgs.papers
 
-    pkgs.ffmpegthumbnailer
-    pkgs.nautilus
+      pkgs.ffmpegthumbnailer
+      pkgs.nautilus
 
-    pkgs.brightnessctl
-    pkgs.pulsemixer
-  ]
-  ++ lib.optionals config.hardware.bluetooth.enable [
-    pkgs.bluetui
-  ];
-
-  programs.dconf = {
-    enable = true;
-    profiles.user.databases = [
-      {
-        settings = {
-          "org/gnome/desktop/wm/preferences" = {
-            button-layout = "appmenu:none";
-          };
-
-        };
-      }
+      pkgs.brightnessctl
+      pkgs.pulsemixer
+    ]
+    ++ lib.optionals config.hardware.bluetooth.enable [
+      pkgs.bluetui
     ];
-  };
 
-  xdg = {
-    mime = {
+    programs.dconf = {
       enable = true;
-      defaultApplications = {
-        "image/png" = [ "org.gnome.Loupe.desktop" ];
-        "image/jpeg" = [ "org.gnome.Loupe.desktop" ];
-        "image/gif" = [ "org.gnome.Loupe.desktop" ];
-        "inode/directory" = [ "org.gnome.Nautilus.desktop" ];
+      profiles.user.databases = [
+        {
+          settings = {
+            "org/gnome/desktop/wm/preferences" = {
+              button-layout = "appmenu:none";
+            };
+
+          };
+        }
+      ];
+    };
+
+    xdg = {
+      mime = {
+        enable = true;
+        defaultApplications = {
+          "image/png" = [ "org.gnome.Loupe.desktop" ];
+          "image/jpeg" = [ "org.gnome.Loupe.desktop" ];
+          "image/gif" = [ "org.gnome.Loupe.desktop" ];
+          "inode/directory" = [ "org.gnome.Nautilus.desktop" ];
+        };
       };
     };
   };
