@@ -7,7 +7,7 @@
 ## 🖥️ Hosts
 
 - **zenix**: My personal laptop. It provides a customized desktop environment
-  based on Hyprland.
+  based on Niri.
 - **nixwsl**: Configuration for WSL systems. It provides only preinstalled
   command-line tools.
 - **nixvm**: Configuration for VMware VMs. It uses GNOME, since it is the most
@@ -15,9 +15,9 @@
 
 ## ⚙️ Programs
 
-- **Window manager**: Hyprland
+- **Window manager**: Niri
 - **Top bar**: Waybar
-- **Application launcher**: Rofi
+- **Application launcher**: Walker
 - **Terminal**: Kitty
 - **Shell**: Fish
 - **Text editor**: Neovim
