@@ -1,4 +1,3 @@
-{ pkgs, ... }:
 {
   imports = [
     ./hardware-configuration.nix
@@ -17,8 +16,4 @@
     enable = true;
     nativeOnly = false;
   };
-
-  environment.systemPackages = [
-    pkgs.conda
-  ];
 }
