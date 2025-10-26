@@ -27,11 +27,6 @@ in
     pkgs.jq
     pkgs.satty
     pkgs.slurp
-    (pkgs.writeShellScriptBin "play-sound" # bash
-      ''
-        ${pkgs.mpv}/bin/mpv --really-quiet "${pkgs.sound-theme-freedesktop}/share/sounds/freedesktop/stereo/$1.oga"
-      ''
-    )
   ]
   ++ scripts;
 }
