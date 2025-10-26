@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 declare -a MENU=(
-    "󰖔 Luz nocturna|pkill hyprsunset || hyprsunset -t 3500"
+    "󰖔 Luz nocturna|pkill sunsetr || sunsetr"
     "󰒲 Suspender|systemctl suspend"
     "󰐥 Apagar|systemctl poweroff"
     "󰜉 Reiniciar|systemctl reboot"

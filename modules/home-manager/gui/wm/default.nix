@@ -5,6 +5,7 @@
     ./scripts
     ./waybar
     ./walker
+    ./sunsetr
   ]
   ++ lib.optionals (osConfig.this.desktop == "hyprland") [
     ./hyprland

@@ -6,7 +6,7 @@ action = "%VALUE%"
 [[entries]]
 text = "Luz nocturna"
 icon = "night-light-symbolic"
-value = "pkill hyprsunset || hyprsunset -t 3500"
+value = "pkill sunsetr || sunsetr"
 
 [[entries]]
 text = "Apagar"

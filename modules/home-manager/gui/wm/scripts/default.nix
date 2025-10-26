@@ -27,7 +27,6 @@ in
     pkgs.fyi
     pkgs.grim
     pkgs.hyprpicker
-    pkgs.hyprsunset
     pkgs.jq
     pkgs.satty
     pkgs.slurp
