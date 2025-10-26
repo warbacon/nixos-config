@@ -7,7 +7,7 @@
 }:
 {
   imports = [
-    ./kitty
+    ./foot
     ./theming
     ./mpv
     ./zen.nix
@@ -75,9 +75,9 @@
       enable = true;
       settings = {
         default = [
+          "footclient.desktop"
           "kitty.desktop"
           "ghostty.desktop"
-          "footclient.desktop"
           "alacritty.desktop"
           "wezterm.desktop"
         ];
