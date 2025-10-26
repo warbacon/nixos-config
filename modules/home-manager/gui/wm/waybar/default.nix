@@ -56,7 +56,7 @@ in
 
         pulseaudio = {
           on-click = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
-          on-click-right = "killall -s1 pulsemixer || ${terminal} -e pulsemixer";
+          on-click-right = "niri-app-toggle pulsemixer";
           format = "{icon} <span color='${foregroundColor}'>{volume} %</span>";
           format-muted = "󰝟";
           format-icons = {
@@ -105,7 +105,7 @@ in
 
         network = {
           format = "{icon} <span color='${foregroundColor}'>{essid}</span>";
-          on-click-right = "killall -s1 nmtui || ${terminal} -e nmtui";
+          on-click-right = "niri-app-toggle nmtui";
           tooltip-format = "{ifname}: {ipaddr}";
           format-disconnected = "{icon} sin conexión";
           format-icons = {
