@@ -16,13 +16,15 @@
         type = lib.types.bool;
         default = true;
       };
+
+      maincra = lib.mkOption {
+        type = lib.types.bool;
+        default = false;
+      };
     };
   };
 
   config = lib.mkIf config.this.gaming.enable {
     hardware.graphics.enable32Bit = !config.this.gaming.nativeOnly;
-    environment.systemPackages = [
-      (pkgs.prismlauncher.override { jdks = [ pkgs.jdk21 ]; })
-    ];
   };
 }

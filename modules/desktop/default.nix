@@ -68,12 +68,6 @@
     # Enable Wayland in Chromium/Electron
     environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
-    # Make non-nixpkgs to run
-    programs.nix-ld = {
-      enable = true;
-      libraries = pkgs.steam-run.args.multiPkgs pkgs;
-    };
-
     # Audio
     security.rtkit.enable = true;
     services.pipewire = {
