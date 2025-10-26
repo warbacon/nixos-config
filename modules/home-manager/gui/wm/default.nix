@@ -1,4 +1,9 @@
-{ osConfig, pkgs, lib, ... }:
+{
+  osConfig,
+  pkgs,
+  lib,
+  ...
+}:
 {
   imports = [
     ./mako
@@ -6,6 +11,7 @@
     ./waybar
     ./walker
     ./sunsetr
+    ./swww.nix
   ]
   ++ lib.optionals (osConfig.this.desktop == "hyprland") [
     ./hyprland
@@ -32,14 +38,6 @@
       Restart = "on-failure";
     };
     Install.WantedBy = [ "graphical-session.target" ];
-  };
-
-  services.hyprpaper = {
-    enable = true;
-    settings = {
-      preload = [ "~/.config/background" ];
-      wallpaper = [ ",~/.config/background" ];
-    };
   };
 
   services.hypridle = {
