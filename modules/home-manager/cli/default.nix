@@ -9,6 +9,7 @@
     ./lazygit
     ./starship
     ./shell
+    ./tmux
 
     ./bottom.nix
     ./git.nix
