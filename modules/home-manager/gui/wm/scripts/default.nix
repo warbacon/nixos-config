@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 let
   scriptDir = ./.;
   allFiles = builtins.readDir scriptDir;
@@ -8,8 +8,12 @@ let
       builtins.mapAttrs (
         name: type:
         if type == "regular" && builtins.match ".*\\.sh" name != null then
-          pkgs.writeShellScriptBin (builtins.replaceStrings [ ".sh" ] [ "" ] name) (
-            builtins.readFile (scriptDir + "/${name}")
+          pkgs.writeScriptBin (builtins.replaceStrings [ ".sh" ] [ "" ] name) (
+            lib.concatStrings [
+              "#!${pkgs.dash}/bin/dash"
+              "\n"
+              (builtins.readFile (scriptDir + "/${name}"))
+            ]
           )
         else
           null
