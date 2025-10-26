@@ -24,6 +24,13 @@ input {
 // https://yalter.github.io/niri/Configuration:-Outputs
 output "eDP-1" {
     scale 2
+    position x=0 y=0
+}
+
+output "LG Electronics LG ULTRAGEAR 102NTZNG9205" {
+    scale 1
+    variable-refresh-rate
+    position x=-560 y=-1440
 }
 
 // Settings that influence how windows are positioned and sized.
@@ -39,7 +46,7 @@ layout {
     // - "always", the focused column will always be centered.
     // - "on-overflow", focusing a column will center it if it doesn't fit
     //   together with the previously focused column.
-    center-focused-column "on-overflow"
+    center-focused-column "never"
 
     preset-column-widths {
         // Proportion sets the width as a fraction of the output width, taking gaps into account.
@@ -129,10 +136,10 @@ window-rule {
     open-floating true
 }
 
-// window-rule {
-//     // geometry-corner-radius 8
-//     clip-to-geometry true
-// }
+window-rule {
+    // geometry-corner-radius 8
+    clip-to-geometry true
+}
 
 debug {
     honor-xdg-activation-with-invalid-serial
@@ -148,25 +155,20 @@ binds {
     //
     // Most actions that you can bind here can also be invoked programmatically with
     // `niri msg action do-something`.
-
-    // Suggested binds for running programs: terminal, app launcher, screen locker.
-    Mod+Q hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty" "-1"; }
+    Mod+Q hotkey-overlay-title="Open a Terminal" { spawn "footclient"; }
     Mod+D hotkey-overlay-title="Run an Application: walker" { spawn "walker"; }
-    Mod+E hotkey-overlay-title="Run the file explorer: nautilus" { spawn "nautilus"; }
+    Mod+Period hotkey-overlay-title="Open emoji picker" { spawn "walker" "-m" "symbols"; }
+    Mod+E hotkey-overlay-title="Run the file explorer: nautilus" { spawn "app2unit" "nautilus"; }
+    Mod+B hotkey-overlay-title="Run Bluetooth manager: bluetui" { spawn "niri-app-toggle" "bluetui"; }
+    Mod+Ctrl+C hotkey-overlay-title="Open color picker" { spawn-sh "hyprpicker | wl-copy"; }
 
-    // Example volume keys mappings for PipeWire & WirePlumber.
-    // The allow-when-locked=true property makes them work even when the session is locked.
-    // Using spawn-sh allows to pass multiple arguments together with the command.
-    XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+"; }
-    XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-"; }
+    XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"; }
+    XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"; }
     XF86AudioMute        allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
     XF86AudioMicMute     allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }
 
-    // Example brightness key mappings for brightnessctl.
-    // You can use regular spawn with multiple arguments too (to avoid going through "sh"),
-    // but you need to manually put each argument in separate "" quotes.
-    XF86MonBrightnessUp allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "+10%"; }
-    XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "10%-"; }
+    XF86MonBrightnessUp allow-when-locked=true { spawn "brightnessctl" "-e4" "-n2" "set" "5%+"; }
+    XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "-e4" "-n2" "set" "5%-"; }
 
     // Open/close the Overview: a zoomed-out view of workspaces and windows.
     // You can also move the mouse into the top-left hot corner,
@@ -321,9 +323,9 @@ binds {
     Mod+BracketRight { consume-or-expel-window-right; }
 
     // Consume one window from the right to the bottom of the focused column.
-    Mod+Comma  { consume-window-into-column; }
+    // Mod+Comma  { consume-window-into-column; }
     // Expel the bottom window from the focused column to the right.
-    Mod+Period { expel-window-from-column; }
+    // Mod+Period { expel-window-from-column; }
 
     Mod+R { switch-preset-column-width; }
     // Cycling through the presets in reverse order is also possible.
@@ -339,9 +341,6 @@ binds {
 
     Mod+Shift+C { center-column; }
 
-    // Center all fully visible columns on screen.
-    Mod+Ctrl+C { center-visible-columns; }
-
     // Finer width adjustments.
     // This command can also:
     // * set width in pixels: "1000"
@@ -355,7 +354,7 @@ binds {
 
     // Finer height adjustments when in column with other windows.
     Mod+Shift+Minus { set-window-height "-10%"; }
-    Mod+Shift+Equal { set-window-height "+10%"; }
+    Mod+Shift+Plus { set-window-height "+10%"; }
 
     // Move the focused window between the floating and the tiling layout.
     Mod+V       { toggle-window-floating; }
@@ -374,8 +373,8 @@ binds {
     // Mod+Space       { switch-layout "next"; }
     // Mod+Shift+Space { switch-layout "prev"; }
 
-    Print { screenshot; }
-    Shift+Print { screenshot-screen; }
+    Print { screenshot-screen; }
+    Shift+Print { screenshot; }
     Alt+Print { screenshot-window; }
 
     // Applications such as remote-desktop clients and software KVM switches may
