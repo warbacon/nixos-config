@@ -9,7 +9,7 @@
   hardware.bluetooth.enable = true;
   services.printing.enable = true;
 
-  services.power-profiles-daemon.enable = true;
+  services.tlp.enable = true;
 
   this.desktop = "niri";
   this.gaming = {

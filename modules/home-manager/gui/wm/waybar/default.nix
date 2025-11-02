@@ -1,7 +1,6 @@
-{ lib, ... }:
+{ lib, osConfig, ... }:
 let
   foregroundColor = "#c0caf5";
-  terminal = "xdg-terminal-exec";
 in
 {
   programs.waybar = {
@@ -17,6 +16,12 @@ in
         spacing = 6;
 
         modules-left = [
+        ]
+        ++ lib.optionals (osConfig.this.desktop == "hyprland") [
+          "hyprland/workspaces"
+          "hyprland/window"
+        ]
+        ++ lib.optionals (osConfig.this.desktop == "niri") [
           "niri/workspaces"
           "niri/window"
         ];
@@ -29,7 +34,6 @@ in
           "battery"
           "network"
           "clock"
-          "power-profiles-daemon"
         ];
 
         "hyprland/window" = {
