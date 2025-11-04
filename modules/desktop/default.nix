@@ -32,7 +32,7 @@
     # Fonts
     fonts = {
       packages = [
-        pkgs.cascadia-code
+        pkgs.geist-font
         pkgs.inter
         pkgs.nerd-fonts.symbols-only
         pkgs.noto-fonts-cjk-sans
@@ -56,7 +56,7 @@
           '';
         defaultFonts = {
           monospace = [
-            "Cascadia Code"
+            "Geist Mono"
             "Symbols Nerd Font"
             "Noto Color Emoji"
           ];
