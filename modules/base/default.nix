@@ -15,6 +15,17 @@
 
   # Cachix binary cache
   nix.settings = {
+    substituters = [
+      "https://vicinae.cachix.org"
+      "https://walker.cachix.org"
+      "https://nix-community.cachix.org"
+      "https://cache.nixos.org/"
+    ];
+    trusted-public-keys = [
+      "vicinae.cachix.org-1:1kDrfienkGHPYbkpNj1mWTr7Fm1+zcenzgTizIcI3oc="
+      "walker.cachix.org-1:fG8q+uAaMqhsMxWjwvk0IMb4mFPFLqHjuvfwQxE4oJM="
+      "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+    ];
     trusted-users = [
       "root"
       "@wheel"
