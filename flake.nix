@@ -27,6 +27,13 @@
       url = "github:abenz1267/walker";
       inputs.elephant.follows = "elephant";
     };
+
+    vicinae.url = "github:vicinaehq/vicinae";
+
+    hyprqt6engine = {
+      url = "github:hyprwm/hyprqt6engine";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
