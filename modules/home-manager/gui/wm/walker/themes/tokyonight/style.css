@@ -3,6 +3,7 @@
 @define-color window_border_color #232533;
 @define-color accent_bg_color #283457;
 @define-color theme_fg_color #c0caf5;
+@define-color theme_alt_fg_color #a9b1d6;
 @define-color error_bg_color #C34043;
 @define-color error_fg_color #DCD7BA;
 
@@ -28,8 +29,7 @@ scrollbar {
     0 19px 38px rgba(0, 0, 0, 0.3),
     0 15px 12px rgba(0, 0, 0, 0.22);
   background: @window_bg_color;
-  padding: 20px;
-  border-radius: 14px;
+  border-radius: 12px;
   border: 1px solid @window_border_color;
 }
 
@@ -40,17 +40,16 @@ scrollbar {
 }
 
 .search-container {
-  border-radius: 6px;
 }
 
 .input placeholder {
-  opacity: 0.5;
+  color: @theme_alt_fg_color;
 }
 
 .input {
   caret-color: @theme_fg_color;
-  background: @light_bg_color;
-  padding: 10px;
+  border-bottom: 1px solid @window_border_color;
+  padding: 18px 14px;
   color: @theme_fg_color;
 }
 
@@ -60,11 +59,12 @@ scrollbar {
 
 .list {
   color: @theme_fg_color;
+  margin: 0 10px 0 10px;
 }
 
 .item-box {
-  border-radius: 10px;
-  padding: 10px;
+  border-radius: 8px;
+  padding: 12px;
 }
 
 child:hover .item-box,
@@ -74,12 +74,12 @@ child:selected .item-box {
 
 .item-subtext {
   font-size: 12px;
-  opacity: 0.5;
+  color: @theme_alt_fg_color;
 }
 
 .providerlist .item-subtext {
   font-size: unset;
-  opacity: 0.75;
+  color: @theme_alt_fg_color;
 }
 
 .item-image,
@@ -94,7 +94,8 @@ child:selected .item-box {
 .preview {
   border: 1px solid @window_border_color;
   padding: 10px;
-  border-radius: 10px;
+  margin-right: 10px;
+  border-radius: 8px;
   color: @theme_fg_color;
 }
 
@@ -107,7 +108,8 @@ child:selected .item-box {
 }
 
 .todo.done .item-text-box {
-  opacity: 0.25;
+  color: @theme_alt_fg_color;
+  opacity: 0.5;
 }
 
 .todo.urgent {
@@ -119,7 +121,7 @@ child:selected .item-box {
 }
 
 .bluetooth.disconnected {
-  opacity: 0.5;
+  color: @theme_alt_fg_color;
 }
 
 .preview .large-icons {
@@ -129,8 +131,8 @@ child:selected .item-box {
 .keybinds-wrapper {
   border-top: 1px solid @window_border_color;
   font-size: 12px;
-  opacity: 0.5;
-  color: @theme_fg_color;
+  color: @theme_alt_fg_color;
+  padding: 0 12px 12px 0;
 }
 
 .keybind-bind {
