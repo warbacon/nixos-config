@@ -10,8 +10,8 @@
     ./foot
     ./theming
     ./mpv
+    ./vicinae
     ./zen.nix
-    ./vicinae.nix
   ]
   ++ lib.optionals (osConfig.this.desktop == "hyprland" || osConfig.this.desktop == "niri") [
     ./wm
