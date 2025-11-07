@@ -11,8 +11,8 @@
 
       # Appearance
       theme = "tokyonight-night";
-      adjust-cursor-thickness = "50%";
-      adjust-cell-height = "20%";
+      adjust-cursor-thickness = "60%";
+      adjust-cell-height = "12%";
 
       # Behavior
       mouse-hide-while-typing = true;
