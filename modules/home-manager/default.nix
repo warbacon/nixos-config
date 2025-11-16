@@ -1,11 +1,16 @@
-{ hostName, inputs, ... }:
+{
+  hostName,
+  inputs,
+  system,
+  ...
+}:
 {
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
     backupFileExtension = "bak";
     extraSpecialArgs = {
-      inherit hostName inputs;
+      inherit inputs hostName system;
     };
     users.warbacon = ./home.nix;
   };

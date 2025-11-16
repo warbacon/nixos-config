@@ -47,12 +47,13 @@
       mkSystem =
         {
           hostName,
+          system ? "x86_64-linux",
           extraModules ? [ ],
         }:
         nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
+          system = system;
           specialArgs = {
-            inherit inputs hostName;
+            inherit inputs hostName system;
           };
           modules = [
             {
@@ -75,17 +76,13 @@
         }
         { hostName = "nixvm"; }
       ];
-
-      generateSystems =
-        list:
-        nixpkgs.lib.listToAttrs (
-          builtins.map (systemArgs: {
-            name = systemArgs.hostName;
-            value = mkSystem systemArgs;
-          }) list
-        );
     in
     {
-      nixosConfigurations = generateSystems systems;
+      nixosConfigurations = builtins.listToAttrs (
+        map (args: {
+          name = args.hostName;
+          value = mkSystem args;
+        }) systems
+      );
     };
 }
