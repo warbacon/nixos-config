@@ -30,6 +30,7 @@
         pkgs.gnome-characters
         pkgs.gnome-font-viewer
         pkgs.loupe
+        pkgs.papers
         pkgs.nautilus
 
         pkgs.ffmpegthumbnailer
