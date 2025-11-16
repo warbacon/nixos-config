@@ -6,6 +6,11 @@
 
   services.vicinae = {
     enable = true;
+    settings = {
+      font.family = "Monospace";
+      theme.name = "tokyonight";
+      window.opacity = 1;
+    };
   };
 
   xdg.dataFile."vicinae/themes" = {
