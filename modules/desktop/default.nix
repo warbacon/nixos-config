@@ -10,6 +10,7 @@
     ./plasma.nix
     ./cosmic.nix
     ./gaming.nix
+    ./undux.nix
     ./wm
   ];
 
