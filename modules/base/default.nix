@@ -32,25 +32,6 @@
     ];
   };
 
-  networking.hostName = hostName;
-
-  time.timeZone = "Europe/Madrid";
-
-  i18n = {
-    defaultLocale = "es_ES.UTF-8";
-    extraLocaleSettings = {
-      LC_ADDRESS = "es_ES.UTF-8";
-      LC_IDENTIFICATION = "es_ES.UTF-8";
-      LC_MEASUREMENT = "es_ES.UTF-8";
-      LC_MONETARY = "es_ES.UTF-8";
-      LC_NAME = "es_ES.UTF-8";
-      LC_NUMERIC = "es_ES.UTF-8";
-      LC_PAPER = "es_ES.UTF-8";
-      LC_TELEPHONE = "es_ES.UTF-8";
-      LC_TIME = "es_ES.UTF-8";
-    };
-  };
-
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
@@ -89,11 +70,28 @@
   # Aliases
   environment.shellAliases = lib.mkForce {
     nrb = "sudo nixos-rebuild boot";
-    # nrs = "sudo nixos-rebuild switch";
     nrt = "sudo nixos-rebuild test";
     rm = "rm -v";
     cp = "cp -iv";
     mv = "mv -iv";
+  };
+
+  # System
+  networking.hostName = hostName;
+  time.timeZone = "Europe/Madrid";
+  i18n = {
+    defaultLocale = "es_ES.UTF-8";
+    extraLocaleSettings = {
+      LC_ADDRESS = "es_ES.UTF-8";
+      LC_IDENTIFICATION = "es_ES.UTF-8";
+      LC_MEASUREMENT = "es_ES.UTF-8";
+      LC_MONETARY = "es_ES.UTF-8";
+      LC_NAME = "es_ES.UTF-8";
+      LC_NUMERIC = "es_ES.UTF-8";
+      LC_PAPER = "es_ES.UTF-8";
+      LC_TELEPHONE = "es_ES.UTF-8";
+      LC_TIME = "es_ES.UTF-8";
+    };
   };
 
   # This value determines the NixOS release from which the default
