@@ -1,7 +1,7 @@
 {
-  pkgs,
   lib,
   config,
+  pkgs,
   ...
 }:
 {
@@ -26,5 +26,16 @@
 
   config = lib.mkIf config.this.gaming.enable {
     hardware.graphics.enable32Bit = !config.this.gaming.nativeOnly;
+    programs.steam.dedicatedServer.openFirewall = true;
+    environment.systemPackages = [
+      pkgs.gamescope
+      pkgs.steam-run-free
+    ]
+    ++ lib.optionals config.this.gaming.maincra [
+      (pkgs.prismlauncher.override { jdks = [ pkgs.jdk21 ]; })
+    ]
+    ++ lib.optionals (!config.this.gaming.nativeOnly) [
+      (pkgs.bottles.override { removeWarningPopup = true; })
+    ];
   };
 }
