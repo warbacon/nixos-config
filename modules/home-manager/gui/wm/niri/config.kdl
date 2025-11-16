@@ -78,7 +78,7 @@ layout {
     }
 
     border {
-        width 2
+        width 1
         active-color "#449dab"
         inactive-color "#ffffff30"
         urgent-color "#f7768e"
@@ -137,7 +137,7 @@ window-rule {
 }
 
 window-rule {
-    // geometry-corner-radius 8
+    geometry-corner-radius 8
     clip-to-geometry true
 }
 
