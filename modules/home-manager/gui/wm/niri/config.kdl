@@ -141,6 +141,16 @@ window-rule {
     clip-to-geometry true
 }
 
+layer-rule {
+    match namespace="vicinae"
+    shadow {
+        on
+        spread 2
+        color "#0004"
+    }
+    geometry-corner-radius 10
+}
+
 debug {
     honor-xdg-activation-with-invalid-serial
 }
