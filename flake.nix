@@ -30,8 +30,8 @@
 
     vicinae.url = "github:vicinaehq/vicinae";
 
-    hyprqt6engine = {
-      url = "github:hyprwm/hyprqt6engine";
+    undux = {
+      url = "github:warbacon/undux";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
