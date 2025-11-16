@@ -14,11 +14,11 @@
     services.gvfs.enable = true;
 
     environment.systemPackages = [
-      pkgs.loupe
-      pkgs.papers
-
       pkgs.ffmpegthumbnailer
+      pkgs.file-roller
+      pkgs.loupe
       pkgs.nautilus
+      pkgs.papers
 
       pkgs.brightnessctl
       pkgs.pulsemixer
