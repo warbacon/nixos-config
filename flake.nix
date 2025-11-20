@@ -30,8 +30,9 @@
 
     vicinae.url = "github:vicinaehq/vicinae";
 
-    undux = {
-      url = "github:warbacon/undux";
+    undug = {
+      # url = "/home/warbacon/Git/undug";
+      url = "github:warbacon/undug";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

@@ -2,6 +2,8 @@
   pkgs,
   lib,
   config,
+  system,
+  inputs,
   ...
 }:
 {
@@ -10,8 +12,9 @@
     ./plasma.nix
     ./cosmic.nix
     ./gaming.nix
-    ./undux.nix
     ./wm
+
+    inputs.undug.nixosModules.${system}.default
   ];
 
   options = {
@@ -19,9 +22,9 @@
       default = null;
       type = lib.types.enum [
         null
+        "cosmic"
         "gnome"
         "plasma"
-        "cosmic"
         "hyprland"
         "niri"
       ];
@@ -80,6 +83,9 @@
 
     # Needed to open the necessary firewall ports
     programs.localsend.enable = true;
+
+    # The GOAT
+    services.undug.enable = true;
 
     # For my HP printer
     services.printing = {
