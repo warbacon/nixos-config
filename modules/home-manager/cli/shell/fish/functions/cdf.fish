@@ -1,7 +1,7 @@
 function cdf
     set preview_cmd
     if test $COLUMNS -gt 80
-        set preview_cmd "--preview=eza --tree --color=always --level 3 --icons=always {}"
+        set preview_cmd "eza --tree --color=always --level=3 --icons=always {}"
     end
 
     set dir (fd --type directory -H \
@@ -14,10 +14,18 @@ function cdf
         --exclude .docker \
         --exclude .mozilla \
         --exclude vendor \
-        | fzf --prompt=(prompt_pwd)/ --layout=reverse $preview_cmd)
+        | fzf --height=50% \
+            --prompt="Go to> " \
+            --scheme=path \
+            --layout=reverse \
+            --border \
+            --cycle \
+            --preview=$preview_cmd
+    )
 
     if test -n "$dir"
         cd "$dir"
-        commandline -f repaint
     end
+
+    commandline -f repaint
 end
