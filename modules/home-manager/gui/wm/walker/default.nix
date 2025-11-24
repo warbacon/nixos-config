@@ -9,7 +9,8 @@
     runAsService = true;
     config = {
       force_keyboard_focus = true;
-      theme = "tokyonight";
+      hide_quick_activation = true;
+      # theme = "tokyonight";
 
       placeholders = {
         default = {
@@ -19,14 +20,14 @@
       };
 
       keybinds = {
-        quick_activate = [ ];
+        previous = ["Up" "ctrl k"];
+        next = ["Down" "ctrl j"];
         "menus:commands" = [
           {
             action = "default";
             bind = "Return";
           }
         ];
-
       };
       providers = {
         default = [
@@ -34,7 +35,6 @@
           "calc"
           "menus:commands"
         ];
-        empty = [ "desktopapplications" ];
       };
     };
   };
