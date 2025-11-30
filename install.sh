@@ -8,7 +8,7 @@ fi
 HOSTNAME="$1"
 USERNAME="warbacon"
 
-sudo nixos-rebuild switch --extra-experimental-features="nix-command flakes" .#"${HOSTNAME}"
+sudo nixos-rebuild switch --flake .#"${HOSTNAME}"
 
 if [[ ! -d "/home/${USERNAME}/.config/nvim" ]]; then
     git clone https://github.com/warbacon/nvim-config "/home/${USERNAME}/.config/nvim"
