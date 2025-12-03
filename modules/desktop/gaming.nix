@@ -29,13 +29,14 @@
     programs.steam.dedicatedServer.openFirewall = true;
     environment.systemPackages = [
       pkgs.gamescope
+      pkgs.mangohud
       pkgs.steam-run-free
     ]
     ++ lib.optionals config.this.gaming.maincra [
       (pkgs.prismlauncher.override { jdks = [ pkgs.jdk21 ]; })
     ]
     ++ lib.optionals (!config.this.gaming.nativeOnly) [
-      (pkgs.bottles.override { removeWarningPopup = true; })
+      pkgs.faugus-launcher
     ];
   };
 }
