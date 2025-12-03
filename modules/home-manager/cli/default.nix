@@ -29,7 +29,7 @@
     pkgs.xdg-utils
     # Development
     pkgs.bun
-    pkgs.jdk
+    pkgs.jdk21
     pkgs.nodejs
     pkgs.python3
   ]
