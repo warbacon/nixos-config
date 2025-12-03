@@ -10,7 +10,6 @@
     ./foot
     ./theming
     ./mpv
-    ./vicinae
     ./zen.nix
   ]
   ++ lib.optionals (osConfig.this.desktop == "hyprland" || osConfig.this.desktop == "niri") [
@@ -19,8 +18,8 @@
 
   # Packages
   home.packages = [
-    pkgs.vscode-fhs
     pkgs.obs-studio
+    pkgs.vscode-fhs
   ];
 
   programs.chromium = {
@@ -69,7 +68,7 @@
           "footclient.desktop"
           "kitty.desktop"
           "ghostty.desktop"
-          "alacritty.desktop"
+          "Alacritty.desktop"
           "wezterm.desktop"
         ];
       };
