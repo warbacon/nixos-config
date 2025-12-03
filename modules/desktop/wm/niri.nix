@@ -10,6 +10,7 @@
 
     environment.systemPackages = [
       pkgs.xwayland-satellite
+      pkgs.wl-mirror
     ];
   };
 }
