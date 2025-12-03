@@ -36,7 +36,8 @@
     # Fonts
     fonts = {
       packages = [
-        pkgs.geist-font
+        pkgs.googlesans-code
+        pkgs.cascadia-code
         pkgs.inter
         pkgs.nerd-fonts.symbols-only
         pkgs.noto-fonts-cjk-sans
@@ -60,7 +61,7 @@
           '';
         defaultFonts = {
           monospace = [
-            "Geist Mono"
+            "Google Sans Code"
             "Symbols Nerd Font"
             "Noto Color Emoji"
           ];
