@@ -8,6 +8,8 @@ command_exists() {
 bind -s "set completion-ignore-case on"
 shopt -s autocd
 shopt -s cdspell
+shopt -s histappend
+export HISTCONTROL=ignoreboth:erasedups
 # ------------------------------------------------------------------------------
 
 # ALIASES ----------------------------------------------------------------------
@@ -26,6 +28,7 @@ fi
 alias cp="cp -iv"
 alias mv="mv -iv"
 alias rm="rm -v"
+alias open="xdg-open"
 # ------------------------------------------------------------------------------
 
 # PROMPT -----------------------------------------------------------------------
@@ -46,4 +49,62 @@ if command_exists starship; then
 
     [[ "$TERM" != "linux" ]] && source "$HOME/.cache/starship/init.sh"
 fi
+# ------------------------------------------------------------------------------
+
+# KEYBINDS ---------------------------------------------------------------------
+fzf-history() {
+    local cmd
+    cmd=$(
+        fc -lnr 1 2>/dev/null \
+            | sed 's/^[[:space:]]*//' \
+            | fzf --query="$READLINE_LINE" \
+                --prompt="History> " \
+                --layout=reverse \
+                --height=50% \
+                --cycle \
+                --border \
+                --no-sort
+    )
+    if [[ -n "$cmd" ]]; then
+        READLINE_LINE="$cmd"
+        READLINE_POINT=${#READLINE_LINE}
+    fi
+}
+
+bind -x '"\C-r": fzf-history'
+
+cdf() {
+    local preview_cmd
+    if [[ $COLUMNS -gt 80 ]]; then
+        preview_cmd="eza --tree --color=always --level=3 --icons=always {}"
+    fi
+
+    local dir
+    dir="$(
+        fd --type directory -H \
+            --exclude .git \
+            --exclude node_modules \
+            --exclude .cache \
+            --exclude .local/share/Trash \
+            --exclude .vscode \
+            --exclude .npm \
+            --exclude .docker \
+            --exclude .mozilla \
+            --exclude vendor \
+            | fzf --height=50% \
+                --prompt="Go to> " \
+                --scheme=path \
+                --layout=reverse \
+                --border \
+                --cycle \
+                --preview="$preview_cmd"
+    )"
+
+    if [[ -n "$dir" ]]; then
+        READLINE_LINE="cd '$dir'"
+        READLINE_POINT=${#READLINE_LINE}
+    fi
+}
+
+bind -x '"\ec": cdf'
 # ------------------------------------------------------------------------------
