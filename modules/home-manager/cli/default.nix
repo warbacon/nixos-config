@@ -10,13 +10,12 @@
     ./starship
     ./shell
     ./tmux
-
-    ./bottom.nix
     ./git.nix
     ./neovim.nix
   ];
 
   home.packages = [
+    pkgs.btop-rocm
     pkgs.chafa
     pkgs.dust
     pkgs.eza

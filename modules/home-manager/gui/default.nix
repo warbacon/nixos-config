@@ -17,9 +17,9 @@
   ];
 
   # Packages
-  home.packages = [
-    pkgs.obs-studio
-    pkgs.vscode-fhs
+  home.packages = with pkgs; [
+    obs-studio
+    vscode-fhs
   ];
 
   programs.chromium = {
