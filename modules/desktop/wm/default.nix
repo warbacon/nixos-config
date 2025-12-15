@@ -1,56 +1,25 @@
 {
-  pkgs,
   config,
+  pkgs,
   lib,
   ...
 }:
+let
+  cfg = config.desktop;
+in
 {
   imports = [
-    ./hyprland.nix
     ./niri.nix
   ];
 
-  config = lib.mkIf (config.this.desktop == "hyprland" || config.this.desktop == "niri") {
-    services.gvfs.enable = true;
-
+  config = lib.mkIf (cfg.profile == "niri" || cfg.profile == "hyprland") {
     environment.systemPackages = [
-      pkgs.ffmpegthumbnailer
-      pkgs.file-roller
-      pkgs.loupe
-      pkgs.nautilus
-      pkgs.papers
-
-      pkgs.brightnessctl
-      pkgs.pulsemixer
+      pkgs.vicinae
+      pkgs.foot
+      pkgs.waybar
     ]
     ++ lib.optionals config.hardware.bluetooth.enable [
-      pkgs.bluetui
+      pkgs.adw-bluetooth
     ];
-
-    programs.dconf = {
-      enable = true;
-      profiles.user.databases = [
-        {
-          settings = {
-            "org/gnome/desktop/wm/preferences" = {
-              button-layout = "appmenu:none";
-            };
-
-          };
-        }
-      ];
-    };
-
-    xdg = {
-      mime = {
-        enable = true;
-        defaultApplications = {
-          "image/png" = [ "org.gnome.Loupe.desktop" ];
-          "image/jpeg" = [ "org.gnome.Loupe.desktop" ];
-          "image/gif" = [ "org.gnome.Loupe.desktop" ];
-          "inode/directory" = [ "org.gnome.Nautilus.desktop" ];
-        };
-      };
-    };
   };
 }

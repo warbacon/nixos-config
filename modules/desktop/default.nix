@@ -1,79 +1,36 @@
 {
-  pkgs,
-  lib,
   config,
-  system,
+  lib,
   inputs,
+  system,
   ...
 }:
+let
+  cfg = config.desktop;
+in
 {
   imports = [
-    ./gnome.nix
-    ./plasma.nix
-    ./cosmic.nix
-    ./gaming.nix
     ./wm
-
-    inputs.undug.nixosModules.${system}.default
+    ./plasma.nix
+    ./gnome.nix
   ];
-
   options = {
-    this.desktop = lib.mkOption {
-      default = null;
-      type = lib.types.enum [
-        null
-        "cosmic"
-        "gnome"
-        "plasma"
-        "hyprland"
-        "niri"
-      ];
-      description = "The desktop environment to use.";
-    };
-  };
-
-  config = lib.mkIf (config.this.desktop != null) {
-    # Fonts
-    fonts = {
-      packages = [
-        pkgs.googlesans-code
-        pkgs.cascadia-code
-        pkgs.inter
-        pkgs.nerd-fonts.symbols-only
-        pkgs.noto-fonts-cjk-sans
-        pkgs.noto-fonts-color-emoji
-      ];
-
-      fontconfig = {
-        enable = true;
-        localConf = # xml
-          ''
-            <?xml version="1.0"?>
-            <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
-            <fontconfig>
-              <alias>
-                <family>Consolas</family>
-                <prefer>
-                  <family>monospace</family>
-                </prefer>
-              </alias>
-            </fontconfig>
-          '';
-        defaultFonts = {
-          monospace = [
-            "Google Sans Code"
-            "Symbols Nerd Font"
-            "Noto Color Emoji"
-          ];
-          sansSerif = [ "Inter" ];
-        };
+    desktop = {
+      enable = lib.mkEnableOption "Enable desktop module";
+      profile = lib.mkOption {
+        type = lib.types.enum [
+          "plasma"
+          "gnome"
+          "niri"
+        ];
+        default = "plasma";
       };
     };
+  };
+  config = lib.mkIf cfg.enable {
+    services.xserver.xkb.layout = "es";
 
-    # Enable Wayland in Chromium/Electron
-    environment.sessionVariables.NIXOS_OZONE_WL = "1";
-
-    # Audio
+    services.pulseaudio.enable = false;
     security.rtkit.enable = true;
     services.pipewire = {
       enable = true;
@@ -82,18 +39,10 @@
       pulse.enable = true;
     };
 
-    # Needed to open the necessary firewall ports
-    programs.localsend.enable = true;
+    xdg.terminal-exec.enable = true;
 
-    # The GOAT
-    services.undug.enable = true;
-
-    # For my HP printer
-    services.printing = {
-      drivers = [ pkgs.hplipWithPlugin ];
-    };
-
-    # X11 layout (also used in Wayland)
-    services.xserver.xkb.layout = "es";
+    environment.systemPackages = [
+      inputs.zen-browser.packages."${system}".default
+    ];
   };
 }

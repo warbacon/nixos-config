@@ -1,68 +1,27 @@
 {
-  pkgs,
-  lib,
   config,
+  lib,
+  pkgs,
   ...
 }:
+let
+  cfg = config.desktop;
+in
 {
-  config = lib.mkIf (config.this.desktop == "gnome") {
-    services = {
-      desktopManager.gnome.enable = true;
-      displayManager.gdm.enable = true;
+  config = lib.mkIf (cfg.profile == "gnome") {
+    services.displayManager.gdm.enable = lib.mkIf (cfg.profile == "gnome") true;
+    services.desktopManager.gnome.enable = lib.mkIf (cfg.profile == "gnome") true;
 
-      gnome.core-apps.enable = false;
+    services.gnome.core-apps.enable = false;
+    environment.gnome.excludePackages = with pkgs; [
+      gnome-tour
+      gnome-user-docs
+    ];
 
-      dleyna.enable = lib.mkForce false;
-      gnome.at-spi2-core.enable = lib.mkForce false;
-      gnome.evolution-data-server.enable = lib.mkForce false;
-      gnome.gnome-initial-setup.enable = lib.mkForce false;
-      gnome.rygel.enable = lib.mkForce false;
-      hardware.bolt.enable = lib.mkForce false;
-    };
-
-    environment = {
-      systemPackages = [
-        pkgs.gnomeExtensions.appindicator
-        pkgs.gnomeExtensions.caffeine
-        pkgs.gnomeExtensions.pano
-
-        pkgs.file-roller
-        pkgs.gnome-characters
-        pkgs.gnome-font-viewer
-        pkgs.loupe
-        pkgs.papers
-        pkgs.nautilus
-
-        pkgs.ffmpegthumbnailer
-      ];
-
-      gnome.excludePackages = [
-        pkgs.gnome-tour
-        pkgs.orca
-      ];
-    };
-
-    xdg.mime = {
-      enable = true;
-      defaultApplications = {
-        "image/png" = [ "org.gnome.Loupe.desktop" ];
-        "image/jpeg" = [ "org.gnome.Loupe.desktop" ];
-        "image/gif" = [ "org.gnome.Loupe.desktop" ];
-        "inode/directory" = [ "org.gnome.Nautilus.desktop" ];
-      };
-    };
-
-    programs.dconf = {
-      enable = true;
-      profiles.user.databases = [
-        {
-          settings = {
-            "org/gnome/desktop/wm/preferences" = {
-              resize-with-right-button = true;
-            };
-          };
-        }
-      ];
-    };
+    environment.systemPackages = [
+      pkgs.nautilus
+      pkgs.loupe
+      pkgs.ghostty
+    ];
   };
 }

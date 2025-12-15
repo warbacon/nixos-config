@@ -1,19 +1,16 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ./../../modules/base
-    ./../../modules/system.nix
-    ./../../modules/desktop
+    ../../modules/desktop
+    ../../nixos/common
+    ../../nixos/system.nix
   ];
 
-  hardware.bluetooth.enable = true;
-  services.printing.enable = true;
+  # boot.loader.grub.enable = true;
+  # boot.loader.grub.device = "/dev/sda";
 
-  services.tlp.enable = true;
-
-  this.desktop = "niri";
-  this.gaming = {
+  desktop = {
     enable = true;
-    nativeOnly = false;
+    profile = "niri";
   };
 }

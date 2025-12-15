@@ -1,7 +1,6 @@
 {
   imports = [
-    ./../../modules/base
-    ./../../modules/desktop
+    ../../nixos/common
   ];
 
   wsl = {

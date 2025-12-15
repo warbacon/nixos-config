@@ -4,43 +4,23 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
 
-    home-manager = {
-      url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     nixos-wsl = {
       url = "github:nix-community/NixOS-WSL/main";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
+
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    neovim-nightly.url = "github:nix-community/neovim-nightly-overlay";
-
-    elephant.url = "github:abenz1267/elephant";
-
-    walker = {
-      url = "github:abenz1267/walker";
-      inputs.elephant.follows = "elephant";
-    };
-
-    vicinae.url = "github:vicinaehq/vicinae";
-
-    undug = {
-      # url = "/home/warbacon/Git/undug";
-      url = "github:warbacon/undug";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
   outputs =
     {
+      self,
       nixpkgs,
-      home-manager,
       nixos-wsl,
       ...
     }@inputs:
@@ -61,8 +41,6 @@
               networking.hostName = hostName;
             }
             ./hosts/${hostName}
-            ./modules/home-manager
-            home-manager.nixosModules.home-manager
           ]
           ++ extraModules;
         };

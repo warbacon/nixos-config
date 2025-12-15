@@ -1,16 +1,9 @@
+{ config, lib, ... }:
+let
+  cfg = config.desktop;
+in
 {
-  lib,
-  config,
-  pkgs,
-  ...
-}:
-{
-  config = lib.mkIf (config.this.desktop == "niri") {
+  config = lib.mkIf (cfg.profile == "niri") {
     programs.niri.enable = true;
-
-    environment.systemPackages = [
-      pkgs.xwayland-satellite
-      pkgs.wl-mirror
-    ];
   };
 }

@@ -1,21 +1,15 @@
 {
-  pkgs,
-  lib,
   config,
+  lib,
+  pkgs,
   ...
 }:
+let
+  cfg = config.desktop;
+in
 {
-  config = lib.mkIf (config.this.desktop == "plasma") {
-    services = {
-      desktopManager.plasma6.enable = true;
-      displayManager.sddm = {
-        enable = true;
-        wayland.enable = true;
-      };
-    };
-
-    environment.plasma6.excludePackages = [
-      pkgs.kdePackages.elisa
-    ];
+  config = lib.mkIf (cfg.profile == "plasma") {
+    services.displayManager.sddm.enable = lib.mkIf (cfg.profile == "plasma") true;
+    services.desktopManager.plasma6.enable = lib.mkIf (cfg.profile == "plasma") true;
   };
 }
