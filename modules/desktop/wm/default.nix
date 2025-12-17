@@ -14,9 +14,8 @@ in
 
   config = lib.mkIf (cfg.profile == "niri" || cfg.profile == "hyprland") {
     environment.systemPackages = [
-      pkgs.vicinae
+      pkgs.fuzzel
       pkgs.foot
-      pkgs.waybar
     ]
     ++ lib.optionals config.hardware.bluetooth.enable [
       pkgs.adw-bluetooth

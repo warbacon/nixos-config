@@ -1,5 +1,6 @@
 {
   imports = [
+    ../../modules/desktop
     ../../nixos/common
   ];
 

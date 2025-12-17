@@ -43,6 +43,13 @@
     ];
   };
 
+  home-manager = {
+    useGlobalPkgs = true;
+    useUserPackages = true;
+    backupFileExtension = "bak";
+    users.warbacon = ../../home-manager/home.nix;
+  };
+
   virtualisation.docker = {
     enable = lib.mkDefault true;
     enableOnBoot = true;

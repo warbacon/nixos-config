@@ -9,8 +9,8 @@ let
 in
 {
   config = lib.mkIf (cfg.profile == "gnome") {
-    services.displayManager.gdm.enable = lib.mkIf (cfg.profile == "gnome") true;
-    services.desktopManager.gnome.enable = lib.mkIf (cfg.profile == "gnome") true;
+    services.displayManager.gdm.enable = true;
+    services.desktopManager.gnome.enable = true;
 
     services.gnome.core-apps.enable = false;
     environment.gnome.excludePackages = with pkgs; [

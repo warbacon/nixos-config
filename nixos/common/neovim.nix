@@ -10,16 +10,24 @@
       "ftplugin/nix.vim".text = "setlocal shiftwidth=2";
     };
     configure = {
-      customRC = # vim
+      customLuaRC = # lua
         ''
-          	  set number
-          	  set relativenumber
+          vim.o.number = true
+          vim.o.relativenumber = true
+          vim.o.softtabstop = -1
+          vim.o.shiftwidth = 4
+          vim.o.expandtab = true
+          vim.o.undofile = true
 
-          	  set softtabstop=-1
-          	  set shiftwidth=4
-          	  set expandtab
-                    set undofile
-          	'';
+          vim.g.mapleader = ' '
+          vim.keymap.set("n", "<Leader>f", ":find **/", { noremap = true })
+
+          vim.pack.add({
+            { src = "https://github.com/rose-pine/neovim", name = "rose-pine" }
+          })
+
+          vim.cmd.colorscheme("rose-pine")
+        '';
     };
   };
 }

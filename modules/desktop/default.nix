@@ -19,11 +19,12 @@ in
       enable = lib.mkEnableOption "Enable desktop module";
       profile = lib.mkOption {
         type = lib.types.enum [
+          null
           "plasma"
           "gnome"
           "niri"
         ];
-        default = "plasma";
+        default = null;
       };
     };
   };
