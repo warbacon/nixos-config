@@ -3,7 +3,6 @@
   programs.bash = {
     enable = true;
     sessionVariables = {
-      MANPAGER = "nvim +Man!";
       FZF_DEFAULT_OPTS = ''
         --ansi \
         --highlight-line \

@@ -11,13 +11,22 @@
     withPython3 = false;
     withRuby = false;
 
-    extraPackages = [
-      pkgs.tree-sitter
+    extraPackages = with pkgs; [
+      tree-sitter
 
-      pkgs.lua-language-server
-      pkgs.nixd
-      pkgs.nixfmt
-      pkgs.stylua
+      clang-tools
+      lua-language-server
+      nixd
+      nixfmt
+      ruff
+      stylua
+      svelte-language-server
+      tailwindcss-language-server
+      vtsls
     ];
+  };
+
+  programs.bash.sessionVariables = {
+    MANPAGER = "nvim +Man!";
   };
 }
