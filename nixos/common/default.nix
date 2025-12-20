@@ -1,7 +1,8 @@
 {
-  config,
   pkgs,
   lib,
+  system,
+  inputs,
   ...
 }:
 
@@ -47,12 +48,15 @@
     useGlobalPkgs = true;
     useUserPackages = true;
     backupFileExtension = "bak";
+    extraSpecialArgs = {
+      inherit system inputs;
+    };
     users.warbacon = ../../home-manager/home.nix;
   };
 
   virtualisation.docker = {
     enable = lib.mkDefault true;
-    enableOnBoot = true;
+    enableOnBoot = false;
   };
 
   programs.fish = {
@@ -62,15 +66,32 @@
   documentation.man.generateCaches = false;
 
   environment.systemPackages = with pkgs; [
+    btop-rocm
+    chafa
     dust
+    eza
     fastfetch
     fd
+    fzf
     gcc
     gh
     git
+    hyperfine
+    killall
     lazygit
+    libqalculate
     ripgrep
+    tlrc
+    tmux
+    trash-cli
+    unrar
     unzip
+    wget
+    xdg-utils
+    # Development
+    bun
+    jdk21
+    nodejs
   ];
 
   system.stateVersion = "25.11";

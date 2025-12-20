@@ -1,6 +1,7 @@
 {
   config,
   lib,
+  pkgs,
   inputs,
   system,
   ...
@@ -44,6 +45,35 @@ in
 
     environment.systemPackages = [
       inputs.zen-browser.packages."${system}".default
+      pkgs.vscode-fhs
+    ]
+    ++ lib.optionals config.hardware.bluetooth.enable [
+      pkgs.ear2ctl
     ];
+
+    environment.sessionVariables.NIXOS_OZONE_WL = "1";
+
+    fonts = {
+      packages = [
+        pkgs.adwaita-fonts
+        pkgs.googlesans-code
+        pkgs.liberation_ttf
+        pkgs.nerd-fonts.symbols-only
+        pkgs.noto-fonts-color-emoji
+      ];
+
+      fontconfig = {
+        enable = true;
+        defaultFonts = {
+          sansSerif = [ "Adwaita Sans" ];
+          serif = [ "Liberation Serif" ];
+          monospace = [
+            "Google Sans Code"
+            "Symbols Nerd Font"
+            "Noto Color Emoji"
+          ];
+        };
+      };
+    };
   };
 }

@@ -6,8 +6,11 @@
     ../../nixos/system.nix
   ];
 
-  boot.loader.grub.enable = true;
-  boot.loader.grub.device = "/dev/sda";
+  boot.loader = {
+    systemd-boot.enable = false;
+    grub.enable = true;
+    grub.device = "/dev/sda";
+  };
 
   desktop = {
     enable = true;

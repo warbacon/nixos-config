@@ -6,8 +6,8 @@
     ../../nixos/system.nix
   ];
 
-  # boot.loader.grub.enable = true;
-  # boot.loader.grub.device = "/dev/sda";
+  services.tlp.enable = true;
+  hardware.bluetooth.enable = true;
 
   desktop = {
     enable = true;
