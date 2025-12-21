@@ -14,15 +14,22 @@
     extraPackages = with pkgs; [
       tree-sitter
 
+      bash-language-server
       clang-tools
+      emmet-language-server
+      jdt-language-server
       lua-language-server
       nixd
       nixfmt
-      ruff
+      shellcheck
+      shfmt
       stylua
       svelte-language-server
       tailwindcss-language-server
+      taplo
+      vscode-langservers-extracted
       vtsls
+      yaml-language-server
     ];
   };
 
