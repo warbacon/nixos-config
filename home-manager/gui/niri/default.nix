@@ -1,6 +1,9 @@
 { osConfig, pkgs, ... }:
 {
-  imports = [ ./swww.nix ];
+  imports = [
+    ./swww.nix
+    ./sunsetr.nix
+  ];
 
   xdg.configFile."niri/config.kdl".source = ./config.kdl;
 
