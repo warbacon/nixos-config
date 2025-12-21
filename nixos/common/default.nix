@@ -74,11 +74,9 @@
     fd
     fzf
     gcc
-    gh
     git
     hyperfine
     killall
-    lazygit
     libqalculate
     ripgrep
     tlrc

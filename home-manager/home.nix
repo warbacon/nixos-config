@@ -4,7 +4,7 @@
     ./starship
     ./fish
     ./bash
-    ./git.nix
+    ./git
     ./neovim.nix
   ]
   ++ lib.optionals osConfig.desktop.enable [

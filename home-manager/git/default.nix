@@ -15,4 +15,7 @@
     enable = true;
     extensions = [ pkgs.gh-markdown-preview ];
   };
+
+  home.packages = [ pkgs.lazygit ];
+  xdg.configFile."lazygit/config.yml".source = ./config.yml;
 }
