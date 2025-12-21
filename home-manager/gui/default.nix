@@ -7,15 +7,11 @@
 {
   imports = [
     ./foot
+    ./vicinae
   ]
   ++ lib.optionals (osConfig.desktop.profile == "niri") [
     ./niri
   ];
-
-  programs.vicinae = {
-    enable = true;
-    systemd.enable = true;
-  };
 
   xdg.userDirs = {
     enable = true;
