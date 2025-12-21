@@ -45,6 +45,7 @@ in
 
     environment.systemPackages = [
       inputs.zen-browser.packages."${system}".default
+      pkgs.mpv
       pkgs.vscode-fhs
     ]
     ++ lib.optionals config.hardware.bluetooth.enable [

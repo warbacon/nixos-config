@@ -8,6 +8,7 @@
   imports = [
     ./foot
     ./vicinae
+    ./mpv.nix
   ]
   ++ lib.optionals (osConfig.desktop.profile == "niri") [
     ./niri
