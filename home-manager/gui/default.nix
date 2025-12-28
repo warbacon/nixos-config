@@ -1,6 +1,7 @@
 {
   config,
   lib,
+  pkgs,
   osConfig,
   ...
 }:
@@ -13,6 +14,15 @@
   ++ lib.optionals (osConfig.desktop.profile == "niri") [
     ./niri
   ];
+
+  programs.chromium = {
+    enable = true;
+    package = pkgs.google-chrome;
+    commandLineArgs = [
+      "--enable-features=TouchpadOverscrollHistoryNavigation"
+      "-no-default-browser-check"
+    ];
+  };
 
   xdg.userDirs = {
     enable = true;
