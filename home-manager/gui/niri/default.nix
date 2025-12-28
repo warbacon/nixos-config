@@ -9,11 +9,6 @@
 
   xdg.configFile."niri/config.kdl".source = ./config.kdl;
 
-  programs.waybar = {
-    enable = true;
-    systemd.enable = true;
-  };
-
   programs.bash.profileExtra = # bash
     ''
       if uwsm check may-start; then
