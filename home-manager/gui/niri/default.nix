@@ -3,6 +3,7 @@
   imports = [
     ./swww.nix
     ./sunsetr.nix
+    ./mako
   ];
 
   xdg.configFile."niri/config.kdl".source = ./config.kdl;
