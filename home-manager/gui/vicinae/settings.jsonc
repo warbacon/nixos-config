@@ -66,7 +66,7 @@
         "client_side_decorations": {
             "enabled": true,
             "rounding": 10,
-            "border_width": 1
+            "border_width": 2
         },
         // The vicinae UI is designed to work best at the default size. If you change this it is highly recommended
         // that you preserve a similar aspect ratio.
