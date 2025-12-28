@@ -43,4 +43,11 @@
     };
     gtk2.enable = false;
   };
+
+  dconf.settings = {
+    "org/gnome/desktop/interface" = {
+      accent-color = "teal";
+      color-scheme = "prefer-dark";
+    };
+  };
 }
