@@ -21,6 +21,7 @@
       lua-language-server
       nixd
       nixfmt
+      oxlint
       shellcheck
       shfmt
       stylua
