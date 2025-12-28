@@ -4,6 +4,7 @@
     ./swww.nix
     ./sunsetr.nix
     ./mako
+    ./waybar
   ];
 
   xdg.configFile."niri/config.kdl".source = ./config.kdl;
