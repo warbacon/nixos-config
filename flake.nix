@@ -22,6 +22,11 @@
     };
 
     vicinae.url = "github:vicinaehq/vicinae";
+
+    quickshell = {
+      url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
