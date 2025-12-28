@@ -15,8 +15,8 @@
 
   programs.bash.profileExtra = # bash
     ''
-      if [ -z "$WAYLAND_DISPLAY" ] && [ -n "$XDG_VTNR" ] && [ "$XDG_VTNR" -eq 1 ] ; then
-        exec niri-session -l
+      if uwsm check may-start; then
+        exec uwsm start niri-uwsm.desktop
       fi
     '';
 
