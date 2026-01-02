@@ -88,6 +88,15 @@
     unzip
     wget
     xdg-utils
+    (writeShellScriptBin "nrs" ''
+      OLD="$(sudo nix-env -p /nix/var/nix/profiles/system --list-generations | tail -1 | awk '{print $1}')"
+      sudo nixos-rebuild switch
+      CURRENT="$(sudo nix-env -p /nix/var/nix/profiles/system --list-generations | tail -1 | awk '{print $1}')"
+
+      if (( $OLD != $CURRENT )); then
+        ${pkgs.dix}/bin/dix "/nix/var/nix/profiles/system-$OLD-link" "/nix/var/nix/profiles/system-$CURRENT-link"
+      fi
+    '')
     # Development
     bun
     jdk21
