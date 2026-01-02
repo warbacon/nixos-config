@@ -28,8 +28,8 @@
       svelte-language-server
       tailwindcss-language-server
       taplo
+      typescript-go
       vscode-langservers-extracted
-      vtsls
       yaml-language-server
     ];
   };
