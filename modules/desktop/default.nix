@@ -57,8 +57,8 @@ in
 
     fonts = {
       packages = [
+        pkgs.cascadia-code
         pkgs.adwaita-fonts
-        pkgs.googlesans-code
         pkgs.liberation_ttf
         pkgs.nerd-fonts.symbols-only
         pkgs.noto-fonts-color-emoji
@@ -70,7 +70,7 @@ in
           sansSerif = [ "Adwaita Sans" ];
           serif = [ "Liberation Serif" ];
           monospace = [
-            "Google Sans Code"
+            "Cascadia Code"
             "Symbols Nerd Font"
             "Noto Color Emoji"
           ];
