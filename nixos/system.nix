@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ pkgs, lib, ... }:
 {
   networking.networkmanager.enable = true;
   console.keyMap = "es";
@@ -12,4 +12,13 @@
     };
     efi.canTouchEfiVariables = true;
   };
+
+  services.printing = {
+    webInterface = lib.mkDefault false;
+    drivers = [ pkgs.hplipWithPlugin ];
+  };
+
+  environment.systemPackages = [
+    pkgs.ntfs3g
+  ];
 }
