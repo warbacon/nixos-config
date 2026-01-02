@@ -19,7 +19,9 @@ in
       pkgs.brightnessctl
       pkgs.foot
       pkgs.fuzzel
+      pkgs.loupe
       pkgs.nautilus
+      pkgs.papers
       pkgs.pulsemixer
     ]
     ++ lib.optionals config.hardware.bluetooth.enable [

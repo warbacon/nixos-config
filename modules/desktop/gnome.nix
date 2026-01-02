@@ -19,9 +19,10 @@ in
     ];
 
     environment.systemPackages = [
-      pkgs.nautilus
-      pkgs.loupe
       pkgs.ghostty
+      pkgs.loupe
+      pkgs.nautilus
+      pkgs.papers
     ];
   };
 }
