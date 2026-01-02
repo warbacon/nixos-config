@@ -1,7 +1,11 @@
-{ inputs, ... }:
+{ pkgs, inputs, ... }:
 {
   imports = [
     inputs.vicinae.homeManagerModules.default
+  ];
+
+  home.packages = [
+    pkgs.app2unit
   ];
 
   services.vicinae = {
