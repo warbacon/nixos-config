@@ -80,7 +80,7 @@ layout {
     }
 
     border {
-        width 1
+        width 2
         active-color "#449dab"
         inactive-color "#ffffff30"
         urgent-color "#f7768e"
@@ -138,10 +138,10 @@ window-rule {
     open-floating true
 }
 
-window-rule {
-    geometry-corner-radius 8
-    clip-to-geometry true
-}
+// window-rule {
+//     geometry-corner-radius 8
+//     clip-to-geometry true
+// }
 
 layer-rule {
     match namespace="rofi"
@@ -151,15 +151,6 @@ layer-rule {
         color "#0004"
     }
     geometry-corner-radius 12
-}
-layer-rule {
-    match namespace="vicinae"
-    shadow {
-        on
-        spread 2
-        color "#0004"
-    }
-    geometry-corner-radius 10
 }
 
 debug {
