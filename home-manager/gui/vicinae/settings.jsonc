@@ -18,7 +18,7 @@
             "icon_theme": "auto"
         },
         "dark": {
-            "name": "vicinae-dark",
+            "name": "gruvbox-dark",
             "icon_theme": "auto"
         }
     },
