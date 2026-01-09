@@ -19,6 +19,7 @@
   };
 
   environment.systemPackages = [
+    pkgs.android-tools
     pkgs.ntfs3g
   ];
 }
