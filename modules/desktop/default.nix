@@ -16,6 +16,7 @@ in
     ./gnome.nix
     inputs.undug.nixosModules.${system}.default
   ];
+
   options = {
     desktop = {
       enable = lib.mkEnableOption "Enable desktop module";
@@ -26,7 +27,7 @@ in
           "gnome"
           "niri"
         ];
-        default = null;
+        default = "niri";
       };
     };
   };
