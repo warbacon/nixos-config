@@ -7,6 +7,8 @@ in
     services.displayManager.sddm.enable = true;
     services.desktopManager.plasma6.enable = true;
 
+    programs.nautilus-open-any-terminal.enable = false;
+
     xdg.mime.defaultApplications = {
       "image/png" = [ "org.kde.gwenview.desktop" ];
       "image/jpeg" = [ "org.kde.gwenview.desktop" ];

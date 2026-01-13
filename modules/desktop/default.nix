@@ -54,6 +54,10 @@ in
     ++ lib.optionals config.hardware.bluetooth.enable [
       pkgs.ear2ctl
     ];
+    programs.nautilus-open-any-terminal = {
+      enable = true;
+      terminal = "footclient";
+    };
 
     environment.sessionVariables.NIXOS_OZONE_WL = "1";
     xdg = {
