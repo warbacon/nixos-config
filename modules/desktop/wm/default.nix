@@ -25,7 +25,7 @@ in
       pkgs.pulsemixer
     ]
     ++ lib.optionals config.hardware.bluetooth.enable [
-      pkgs.adw-bluetooth
+      pkgs.bluetui
     ];
   };
 }
