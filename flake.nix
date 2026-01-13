@@ -23,11 +23,6 @@
 
     vicinae.url = "github:vicinaehq/vicinae";
 
-    quickshell = {
-      url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     undug = {
       # url = "/home/warbacon/Git/undug";
       url = "github:warbacon/undug";

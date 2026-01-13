@@ -1,12 +1,7 @@
-{
-  inputs,
-  system,
-  pkgs,
-  ...
-}:
+{ pkgs, ... }:
 {
   home.packages = [
-    inputs.quickshell.packages."${system}".default
+    pkgs.quickshell
   ];
 
   programs.neovim.extraPackages = [
