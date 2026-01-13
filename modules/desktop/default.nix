@@ -41,7 +41,6 @@ in
       pulse.enable = true;
     };
 
-    xdg.terminal-exec.enable = true;
 
     environment.systemPackages = [
       inputs.zen-browser.packages."${system}".default
@@ -54,6 +53,19 @@ in
     ];
 
     environment.sessionVariables.NIXOS_OZONE_WL = "1";
+    xdg = {
+      terminal-exec = true;
+      mime = {
+        enable = true;
+        defaultApplications = {
+          "application/pdf" = [ "zen-beta.desktop" ];
+          "text/html" = [ "zen-beta.desktop" ];
+          "x-scheme-handler/http" = [ "zen-beta.desktop" ];
+          "x-scheme-handler/https" = [ "zen-beta.desktop" ];
+          "x-scheme-handler/mailto" = [ "zen-beta.desktop" ];
+        };
+      };
+    };
 
     fonts = {
       packages = [

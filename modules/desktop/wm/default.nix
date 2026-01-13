@@ -27,5 +27,12 @@ in
     ++ lib.optionals config.hardware.bluetooth.enable [
       pkgs.bluetui
     ];
+
+    xdg.mime.defaultApplications = {
+      "image/png" = [ "org.gnome.Loupe.desktop" ];
+      "image/jpeg" = [ "org.gnome.Loupe.desktop" ];
+      "image/gif" = [ "org.gnome.Loupe.desktop" ];
+      "inode/directory" = [ "org.gnome.Nautilus.desktop" ];
+    };
   };
 }
