@@ -34,5 +34,14 @@ in
       "image/gif" = [ "org.gnome.Loupe.desktop" ];
       "inode/directory" = [ "org.gnome.Nautilus.desktop" ];
     };
+
+    programs.dconf = {
+      enable = true;
+      profiles.user.databases = [
+        {
+          settings."org/gnome/desktop/wm/preferences".button-layout = "appmenu:none";
+        }
+      ];
+    };
   };
 }
