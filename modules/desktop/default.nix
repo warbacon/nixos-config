@@ -45,21 +45,23 @@ in
 
     services.undug.enable = true;
 
-    environment.systemPackages = [
-      inputs.zen-browser.packages."${system}".default
-      pkgs.mpv
-      pkgs.steam-run-free
-      pkgs.vscode-fhs
-    ]
-    ++ lib.optionals config.hardware.bluetooth.enable [
-      pkgs.ear2ctl
-    ];
     programs.nautilus-open-any-terminal = {
       enable = true;
       terminal = "footclient";
     };
 
-    environment.sessionVariables.NIXOS_OZONE_WL = "1";
+    programs.localsend.enable = true;
+    environment = {
+      sessionVariables.NIXOS_OZONE_WL = "1";
+      systemPackages = [
+        inputs.zen-browser.packages."${system}".default
+        pkgs.mpv
+      ]
+      ++ lib.optionals config.hardware.bluetooth.enable [
+        pkgs.ear2ctl
+      ];
+    };
+
     xdg = {
       terminal-exec = true;
       mime = {
@@ -77,6 +79,7 @@ in
     fonts = {
       packages = [
         pkgs.cascadia-code
+        pkgs.googlesans-code
         pkgs.adwaita-fonts
         pkgs.liberation_ttf
         pkgs.nerd-fonts.symbols-only
@@ -89,7 +92,7 @@ in
           sansSerif = [ "Adwaita Sans" ];
           serif = [ "Liberation Serif" ];
           monospace = [
-            "Cascadia Code"
+            "Google Sans Code"
             "Symbols Nerd Font"
             "Noto Color Emoji"
           ];
