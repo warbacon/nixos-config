@@ -63,7 +63,7 @@ in
     };
 
     xdg = {
-      terminal-exec = true;
+      terminal-exec.enable = true;
       mime = {
         enable = true;
         defaultApplications = {
