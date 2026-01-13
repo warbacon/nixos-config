@@ -13,10 +13,7 @@
     efi.canTouchEfiVariables = true;
   };
 
-  services.printing = {
-    webInterface = lib.mkDefault false;
-    drivers = [ pkgs.hplipWithPlugin ];
-  };
+  services.printing.drivers = [ pkgs.hplipWithPlugin ];
 
   environment.systemPackages = [
     pkgs.android-tools
