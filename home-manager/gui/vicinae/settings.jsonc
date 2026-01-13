@@ -1,70 +1,15 @@
 {
-    "imports": [],
-    "close_on_focus_loss": false,
-    "consider_preedit": false,
-    "pop_to_root_on_close": false,
-    "favicon_service": "twenty",
-    "keybinding": "default",
-    "search_files_in_root": false,
     "font": {
         "normal": {
             "family": "monospace",
-            "size": 10.5
+            "size": 11
         }
     },
     "theme": {
-        "light": {
-            "name": "vicinae-light",
-            "icon_theme": "auto"
-        },
         "dark": {
-            "name": "gruvbox-dark",
-            "icon_theme": "auto"
+            "name": "rose-pine"
         }
     },
-    "launcher_window": {
-        "opacity": 0.98,
-        "client_side_decorations": {
-            "enabled": true,
-            "rounding": 10,
-            "border_width": 2
-        },
-        "size": {
-            "width": 770,
-            "height": 480
-        },
-        "compact_mode": {
-            "enabled": false
-        },
-        "layer_shell": {
-            "layer": "top",
-            "keyboard_interactivity": "exclusive",
-            "enabled": true
-        }
-    },
-    "keybinds": {
-        "action.copy": "control+shift+C",
-        "action.copy-name": "control+shift+.",
-        "action.copy-path": "control+shift+,",
-        "action.dangerous-remove": "control+shift+X",
-        "action.duplicate": "control+D",
-        "action.edit": "control+E",
-        "action.edit-secondary": "control+shift+E",
-        "action.move-down": "control+shift+ARROWDOWN",
-        "action.move-up": "control+shift+ARROWUP",
-        "action.new": "control+N",
-        "action.open": "control+O",
-        "action.pin": "control+shift+P",
-        "action.refresh": "control+R",
-        "action.remove": "control+X",
-        "action.save": "control+S",
-        "open-search-filter": "control+P",
-        "open-settings": "control+,",
-        "toggle-action-panel": "control+B"
-    },
-    "favorites": [
-        "applications:zen-beta"
-    ],
     "fallbacks": [],
     "providers": {
         "applications": {
@@ -76,13 +21,13 @@
                 "btop": {
                     "enabled": false
                 },
-                "cups": {
-                    "enabled": false
-                },
                 "footclient": {
                     "enabled": false
                 },
                 "nvim": {
+                    "enabled": false
+                },
+                "cups": {
                     "enabled": false
                 },
                 "vicinae": {
@@ -124,38 +69,13 @@
         "manage-shortcuts": {
             "enabled": false
         },
-        "power": {
-            "entrypoints": {
-                "hibernate": {
-                    "enabled": false
-                },
-                "lock": {
-                    "enabled": false
-                },
-                "logout": {
-                    "alias": "cerrar sesión"
-                },
-                "power-off": {
-                    "alias": "apagar"
-                },
-                "sleep": {
-                    "enabled": false
-                },
-                "soft-reboot": {
-                    "alias": "reiniciar"
-                },
-                "suspend": {
-                    "alias": "suspender"
-                }
-            }
-        },
         "raycast-compat": {
             "enabled": false
         },
         "system": {
             "entrypoints": {
                 "run": {
-                    "alias": ">"
+                    "enabled": false
                 }
             }
         },
