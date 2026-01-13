@@ -14,6 +14,7 @@ in
     ./wm
     ./plasma.nix
     ./gnome.nix
+    inputs.undug.nixosModules.${system}.default
   ];
   options = {
     desktop = {
@@ -41,6 +42,7 @@ in
       pulse.enable = true;
     };
 
+    services.undug.enable = true;
 
     environment.systemPackages = [
       inputs.zen-browser.packages."${system}".default
