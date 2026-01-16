@@ -17,11 +17,9 @@
       bash-language-server
       clang-tools
       emmet-language-server
-      jdt-language-server
       lua-language-server
       nixd
       nixfmt
-      oxlint
       shellcheck
       shfmt
       stylua
