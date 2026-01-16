@@ -83,7 +83,7 @@ layout {
 
     border {
         width 2
-        active-color "#449dab"
+        active-color "#419bbe"
         inactive-color "#ffffff30"
         urgent-color "#f7768e"
     }
@@ -95,16 +95,16 @@ layout {
         // properties.
 
         // Softness controls the shadow blur radius.
-        softness 30
+        softness 25
 
         // Spread expands the shadow.
-        spread 4
+        spread 5
 
         // Offset moves the shadow relative to the window.
-        offset x=0 y=2
+        offset x=0 y=5
 
         // You can also change the shadow color and opacity.
-        color "#0007"
+        color "#00000059"
     }
 }
 
@@ -140,19 +140,9 @@ window-rule {
     open-floating true
 }
 
-// window-rule {
-//     geometry-corner-radius 8
-//     clip-to-geometry true
-// }
-
-layer-rule {
-    match namespace="rofi"
-    shadow {
-        on
-        spread 2
-        color "#0004"
-    }
-    geometry-corner-radius 12
+window-rule {
+    geometry-corner-radius 8
+    clip-to-geometry true
 }
 
 debug {
@@ -170,7 +160,7 @@ binds {
     // Most actions that you can bind here can also be invoked programmatically with
     // `niri msg action do-something`.
     Mod+Q hotkey-overlay-title="Open a Terminal" { spawn "footclient"; }
-    Mod+D hotkey-overlay-title="Show the launcher: vicinae" repeat=false { spawn "vicinae" "toggle"; }
+    Mod+D hotkey-overlay-title="Show the launcher: rofi" repeat=false { spawn "rofi" "-show" "drun"; }
     Mod+Period hotkey-overlay-title="Show emoji picker" { spawn "vicinae" "vicinae://extensions/vicinae/core/search-emojis"; }
     Mod+P hotkey-overlay-title="Show emoji picker" { spawn "vicinae" "vicinae://extensions/vicinae/clipboard/history"; }
     Mod+E hotkey-overlay-title="Open the file explorer: nautilus" { spawn "nautilus"; }
