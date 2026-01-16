@@ -1,3 +1,5 @@
+spawn-at-startup "qs"
+
 input {
     keyboard {
         xkb {

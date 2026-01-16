@@ -1,10 +1,10 @@
 { osConfig, pkgs, ... }:
 {
   imports = [
-    ./swww.nix
     ./sunsetr.nix
     ./mako
     ./waybar
+    ./quickshell.nix
   ];
 
   xdg.configFile."niri/config.kdl".source = ./config.kdl;
@@ -28,6 +28,7 @@
 
   home.packages = [
     pkgs.adwaita-icon-theme
+    pkgs.rofi
   ];
 
   gtk = {

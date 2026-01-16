@@ -5,7 +5,7 @@ in
 {
   programs.waybar = {
     enable = true;
-    systemd.enable = true;
+    # systemd.enable = true;
     style = lib.concatStrings [
       (builtins.readFile ./tokyonight.css)
       (builtins.readFile ./style.css)
