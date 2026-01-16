@@ -10,6 +10,11 @@
             "name": "rose-pine"
         }
     },
+    "launcher_window": {
+        "layer_shell": {
+            "layer": "overlay"
+        }
+    },
     "fallbacks": [],
     "providers": {
         "applications": {
