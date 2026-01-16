@@ -99,7 +99,6 @@
     '')
     # Development
     bun
-    jdk21
     nodejs
   ];
 

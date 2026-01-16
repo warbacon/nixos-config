@@ -15,5 +15,8 @@
   desktop.enable = true;
   gaming.enable = true;
 
-  environment.systemPackages = [ pkgs.vscode-fhs ];
+  environment.systemPackages = [
+    pkgs.jdk21
+    pkgs.vscode-fhs
+  ];
 }
