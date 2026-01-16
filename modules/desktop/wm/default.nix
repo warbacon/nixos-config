@@ -13,6 +13,7 @@ in
   ];
 
   config = lib.mkIf (cfg.profile == "niri" || cfg.profile == "hyprland") {
+    services.upower.enable = true;
     services.gvfs.enable = true;
 
     environment.systemPackages = [
