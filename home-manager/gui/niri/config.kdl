@@ -160,11 +160,11 @@ binds {
     // Most actions that you can bind here can also be invoked programmatically with
     // `niri msg action do-something`.
     Mod+Q hotkey-overlay-title="Open a Terminal" { spawn "footclient"; }
-    Mod+D hotkey-overlay-title="Show the launcher: rofi" repeat=false { spawn "rofi" "-show" "drun"; }
-    Mod+Period hotkey-overlay-title="Show emoji picker" { spawn "vicinae" "vicinae://extensions/vicinae/core/search-emojis"; }
-    Mod+P hotkey-overlay-title="Show emoji picker" { spawn "vicinae" "vicinae://extensions/vicinae/clipboard/history"; }
-    Mod+E hotkey-overlay-title="Open the file explorer: nautilus" { spawn "nautilus"; }
-    Mod+B hotkey-overlay-title="Open the Bluetooth manager: bluetui" { spawn "xdg-terminal-exec" "bluetui"; }
+    Mod+D hotkey-overlay-title="Show the launcher: vicinae" repeat=false { spawn "vicinae" "toggle"; }
+    Mod+Period hotkey-overlay-title="Show emoji picker" repeat=false { spawn "vicinae" "vicinae://extensions/vicinae/core/search-emojis"; }
+    Mod+P hotkey-overlay-title="Show emoji picker" repeat=false { spawn "vicinae" "vicinae://extensions/vicinae/clipboard/history"; }
+    Mod+E hotkey-overlay-title="Open the file explorer: nautilus" repeat=false { spawn "nautilus"; }
+    Mod+B hotkey-overlay-title="Open the Bluetooth manager: bluetui" repeat=false { spawn "xdg-terminal-exec" "bluetui"; }
     Mod+Shift+C hotkey-overlay-title="Open the color picker" { spawn-sh "hyprpicker --autocopy"; }
 
     XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"; }
