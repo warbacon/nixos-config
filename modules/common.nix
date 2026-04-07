@@ -110,6 +110,7 @@
       export HISTCONTROL=ignoreboth:erasedups
 
       source <(starship init bash --print-full-init)
+      source <(fzf --bash)
     '';
   };
 
@@ -122,6 +123,7 @@
     unrar
     unzip
     wget
+    xdg-utils
     zip
 
     dix
