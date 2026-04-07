@@ -1,11 +1,21 @@
 {
-  description = "My personal NixOS configuration";
+  description = "My NixOS configuration :P";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
 
-    home-manager = {
-      url = "github:nix-community/home-manager";
+    zen-browser = {
+      url = "github:0xc000022070/zen-browser-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    helium = {
+      url = "github:schembriaiden/helium-browser-nix-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    nix-index-database = {
+      url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -13,69 +23,35 @@
       url = "github:nix-community/NixOS-WSL/main";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
-
-    zen-browser = {
-      url = "github:0xc000022070/zen-browser-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    vicinae.url = "github:vicinaehq/vicinae";
-
-    undug = {
-      # url = "/home/warbacon/Git/undug";
-      url = "github:warbacon/undug";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs =
     {
       nixpkgs,
-      home-manager,
+      nix-index-database,
       nixos-wsl,
       ...
     }@inputs:
     let
-      mkSystem =
-        {
-          hostName,
-          system ? "x86_64-linux",
-          extraModules ? [ ],
-        }:
+      system = "x86_64-linux";
+      mkHost =
+        modules:
         nixpkgs.lib.nixosSystem {
-          system = system;
+          inherit system;
           specialArgs = {
-            inherit inputs hostName system;
+            inherit inputs system;
           };
-          modules = [
-            {
-              networking.hostName = hostName;
-            }
-            ./hosts/${hostName}
-            home-manager.nixosModules.home-manager
-          ]
-          ++ extraModules;
+          modules = modules ++ [ nix-index-database.nixosModules.default ];
         };
-
-      systems = [
-        { hostName = "zenix"; }
-        {
-          hostName = "nixwsl";
-          extraModules = [
-            nixos-wsl.nixosModules.default
-          ];
-        }
-        { hostName = "nixvm"; }
-      ];
     in
     {
-      nixosConfigurations = builtins.listToAttrs (
-        map (args: {
-          name = args.hostName;
-          value = mkSystem args;
-        }) systems
-      );
+      nixosConfigurations = {
+        zenix = mkHost [ ./hosts/zenix/default.nix ];
+        desktop = mkHost [ ./hosts/desktop/default.nix ];
+        wsl = mkHost [
+          nixos-wsl.nixosModules.default
+          ./hosts/wsl/default.nix
+        ];
+      };
     };
 }

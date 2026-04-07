@@ -10,7 +10,5 @@
     ./hardware-configuration.nix
   ];
 
-  networking.hostName = "zenix";
-  services.power-profiles-daemon.enable = true;
-  hardware.bluetooth.enable = true;
+  networking.hostName = "desktop";
 }
