@@ -48,6 +48,7 @@
       nixosConfigurations = {
         zenix = mkHost [ ./hosts/zenix/default.nix ];
         desktop = mkHost [ ./hosts/desktop/default.nix ];
+        vm = mkHost [ ./hosts/vm/default.nix ];
         wsl = mkHost [
           nixos-wsl.nixosModules.default
           ./hosts/wsl/default.nix

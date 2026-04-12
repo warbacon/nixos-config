@@ -129,6 +129,9 @@
     dix
     nix-output-monitor
 
+    opencode
+    pi-coding-agent
+
     btop-rocm
     fastfetch
     fd
@@ -136,7 +139,7 @@
     gh
     jq
     lazygit
-    opencode
+    numbat
     ripgrep
     starship
     steam-run
