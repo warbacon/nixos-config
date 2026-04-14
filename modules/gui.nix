@@ -74,9 +74,9 @@
   fonts = {
     enableDefaultPackages = false;
     packages = with pkgs; [
+      jetbrains-mono
       adwaita-fonts
       dejavu_fonts
-      cascadia-code
       liberation_ttf
       nerd-fonts.symbols-only
       noto-fonts-cjk-sans
@@ -87,7 +87,7 @@
       enable = true;
       defaultFonts = {
         monospace = [
-          "Cascadia Code"
+          "JetBrains Mono"
           "Symbols Nerd Font"
           "Noto Color Emoji"
         ];
