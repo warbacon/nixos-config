@@ -1,4 +1,4 @@
-{ ... }:
+{ lib, ... }:
 
 {
   imports = [
@@ -11,7 +11,10 @@
   ];
 
   boot.loader.systemd-boot.enable = false;
-  boot.loader.limine.enable = true;
+  boot.loader.limine = {
+    enable = true;
+    style.wallpapers = lib.mkForce [ ];
+  };
 
   virtualisation.vmware.guest.enable = true;
 
