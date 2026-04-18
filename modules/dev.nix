@@ -24,7 +24,5 @@
 
     bun
     nodejs
-    dotnetCorePackages.sdk_10_0-bin
-    mono
   ];
 }

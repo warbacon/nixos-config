@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   imports = [
@@ -13,4 +13,18 @@
   networking.hostName = "zenix";
   services.power-profiles-daemon.enable = true;
   hardware.bluetooth.enable = true;
+
+  nixpkgs.config.android_sdk.accept_license = true;
+  environment.packages = with pkgs; [
+    obs-studio
+    faugus-launcher
+    onlyoffice-desktopeditors
+
+    android-studio
+    postman
+    unityhub
+    dotnetCorePackages.sdk_10_0-bin
+    mono
+    vscode-fhs
+  ];
 }

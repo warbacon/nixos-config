@@ -101,17 +101,18 @@
   };
 
   programs.bash = {
-    interactiveShellInit = ''
-      bind "set completion-ignore-case on"
-      bind "set show-all-if-ambiguous on"
-      shopt -s autocd
-      shopt -s cdspell
-      shopt -s histappend
-      export HISTCONTROL=ignoreboth:erasedups
+    interactiveShellInit = # bash
+      ''
+        bind "set completion-ignore-case on"
+        bind "set show-all-if-ambiguous on"
+        shopt -s autocd
+        shopt -s cdspell
+        shopt -s histappend
+        export HISTCONTROL=ignoreboth:erasedups
 
-      source <(starship init bash --print-full-init)
-      source <(fzf --bash)
-    '';
+        source <(starship init bash --print-full-init)
+        source <(fzf --bash)
+      '';
   };
 
   environment.systemPackages = with pkgs; [

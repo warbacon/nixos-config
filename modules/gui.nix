@@ -12,7 +12,6 @@
   services.displayManager.gdm.enable = true;
   services.desktopManager.gnome.enable = true;
   services.gnome = {
-    sushi.enable = true;
     core-apps.enable = false;
     evolution-data-server.enable = lib.mkForce false;
   };
@@ -35,28 +34,19 @@
   };
 
   programs.localsend.enable = true;
-  programs.niri.enable = true;
 
   hardware.graphics.enable32Bit = true;
-
   environment.systemPackages = with pkgs; [
     bibata-cursors
 
     alacritty
-    faugus-launcher
     inputs.helium.packages."${system}".default
     inputs.zen-browser.packages."${system}".default
     mpv
-    obs-studio
-    onlyoffice-desktopeditors
     vesktop
-
-    fuzzel
-    mako
 
     ffmpegthumbnailer
     file-roller
-    fragments
     gnome-characters
     gnome-disk-utility
     gnome-themes-extra
@@ -66,9 +56,6 @@
 
     gnomeExtensions.copyous
     gnomeExtensions.appindicator
-
-    unityhub
-    vscode-fhs
   ];
 
   fonts = {
@@ -94,30 +81,31 @@
         sansSerif = [ "Adwaita Sans" ];
         serif = [ "Liberation Serif" ];
       };
-      localConf = ''
-        <?xml version="1.0"?>
-        <!DOCTYPE fontconfig SYSTEM "urn:fontconfig:fonts.dtd">
-        <fontconfig>
-          <alias>
-              <family>Segoe UI</family>
-              <prefer>
-                  <family>Adwaita Sans</family>
-              </prefer>
-          </alias>
-          <alias>
-              <family>Arial</family>
-              <prefer>
-                  <family>Liberation Sans</family>
-              </prefer>
-          </alias>
-          <alias>
-              <family>Verdana</family>
-              <prefer>
-                  <family>DejaVu Sans</family>
-              </prefer>
-          </alias>
-        </fontconfig>
-      '';
+      localConf = # xml
+        ''
+          <?xml version="1.0"?>
+          <!DOCTYPE fontconfig SYSTEM "urn:fontconfig:fonts.dtd">
+          <fontconfig>
+            <alias>
+                <family>Segoe UI</family>
+                <prefer>
+                    <family>Adwaita Sans</family>
+                </prefer>
+            </alias>
+            <alias>
+                <family>Arial</family>
+                <prefer>
+                    <family>Liberation Sans</family>
+                </prefer>
+            </alias>
+            <alias>
+                <family>Verdana</family>
+                <prefer>
+                    <family>DejaVu Sans</family>
+                </prefer>
+            </alias>
+          </fontconfig>
+        '';
     };
   };
 
@@ -164,15 +152,15 @@
   };
 
   xdg.terminal-exec.enable = true;
-
-  environment.etc."xdg/user-dirs.defaults".text = ''
-    DESKTOP=Escritorio
-    DOWNLOAD=Descargas
-    TEMPLATES=
-    PUBLICSHARE=
-    DOCUMENTS=Documentos
-    MUSIC=
-    PICTURES=Imágenes
-    VIDEOS=Vídeos
-  '';
+  environment.etc."xdg/user-dirs.defaults".text = # bash
+    ''
+      DESKTOP=Escritorio
+      DOWNLOAD=Descargas
+      TEMPLATES=
+      PUBLICSHARE=
+      DOCUMENTS=Documentos
+      MUSIC=
+      PICTURES=Imágenes
+      VIDEOS=Vídeos
+    '';
 }
