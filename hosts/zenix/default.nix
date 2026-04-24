@@ -13,9 +13,10 @@
   networking.hostName = "zenix";
   services.power-profiles-daemon.enable = true;
   hardware.bluetooth.enable = true;
+  # services.upower.enable = true;
 
   nixpkgs.config.android_sdk.accept_license = true;
-  environment.packages = with pkgs; [
+  environment.systemPackages = with pkgs; [
     obs-studio
     faugus-launcher
     onlyoffice-desktopeditors
@@ -26,5 +27,7 @@
     dotnetCorePackages.sdk_10_0-bin
     mono
     vscode-fhs
+
+    # brightnessctl
   ];
 }

@@ -32,19 +32,22 @@
     enable = true;
     terminal = "alacritty";
   };
-
+  # programs.niri.enable = true;
   programs.localsend.enable = true;
 
   hardware.graphics.enable32Bit = true;
   environment.systemPackages = with pkgs; [
+    # Theming
     bibata-cursors
 
+    # General
     alacritty
     inputs.helium.packages."${system}".default
     inputs.zen-browser.packages."${system}".default
     mpv
     vesktop
 
+    # Gnome
     ffmpegthumbnailer
     file-roller
     gnome-characters
@@ -53,15 +56,20 @@
     loupe
     nautilus
     papers
-
     gnomeExtensions.copyous
     gnomeExtensions.appindicator
+
+    # Niri
+    # hyprpicker
+    # noctalia-shell
+    # pwvucontrol
+    # vicinae
   ];
 
   fonts = {
     enableDefaultPackages = false;
     packages = with pkgs; [
-      jetbrains-mono
+      ioskeley-mono.normal-unhinted
       adwaita-fonts
       dejavu_fonts
       liberation_ttf
@@ -74,7 +82,7 @@
       enable = true;
       defaultFonts = {
         monospace = [
-          "JetBrains Mono"
+          "Ioskeley Mono"
           "Symbols Nerd Font"
           "Noto Color Emoji"
         ];

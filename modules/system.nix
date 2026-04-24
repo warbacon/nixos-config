@@ -15,12 +15,11 @@
     enable = true;
     wifi.backend = "iwd";
   };
+  users.users.warbacon.extraGroups = [ "networkmanager" ];
 
   environment.systemPackages = [
     pkgs.android-tools
   ];
-
-  users.users.warbacon.extraGroups = [ "networkmanager" ];
 
   zramSwap.enable = true;
 }

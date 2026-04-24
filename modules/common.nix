@@ -36,9 +36,9 @@
     cp = "cp -vi";
     mv = "mv -vi";
     rm = "rm -v";
-    ls = "ls --color -vp";
-    ll = "ls --color -lvhp";
-    la = "ls --color -lvAhp";
+    ls = "ls --group-directories-first --color -vp";
+    ll = "ls --group-directories-first --color -lvhp";
+    la = "ls --group-directories-first --color -lvAhp";
     tree = "tree --gitignore -aC";
     grep = "grep --color";
     open = "xdg-open";
