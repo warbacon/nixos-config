@@ -10,6 +10,10 @@
   services.xserver.xkb.layout = "es";
 
   services.displayManager.gdm.enable = true;
+  # services.displayManager.ly = {
+  #   enable = true;
+  #   x11Support = false;
+  # };
   services.desktopManager.gnome.enable = true;
   services.gnome = {
     core-apps.enable = false;
@@ -60,10 +64,12 @@
     gnomeExtensions.appindicator
 
     # Niri
-    # hyprpicker
     # noctalia-shell
-    # pwvucontrol
+    # hyprpicker
+    # mako
+    # pulsemixer
     # vicinae
+    # xwayland-satellite
   ];
 
   fonts = {
