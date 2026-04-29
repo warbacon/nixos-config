@@ -18,11 +18,9 @@
   nixpkgs.config.android_sdk.accept_license = true;
   environment.systemPackages = with pkgs; [
     obs-studio
-    faugus-launcher
     onlyoffice-desktopeditors
 
     android-studio
-    postman
     unityhub
     dotnetCorePackages.sdk_10_0-bin
     mono
