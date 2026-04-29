@@ -45,7 +45,7 @@
     inputs.helium.packages."${system}".default
     inputs.zen-browser.packages."${system}".default
     mpv
-    vesktop
+    (discord.override { withOpenASAR = true; })
 
     # Gnome
     ffmpegthumbnailer
