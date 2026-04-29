@@ -130,9 +130,6 @@
     dix
     nix-output-monitor
 
-    opencode
-    pi-coding-agent
-
     btop-rocm
     fastfetch
     fd
@@ -141,6 +138,7 @@
     jq
     lazygit
     numbat
+    pi-coding-agent
     ripgrep
     starship
     steam-run
