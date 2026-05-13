@@ -44,12 +44,11 @@
 
         hardware.graphics.enable32Bit = true;
         environment.systemPackages = with pkgs; [
-          bibata-cursors
-
           alacritty
           inputs.helium.packages."${system}".default
           inputs.zen-browser.packages."${system}".default
           mpv
+          obs-studio
           (discord.override { withOpenASAR = true; })
 
           ffmpegthumbnailer
@@ -116,62 +115,72 @@
               '';
           };
         };
-
-        programs.dconf = {
-          enable = true;
-          profiles.user.databases = [
-            {
-              settings = {
-                "org/gnome/desktop/wm/keybindings" = {
-                  close = [ "<Super>C" ];
-                  switch-to-workspace-right = [ "<Control><Super>Right" ];
-                  switch-to-workspace-left = [ "<Control><Super>Left" ];
-                  move-to-workspace-right = [ "<Shift><Control><Super>Right" ];
-                  move-to-workspace-left = [ "<Shift><Control><Super>Left" ];
-                  toggle-fullscreen = [ "<Super>f" ];
-                };
-                "org/gnome/settings-daemon/plugins/media-keys" = {
-                  custom-keybindings = [
-                    "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
-                  ];
-                };
-                "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
-                  binding = "<Super>q";
-                  command = "bash -c \"alacritty msg create-window || alacritty\"";
-                  name = "Alacritty";
-                };
-                "org/gnome/desktop/wm/preferences" = {
-                  resize-with-right-button = true;
-                };
-                "org/gnome/desktop/interface" = {
-                  cursor-theme = "Bibata-Modern-Ice";
-                  color-scheme = "prefer-dark";
-                  gtk-theme = "Adwaita-dark";
-                };
-                "org/gnome/desktop/peripherals/trackball" = {
-                  accel-profile = "flat";
-                };
-                "org/gnome/desktop/peripherals/mouse" = {
-                  accel-profile = "flat";
-                };
-              };
-            }
-          ];
+      };
+    homeManager =
+      { pkgs, ... }:
+      {
+        dconf.settings = {
+          "org/gnome/desktop/wm/keybindings" = {
+            close = [ "<Super>C" ];
+            switch-to-workspace-right = [ "<Control><Super>Right" ];
+            switch-to-workspace-left = [ "<Control><Super>Left" ];
+            move-to-workspace-right = [ "<Shift><Control><Super>Right" ];
+            move-to-workspace-left = [ "<Shift><Control><Super>Left" ];
+            toggle-fullscreen = [ "<Super>f" ];
+          };
+          "org/gnome/settings-daemon/plugins/media-keys" = {
+            custom-keybindings = [
+              "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
+            ];
+          };
+          "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
+            binding = "<Super>q";
+            command = "bash -c \"alacritty msg create-window || alacritty\"";
+            name = "Alacritty";
+          };
+          "org/gnome/desktop/wm/preferences" = {
+            resize-with-right-button = true;
+          };
+          "org/gnome/desktop/peripherals/trackball" = {
+            accel-profile = "flat";
+          };
+          "org/gnome/desktop/peripherals/mouse" = {
+            accel-profile = "flat";
+          };
         };
 
-        xdg.terminal-exec.enable = true;
-        environment.etc."xdg/user-dirs.defaults".text =
-          # bash
-          ''
-            DESKTOP=Escritorio
-            DOWNLOAD=Descargas
-            TEMPLATES=
-            PUBLICSHARE=
-            DOCUMENTS=Documentos
-            MUSIC=
-            PICTURES=Imágenes
-            VIDEOS=Vídeos
-          '';
+        home.pointerCursor = {
+          enable = true;
+          gtk.enable = true;
+          package = pkgs.bibata-cursors;
+          size = 24;
+          name = "Bibata-Modern-Ice";
+        };
+
+        gtk = {
+          enable = true;
+          colorScheme = "dark";
+          gtk2.enable = false;
+        };
+
+        xdg = {
+          enable = true;
+          terminal-exec.enable = true;
+          userDirs = {
+            enable = true;
+            setSessionVariables = false;
+            createDirectories = true;
+            desktop = "$HOME/";
+            documents = "$HOME/Documentos";
+            download = "$HOME/Descargas";
+            music = "$HOME/";
+            pictures = "$HOME/Imágenes";
+            projects = "$HOME/Proyectos";
+            publicShare = "$HOME/";
+            templates = "$HOME/";
+            videos = "$HOME/Vídeos";
+          };
+        };
       };
   };
 }

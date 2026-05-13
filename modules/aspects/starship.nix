@@ -1,20 +1,16 @@
 {
-  den.aspects.starship = {
-    nixos =
-      { pkgs, ... }:
-      {
-        environment.systemPackages = [
-          pkgs.starship
-        ];
+  den.aspects.starship.homeManager =
+    { pkgs, ... }:
+    {
+      home.packages = [
+        pkgs.starship
+      ];
 
-        programs.bash.interactiveShellInit =
-          # bash
-          ''
-            source <(starship init bash --print-full-init)
-          '';
-      };
+      programs.bash.initExtra = # bash
+        ''
+          source <(starship init bash --print-full-init)
+        '';
 
-    homeManager = {
       xdg.configFile."starship.toml".text = # toml
         ''
           "$schema" = 'https://starship.rs/config-schema.json'
@@ -42,5 +38,4 @@
           format = '[$duration]($style) '
         '';
     };
-  };
 }

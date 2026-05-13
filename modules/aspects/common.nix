@@ -111,9 +111,6 @@
             shopt -s cdspell
             shopt -s histappend
             export HISTCONTROL=ignoreboth:erasedups
-
-            source <(starship init bash --print-full-init)
-            source <(fzf --bash)
           '';
 
         environment.systemPackages = with pkgs; [
@@ -140,6 +137,15 @@
           trash-cli
         ];
       };
-
+    homeManager = {
+      home.preferXdgDirectories = true;
+      programs.bash = {
+        enable = true;
+        initExtra = # bash
+          ''
+            source <(fzf --bash)
+          '';
+      };
+    };
   };
 }
