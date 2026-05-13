@@ -5,7 +5,6 @@
       {
         environment.systemPackages = with pkgs; [
           gcc
-          lazygit
           pi-coding-agent
 
           tree-sitter
@@ -33,6 +32,11 @@
     homeManager =
       { pkgs, ... }:
       {
+        home.packages = with pkgs; [
+          pnpm
+          lazygit
+        ];
+
         programs.git = {
           enable = true;
           settings = {
@@ -49,6 +53,39 @@
             pkgs.gh-markdown-preview
           ];
         };
+        xdg.configFile."lazygit/config.yml".text = # yaml
+          ''
+            disableStartupPopups: true
+            os:
+              editPreset: "nvim"
+            gui:
+              nerdFontsVersion: "3"
+              showBottomLine: false
+              showRandomTip: false
+              spinner:
+                rate: 80
+                frames:
+                - "⠋"
+                - "⠙"
+                - "⠹"
+                - "⠸"
+                - "⠼"
+                - "⠴"
+                - "⠦"
+                - "⠧"
+                - "⠇"
+                - "⠏"
+              theme:
+                activeBorderColor:
+                 - "#52abcf"
+                 - "bold"
+                inactiveBorderColor:
+                 - "#8e8aac"
+                selectedLineBgColor:
+                 - "#2b3b51"
+                defaultFgColor:
+                 - "#cdcbdd"
+          '';
 
         programs.npm = {
           enable = true;
@@ -56,9 +93,6 @@
             prefix = "\${HOME}/.local/share/npm";
           };
         };
-        home.packages = [
-          pkgs.pnpm
-        ];
       };
   };
 }
