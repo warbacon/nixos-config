@@ -62,6 +62,7 @@
     papers
     gnomeExtensions.copyous
     gnomeExtensions.appindicator
+    gnomeExtensions.grand-theft-focus
 
     # Niri
     # noctalia-shell

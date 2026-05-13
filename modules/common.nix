@@ -134,11 +134,8 @@
     fastfetch
     fd
     fzf
-    gh
     jq
-    lazygit
     numbat
-    pi-coding-agent
     ripgrep
     starship
     steam-run

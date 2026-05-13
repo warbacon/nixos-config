@@ -24,5 +24,11 @@
 
     bun
     nodejs
+
+    gh
+    lazygit
+    pi-coding-agent
+    pnpm
+    lmstudio
   ];
 }
