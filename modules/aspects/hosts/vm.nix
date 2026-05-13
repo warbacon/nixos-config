@@ -18,8 +18,6 @@
         };
 
         virtualisation.vmware.guest.enable = true;
-
-        networking.hostName = "vm";
       };
   };
 }

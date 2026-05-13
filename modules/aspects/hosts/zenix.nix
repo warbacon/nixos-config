@@ -13,7 +13,6 @@
       {
         imports = [ ../hosts/zenix/hardware-configuration.nix ];
 
-        networking.hostName = "zenix";
         services.power-profiles-daemon.enable = true;
         hardware.bluetooth.enable = true;
 
@@ -23,9 +22,10 @@
           onlyoffice-desktopeditors
 
           android-studio
-          unityhub
           dotnetCorePackages.sdk_10_0-bin
+          lmstudio
           mono
+          unityhub
           vscode-fhs
         ];
       };

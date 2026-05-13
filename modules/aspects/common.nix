@@ -3,6 +3,7 @@
   den.aspects.common = {
     includes = [
       den.aspects.starship
+      den.aspects.fd
     ];
 
     nixos =
@@ -117,8 +118,6 @@
 
         environment.systemPackages = with pkgs; [
           _7zip-zstd-rar
-          gcc
-          git
           killall
           tree
           unrar
@@ -132,12 +131,10 @@
 
           btop-rocm
           fastfetch
-          fd
           fzf
           jq
           numbat
           ripgrep
-          # starship
           steam-run
           tlrc
           trash-cli

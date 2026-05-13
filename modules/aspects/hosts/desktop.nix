@@ -7,7 +7,5 @@
       den.aspects.gui
       den.aspects.system
     ];
-
-    nixos.networking.hostName = "desktop";
   };
 }

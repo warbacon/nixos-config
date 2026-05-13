@@ -14,7 +14,7 @@
           '';
       };
 
-    provides.to-users.homeManager = {
+    homeManager = {
       xdg.configFile."starship.toml".text = # toml
         ''
           "$schema" = 'https://starship.rs/config-schema.json'
