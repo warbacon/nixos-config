@@ -10,7 +10,10 @@
     kernelModules = [ "ntsync" ];
   };
 
-  networking.networkmanager.enable = true;
+  networking.networkmanager = {
+    enable = true;
+    wifi.backend = "iwd";
+  };
   users.users.warbacon.extraGroups = [ "networkmanager" ];
 
   zramSwap.enable = true;
