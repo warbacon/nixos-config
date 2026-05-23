@@ -1,20 +1,5 @@
 {
   "nodes": {
-    "den": {
-      "locked": {
-        "lastModified": 1779284890,
-        "narHash": "sha256-M13hhd4qXKrAyqfTFFP8ov1dNu6acHyeQdUj/V5dj3g=",
-        "owner": "denful",
-        "repo": "den",
-        "rev": "8f1a59448043677ac8bc7854348c1b8ee6889c0b",
-        "type": "github"
-      },
-      "original": {
-        "owner": "denful",
-        "repo": "den",
-        "type": "github"
-      }
-    },
     "flake-compat": {
       "flake": false,
       "locked": {
@@ -69,21 +54,6 @@
       "original": {
         "owner": "nix-community",
         "repo": "home-manager",
-        "type": "github"
-      }
-    },
-    "import-tree": {
-      "locked": {
-        "lastModified": 1778781969,
-        "narHash": "sha256-Jjuz5CmSkur8KvLDoGa+vylEp+RkQtv4mt/qcMznpH0=",
-        "owner": "vic",
-        "repo": "import-tree",
-        "rev": "d321337efd0f23a9eb14a42adb7b2c29313ab274",
-        "type": "github"
-      },
-      "original": {
-        "owner": "vic",
-        "repo": "import-tree",
         "type": "github"
       }
     },
@@ -147,10 +117,8 @@
     },
     "root": {
       "inputs": {
-        "den": "den",
         "helium": "helium",
         "home-manager": "home-manager",
-        "import-tree": "import-tree",
         "nix-index-database": "nix-index-database",
         "nixos-wsl": "nixos-wsl",
         "nixpkgs": "nixpkgs",

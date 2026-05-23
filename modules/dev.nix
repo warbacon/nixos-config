@@ -49,37 +49,38 @@
       ];
     };
 
-    xdg.configFile."lazygit/config.yml".text = ''
-      disableStartupPopups: true
-      os:
-        editPreset: "nvim"
-      gui:
-        nerdFontsVersion: "3"
-        showBottomLine: false
-        showRandomTip: false
-        spinner:
-          rate: 80
-          frames:
-          - "⠋"
-          - "⠙"
-          - "⠹"
-          - "⠸"
-          - "⠼"
-          - "⠴"
-          - "⠦"
-          - "⠧"
-          - "⠇"
-          - "⠏"
-        theme:
-          activeBorderColor:
-           - "#52abcf"
-           - "bold"
-          inactiveBorderColor:
-           - "#8e8aac"
-          selectedLineBgColor:
-           - "#2b3b51"
-          defaultFgColor:
-           - "#cdcbdd"
-    '';
+    xdg.configFile."lazygit/config.yml".text = # yaml
+      ''
+        disableStartupPopups: true
+        os:
+          editPreset: "nvim"
+        gui:
+          nerdFontsVersion: "3"
+          showBottomLine: false
+          showRandomTip: false
+          spinner:
+            rate: 80
+            frames:
+            - "⠋"
+            - "⠙"
+            - "⠹"
+            - "⠸"
+            - "⠼"
+            - "⠴"
+            - "⠦"
+            - "⠧"
+            - "⠇"
+            - "⠏"
+          theme:
+            activeBorderColor:
+             - "#52abcf"
+             - "bold"
+            inactiveBorderColor:
+             - "#8e8aac"
+            selectedLineBgColor:
+             - "#2b3b51"
+            defaultFgColor:
+             - "#cdcbdd"
+      '';
   };
 }

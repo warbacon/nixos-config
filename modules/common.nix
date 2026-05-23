@@ -1,4 +1,10 @@
-{ inputs, pkgs, lib, config, ... }:
+{
+  inputs,
+  pkgs,
+  lib,
+  config,
+  ...
+}:
 {
   imports = [
     inputs.nix-index-database.nixosModules.default
@@ -94,7 +100,7 @@
     flake = "/etc/nixos";
   };
 
-  programs.bash.interactiveShellInit =
+  programs.bash.interactiveShellInit = # bash
     ''
       bind "set completion-ignore-case on"
       bind "set show-all-if-ambiguous on"
@@ -103,15 +109,6 @@
       shopt -s histappend
       export HISTCONTROL=ignoreboth:erasedups
     '';
-
-  home-manager.users.warbacon = {
-    programs.fish = {
-      enable = true;
-      useBabelfish = true;
-      shellAliases = lib.mkForce { };
-      shellAbbrs = config.environment.shellAliases;
-    };
-  };
 
   environment.systemPackages = with pkgs; [
     _7zip-zstd-rar
@@ -129,10 +126,8 @@
     btop-rocm
     fastfetch
     fzf
-    jq
     libqalculate
     ripgrep
-    steam-run
     tlrc
     trash-cli
   ];

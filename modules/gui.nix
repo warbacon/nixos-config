@@ -17,6 +17,7 @@ in
     inputs.helium.packages."${system}".default
     inputs.zen-browser.packages."${system}".default
     mpv
+    steam-run
   ];
   programs.localsend.enable = true;
 
@@ -44,29 +45,29 @@ in
       };
       localConf = # xml
         ''
-        <?xml version="1.0"?>
-        <!DOCTYPE fontconfig SYSTEM "urn:fontconfig:fonts.dtd">
-        <fontconfig>
-          <alias>
-              <family>Segoe UI</family>
-              <prefer>
-                  <family>Adwaita Sans</family>
-              </prefer>
-          </alias>
-          <alias>
-              <family>Arial</family>
-              <prefer>
-                  <family>Liberation Sans</family>
-              </prefer>
-          </alias>
-          <alias>
-              <family>Verdana</family>
-              <prefer>
-                  <family>DejaVu Sans</family>
-              </prefer>
-          </alias>
-        </fontconfig>
-      '';
+          <?xml version="1.0"?>
+          <!DOCTYPE fontconfig SYSTEM "urn:fontconfig:fonts.dtd">
+          <fontconfig>
+            <alias>
+                <family>Segoe UI</family>
+                <prefer>
+                    <family>Adwaita Sans</family>
+                </prefer>
+            </alias>
+            <alias>
+                <family>Arial</family>
+                <prefer>
+                    <family>Liberation Sans</family>
+                </prefer>
+            </alias>
+            <alias>
+                <family>Verdana</family>
+                <prefer>
+                    <family>DejaVu Sans</family>
+                </prefer>
+            </alias>
+          </fontconfig>
+        '';
     };
   };
 

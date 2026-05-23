@@ -30,17 +30,21 @@
     let
       lib = nixpkgs.lib;
 
-      mkHost = name: lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = {
-          inherit inputs;
-          hostName = name;
+      mkHost =
+        name:
+        lib.nixosSystem {
+          system = "x86_64-linux";
+          specialArgs = {
+            inherit inputs;
+            hostName = name;
+          };
+          modules = [
+            ./hosts/${name}
+            {
+              networking.hostName = name;
+            }
+          ];
         };
-        modules = [
-           ./hosts/${name},
-            networking.hostName = name
-        ];
-      };
     in
     {
       nixosConfigurations = {

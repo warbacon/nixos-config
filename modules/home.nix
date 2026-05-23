@@ -16,8 +16,8 @@
         enable = true;
         initExtra = # bash
           ''
-          source <(fzf --bash)
-        '';
+            source <(fzf --bash)
+          '';
       };
     };
   };
