@@ -2,7 +2,6 @@
 {
   services.displayManager.ly = {
     enable = true;
-    x11Support = false;
     settings = {
       lang = "es";
     };

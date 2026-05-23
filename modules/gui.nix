@@ -9,6 +9,12 @@ in
     ./audio.nix
   ];
 
+  users.users.warbacon = {
+    isNormalUser = true;
+    description = "Joaquín Guerra";
+    extraGroups = [ "wheel" ];
+  };
+
   services.xserver.xkb.layout = "es";
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
   hardware.graphics.enable32Bit = true;
