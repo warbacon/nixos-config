@@ -130,7 +130,7 @@
           fastfetch
           fzf
           jq
-          numbat
+          libqalculate
           ripgrep
           steam-run
           tlrc

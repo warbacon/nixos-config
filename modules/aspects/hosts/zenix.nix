@@ -18,11 +18,7 @@
 
         nixpkgs.config.android_sdk.accept_license = true;
         environment.systemPackages = with pkgs; [
-          android-studio
-          dotnetCorePackages.sdk_10_0-bin
-          mono
-          unityhub
-          vscode-fhs
+          (discord.override { withOpenASAR = true; })
         ];
       };
   };

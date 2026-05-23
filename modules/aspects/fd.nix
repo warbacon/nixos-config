@@ -3,6 +3,11 @@
     nixos =
       { pkgs, ... }:
       {
+        environment.sessionVariables = {
+          FZF_CTRL_T_COMMAND = "fd -H --color=never";
+          FZF_ALT_C_COMMAND = "fd -H --color=never --type d";
+        };
+
         environment.systemPackages = [
           pkgs.fd
         ];

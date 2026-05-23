@@ -11,9 +11,12 @@
     nixos =
       { lib, ... }:
       {
+        imports = [ ../../../hosts/vm/hardware-configuration.nix ];
+
         boot.loader.systemd-boot.enable = false;
         boot.loader.limine = {
           enable = true;
+          efiSupport = false;
           style.wallpapers = lib.mkForce [ ];
         };
 
