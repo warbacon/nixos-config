@@ -3,8 +3,6 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
-    import-tree.url = "github:vic/import-tree";
-    den.url = "github:denful/den";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -28,11 +26,28 @@
   };
 
   outputs =
-    inputs:
-    (inputs.nixpkgs.lib.evalModules {
-      modules = [ (inputs.import-tree ./modules) ];
-      specialArgs = {
-        inherit inputs;
+    inputs@{ nixpkgs, ... }:
+    let
+      lib = nixpkgs.lib;
+
+      mkHost = name: lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = {
+          inherit inputs;
+          hostName = name;
+        };
+        modules = [
+           ./hosts/${name},
+            networking.hostName = name
+        ];
       };
-    }).config.flake;
+    in
+    {
+      nixosConfigurations = {
+        desktop = mkHost "desktop";
+        vm = mkHost "vm";
+        wsl = mkHost "wsl";
+        zenix = mkHost "zenix";
+      };
+    };
 }
