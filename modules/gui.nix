@@ -6,12 +6,19 @@ in
   imports = [
     ./kitty.nix
     ./niri.nix
-    ./audio.nix
   ];
 
   services.xserver.xkb.layout = "es";
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
   hardware.graphics.enable32Bit = true;
+
+  security.rtkit.enable = true;
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+  };
 
   environment.systemPackages = with pkgs; [
     inputs.helium.packages."${system}".default
