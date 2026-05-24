@@ -32,6 +32,12 @@
   i18n.defaultLocale = "es_ES.UTF-8";
   console.keyMap = "es";
 
+  users.users.warbacon = {
+    isNormalUser = true;
+    description = "Joaquín Guerra";
+    extraGroups = [ "wheel" ];
+  };
+
   environment.shellAliases = lib.mkForce {
     cp = "cp -vi";
     mv = "mv -vi";
