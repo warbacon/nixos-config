@@ -1,16 +1,22 @@
 # ❄️ My NixOS configuration
 
-Personal NixOS configuration based on flakes and [Den](https://den.denful.dev/)
-to build a configuration following the dendritic pattern.
+> [!NOTE]
+> This configuration is purely for personal use. Use this repository as
+> reference material at your own risk.
 
-The goal is to structure the system into modular aspects so each profile only
-inherits what it needs, avoiding a hard-to-maintain monolith.
+I hate the arbitrary separation between my NixOS and Home Manager configs. At
+the end of the day, it's all my system. Since I'm the only user on my machines,
+I've bundled NixOS and Home Manager settings into the exact same file per
+module. It makes importing them a breeze and kills the need for redundant
+options.
+
+Is this setup weird and unconventional? Absolutely. Does it work flawlessly for
+me? You bet. Funny story: this was actually my very first approach when I jumped
+into NixOS, but I abandoned it back then because it felt "too weird" and nobody
+else was doing it. I thought I was doing it wrong. Oh boy, I didn't know I
+cooked.
 
 ## What's included
 
 - Machine profiles for `zenix`, `desktop`, `vm`, and `wsl`.
-- A single main user: `warbacon`, with Home Manager integrated.
-
-> [!NOTE]
-> This configuration is intended for personal use. Use this repository as
-> reference material at your own risk.
+- A single main user: `warbacon`, with Home Manager deeply integrated.
