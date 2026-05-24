@@ -27,8 +27,8 @@
 
   home-manager.users.warbacon = {
     home.packages = with pkgs; [
-      pnpm
       lazygit
+      pnpm
     ];
 
     programs.git = {
@@ -82,5 +82,12 @@
             defaultFgColor:
              - "#cdcbdd"
       '';
+
+    programs.npm = {
+      enable = true;
+      settings = {
+        prefix = "\${HOME}/.local/share/npm";
+      };
+    };
   };
 }
