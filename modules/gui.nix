@@ -4,7 +4,7 @@ let
 in
 {
   imports = [
-    ./kitty.nix
+    ./kitty
     ./niri.nix
   ];
 
@@ -90,6 +90,10 @@ in
     gtk = {
       enable = true;
       colorScheme = "dark";
+      iconTheme = {
+        name = "Adwaita";
+        package = pkgs.adwaita-icon-theme;
+      };
       gtk2.enable = false;
     };
 

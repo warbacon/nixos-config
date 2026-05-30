@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 {
   home-manager.users.warbacon = {
     home.packages = with pkgs; [
@@ -33,10 +33,11 @@
       '';
 
     programs.bash = {
-      initExtra = # bash
-        ''
-          source <(starship init bash --print-full-init)
-        '';
+      initExtra =
+        lib.mkBefore # bash
+          ''
+            source <(starship init bash --print-full-init)
+          '';
     };
   };
 }

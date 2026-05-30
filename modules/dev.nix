@@ -2,7 +2,7 @@
 {
   environment.systemPackages = with pkgs; [
     gcc
-    pi-coding-agent
+    opencode
 
     tree-sitter
 

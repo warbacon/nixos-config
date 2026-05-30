@@ -5,7 +5,7 @@
     extraConfig = # kitty
       ''
         # Shell
-        shell fish
+        shell bash
 
         # Font
         font_family monospace
@@ -58,44 +58,7 @@
         map alt+0 goto_tab 10
 
         # Theme
-        foreground oklch(0.8500 0.0250 290.0)
-        background oklch(0.2100 0.0280 290.0)
-        selection_foreground none
-        selection_background oklch(0.3485 0.0441 256.5)
-        cursor oklch(0.8500 0.0250 290.0)
-        cursor_text_color oklch(0.2100 0.0280 290.0)
-
-        # Black
-        color0 oklch(0.2900 0.0430 290.0)
-        color8 oklch(0.5000 0.0500 290.0)
-
-        # Red
-        color1 oklch(0.7000 0.1500 4.0)
-        color9 oklch(0.7600 0.1500 4.0)
-
-        # Green
-        color2 oklch(0.7700 0.1000 141.0)
-        color10 oklch(0.8300 0.1000 141.0)
-
-        # Yellow
-        color3 oklch(0.8400 0.1100 77.0)
-        color11 oklch(0.9000 0.1100 77.0)
-
-        # Blue
-        color4 oklch(0.7000 0.1000 228.0)
-        color12 oklch(0.7600 0.1000 228.0)
-
-        # Magenta
-        color5 oklch(0.7700 0.1100 304.0)
-        color13 oklch(0.8300 0.1300 304.0)
-
-        # Cyan
-        color6 oklch(0.8200 0.0600 209.0)
-        color14 oklch(0.8800 0.0600 209.0)
-
-        # White
-        color7 oklch(0.6500 0.0500 290.0)
-        color15 oklch(0.8500 0.0250 290.0)
+        ${builtins.readFile ./pino.conf}
       '';
   };
 }

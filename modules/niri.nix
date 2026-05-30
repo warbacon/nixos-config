@@ -9,8 +9,6 @@
   programs.niri.enable = true;
 
   environment.systemPackages = with pkgs; [
-    quickshell
-
     ffmpegthumbnailer
     file-roller
     gnome-disk-utility
@@ -21,6 +19,11 @@
 
   home-manager.users.warbacon = {
     programs.vicinae = {
+      enable = true;
+      systemd.enable = true;
+    };
+
+    programs.quickshell = {
       enable = true;
       systemd.enable = true;
     };
