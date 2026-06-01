@@ -90,6 +90,10 @@ in
     gtk = {
       enable = true;
       colorScheme = "dark";
+      font = {
+        name = "Adwaita Sans";
+        size = 10;
+      };
       iconTheme = {
         name = "Adwaita";
         package = pkgs.adwaita-icon-theme;

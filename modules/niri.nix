@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, hostName, ... }:
 {
   services.displayManager.ly = {
     enable = true;
@@ -7,17 +7,40 @@
     };
   };
   programs.niri.enable = true;
+  services.gvfs.enable = true;
+  services.upower.enable = hostName == "zenix";
 
   environment.systemPackages = with pkgs; [
+    brightnessctl
     ffmpegthumbnailer
     file-roller
     gnome-disk-utility
+    hyprpicker
     loupe
     nautilus
     papers
+    pulsemixer
+    wl-clipboard
   ];
 
   home-manager.users.warbacon = {
+    systemd.user.services.wl-clip-persist = {
+      Unit = {
+        Description = "Keep Wayland clipboard contents persistent";
+        PartOf = [ "graphical-session.target" ];
+        After = [ "graphical-session.target" ];
+      };
+
+      Install = {
+        WantedBy = [ "graphical-session.target" ];
+      };
+
+      Service = {
+        ExecStart = "${pkgs.wl-clip-persist}/bin/wl-clip-persist --clipboard regular";
+        Restart = "on-failure";
+      };
+    };
+
     programs.vicinae = {
       enable = true;
       systemd.enable = true;
@@ -35,16 +58,16 @@
         // https://niri-wm.github.io/niri/Configuration:-Outputs.html
         // ====================================================================
 
-        // output "eDP-1" {
-        //     scale 2
-        //     position x=0 y=0
-        // }
-        //
-        // output "LG Electronics LG ULTRAGEAR 102NTZNG9205" {
-        //     scale 1
-        //     variable-refresh-rate
-        //     position x=-560 y=-1440
-        // }
+        output "eDP-1" {
+            scale 2
+            position x=0 y=0
+        }
+
+        output "LG Electronics LG ULTRAGEAR 102NTZNG9205" {
+            scale 1
+            variable-refresh-rate
+            position x=-560 y=-1440
+        }
 
         // ====================================================================
         // INPUTS
@@ -155,15 +178,15 @@
 
         binds {
             // Applications
-            Mod+Q hotkey-overlay-title="Open a Terminal" { spawn-sh "kitty"; }
+            Mod+Q hotkey-overlay-title="Open a Terminal" { spawn "kitty" "-1"; }
             Mod+D hotkey-overlay-title="Show the launcher: vicinae" repeat=false { spawn "vicinae" "toggle"; }
             Mod+E hotkey-overlay-title="Open the file explorer: nautilus" { spawn "nautilus"; }
             Mod+B hotkey-overlay-title="Open the Bluetooth manager: bluetui" { spawn "xdg-terminal-exec" "bluetui"; }
 
             // Utilities
-            Mod+P       hotkey-overlay-title="Show clipboard history" { spawn "vicinae" "vicinae://extensions/vicinae/clipboard/history"; }
-            Mod+Period  hotkey-overlay-title="Show emoji picker" { spawn "vicinae" "vicinae://extensions/vicinae/core/search-emojis"; }
-            Mod+Shift+C hotkey-overlay-title="Open the color picker" { spawn "hyprpicker" "--autocopy"; }
+            Mod+P repeat=false { spawn "vicinae" "vicinae://launch/clipboard/history"; }
+            Mod+Period repeat=false  hotkey-overlay-title="Show emoji picker" { spawn "vicinae" "vicinae://launch/core/search-emojis"; }
+            Mod+Shift+C repeat=false hotkey-overlay-title="Open the color picker" { spawn "hyprpicker" "--autocopy"; }
 
             // Audio
             XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"; }

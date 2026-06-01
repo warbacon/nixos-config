@@ -39,5 +39,13 @@
             source <(starship init bash --print-full-init)
           '';
     };
+
+    programs.fish = {
+      interactiveShellInit =
+        lib.mkBefore # fish
+          ''
+            starship init fish --print-full-init | source
+          '';
+    };
   };
 }

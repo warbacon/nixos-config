@@ -2,12 +2,12 @@
   inputs,
   pkgs,
   lib,
-  config,
   ...
 }:
 {
   imports = [
     inputs.nix-index-database.nixosModules.default
+    ./fish
     ./starship.nix
     ./fd.nix
   ];
@@ -94,11 +94,14 @@
     enableFishIntegration = false;
   };
 
-  programs.fish = {
+  programs.direnv = {
     enable = true;
-    useBabelfish = true;
-    shellAliases = lib.mkForce { };
-    shellAbbrs = config.environment.shellAliases;
+    silent = true;
+  };
+
+  programs.zsh = {
+    enable = true;
+    enableCompletion = false;
   };
 
   programs.nh = {

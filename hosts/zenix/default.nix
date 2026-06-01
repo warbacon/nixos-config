@@ -12,8 +12,11 @@
   services.power-profiles-daemon.enable = true;
   hardware.bluetooth.enable = true;
 
+  virtualisation.podman.enable = true;
+
   environment.systemPackages = with pkgs; [
     pkgs.android-tools
+    distrobox
     (discord.override { withOpenASAR = true; })
   ];
 }

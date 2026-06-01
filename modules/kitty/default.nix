@@ -5,7 +5,7 @@
     extraConfig = # kitty
       ''
         # Shell
-        shell bash
+        shell fish
 
         # Font
         font_family monospace
@@ -15,23 +15,17 @@
         # Appearance
         undercurl_style thick-sparse
         tab_title_template {index}:{title}
-        tab_bar_style powerline
-        tab_powerline_style slanted
+        tab_fade 1
         tab_bar_edge top
+        tab_bar_show_new_tab_button yes
         palette_generate legacy
-
-        # Window
-        # placement_strategy top-left
-        # window_padding_width 2
+        cursor_trail 3
 
         # Performance
         wayland_enable_ime no
         resize_debounce_time 0.0 0.0
         input_delay 0
         sync_to_monitor no
-
-        # Scrolling
-        momentum_scroll 0
 
         # Mappings
         mouse_map alt+left press ungrabbed mouse_selection rectangle
