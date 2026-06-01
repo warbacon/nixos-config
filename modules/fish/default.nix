@@ -15,6 +15,7 @@
       shellAbbrs = config.environment.shellAliases;
       interactiveShellInit = # fish
         ''
+          set -g fish_greeting
           fzf --fish | source
         '';
     };
