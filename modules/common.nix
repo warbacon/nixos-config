@@ -42,9 +42,9 @@
     cp = "cp -vi";
     mv = "mv -vi";
     rm = "rm -v";
-    ls = "ls --group-directories-first --color -vp";
-    ll = "ls --group-directories-first --color -lvhp";
-    la = "ls --group-directories-first --color -lvAhp";
+    ls = "eza --group-directories-first --icons";
+    ll = "eza --group-directories-first --icons --git -l";
+    la = "eza --group-directories-first --icons --git -la";
     tree = "tree --gitignore -aC";
     grep = "grep --color";
     open = "xdg-open";
@@ -133,6 +133,7 @@
     nix-output-monitor
 
     btop-rocm
+    eza
     fastfetch
     fzf
     libqalculate
@@ -140,6 +141,10 @@
     tlrc
     trash-cli
   ];
+
+  home-manager.users.warbacon = {
+    programs.dircolors.enable = true;
+  };
 
   system.stateVersion = "25.11";
 }
