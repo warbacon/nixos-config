@@ -10,7 +10,6 @@
   home-manager.users.warbacon = {
     programs.fish = {
       enable = true;
-      generateCompletions = false;
       shellAliases = lib.mkForce { };
       shellAbbrs = config.environment.shellAliases;
       interactiveShellInit = # fish
