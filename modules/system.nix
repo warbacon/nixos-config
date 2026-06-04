@@ -1,4 +1,9 @@
-{ pkgs, lib, ... }:
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
 {
   boot = {
     loader = {
@@ -17,4 +22,8 @@
   users.users.warbacon.extraGroups = [ "networkmanager" ];
 
   zramSwap.enable = true;
+
+  environment.systemPackages = lib.optionals config.hardware.bluetooth.enable [
+    pkgs.bluetui
+  ];
 }
