@@ -9,30 +9,31 @@
     pkgs.fd
   ];
 
-  home-manager.users.warbacon.xdg.configFile."fd/ignore".text = lib.concatLines [
-    ".ServiceHub"
-    ".android"
-    ".bun"
-    ".cache"
-    ".cargo"
-    ".copilot"
-    ".dotnet"
-    ".git"
-    ".gnupg"
-    ".gradle"
-    ".java"
-    ".javacpp"
-    ".m2"
-    ".npm"
-    ".nuget"
-    ".pki"
-    ".plastic4"
-    ".renpy"
-    ".ssh"
-    ".vscode"
-    "Android"
-    "go"
-    "node_modules"
-    "vendor"
-  ];
+  home-manager.users.warbacon.xdg.configFile."fd/ignore".text = ''
+    .ServiceHub
+    .agents
+    .android
+    .bun
+    .cache
+    .cargo
+    .copilot
+    .dotnet
+    .git
+    .gnupg
+    .gradle
+    .java
+    .javacpp
+    .m2
+    .npm
+    .nuget
+    .pki
+    .plastic4
+    .renpy
+    .ssh
+    .vscode
+    Android
+    go
+    node_modules
+    vendor
+  '';
 }
