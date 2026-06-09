@@ -3,7 +3,7 @@
   fonts = {
     enableDefaultPackages = false;
     packages = with pkgs; [
-      lilex
+      cascadia-code
       adwaita-fonts
       dejavu_fonts
       liberation_ttf
@@ -16,7 +16,7 @@
       enable = true;
       defaultFonts = {
         monospace = [
-          "Lilex"
+          "Cascadia Code"
           "Symbols Nerd Font"
         ];
         sansSerif = [ "Adwaita Sans" ];
