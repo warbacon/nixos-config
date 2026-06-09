@@ -7,14 +7,27 @@
 
     xdg.configFile."starship.toml".text = # toml
       ''
-        "$schema" = 'https://starship.rs/config-schema.json'
         add_newline = false
-        format = "$shell$username$directory$git_branch$git_commit$git_status$cmd_duration$character"
+        format = """
+        $nix_shell\
+        $shell\
+        $username\
+        $directory\
+        $git_branch\
+        $git_commit\
+        $git_status\
+        $cmd_duration\
+        $character"""
+
+        [nix_shell]
+        format = '[$symbol]($style) '
+        symbol = ''
 
         [shell]
         disabled = false
         fish_indicator = '󰈺 fish'
         bash_indicator = ' bash'
+        zsh_indicator = ' zsh'
         style = 'white'
 
         [username]
@@ -28,8 +41,8 @@
         format = '[\($branch\)](bold purple) '
 
         [cmd_duration]
-        min_time = 3_000
         format = '[$duration]($style) '
+        min_time = 3_000
       '';
 
     programs.bash = {
