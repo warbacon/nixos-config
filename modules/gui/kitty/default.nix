@@ -31,8 +31,8 @@
           # Mappings
           mouse_map alt+left press ungrabbed mouse_selection rectangle
 
-          map kitty_mod+p command_palette
           map kitty_mod+d new_tab_with_cwd
+          map kitty_mod+enter new_window_with_cwd
 
           map ctrl+0 change_font_size current 0
           map ctrl+plus change_font_size current +2.0

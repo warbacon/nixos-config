@@ -5,6 +5,6 @@
     ../../modules/common.nix
     ../../modules/system.nix
     ../../modules/dev.nix
-    ../../modules/gui.nix
+    ../../modules/gui
   ];
 }
