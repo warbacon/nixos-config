@@ -6,6 +6,7 @@ in
   imports = [
     ./kitty
     ./mpv
+    ./qt.nix
     ./niri.nix
     ./fonts.nix
   ];
