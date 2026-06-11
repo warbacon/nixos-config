@@ -16,6 +16,7 @@
     file-roller
     gnome-disk-utility
     hyprpicker
+    libnotify
     loupe
     nautilus
     papers
