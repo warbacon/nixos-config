@@ -188,6 +188,7 @@
             Mod+P repeat=false { spawn "vicinae" "vicinae://launch/clipboard/history"; }
             Mod+Period repeat=false  hotkey-overlay-title="Show emoji picker" { spawn "vicinae" "vicinae://launch/core/search-emojis"; }
             Mod+Shift+C repeat=false hotkey-overlay-title="Open the color picker" { spawn "hyprpicker" "--autocopy"; }
+            Mod+Shift+Y repeat=false hotkey-overlay-title="Toggle caffeine mode" { spawn "qs" "ipc" "call" "caffeine" "toggle"; }
 
             // Audio
             XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"; }
