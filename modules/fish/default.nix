@@ -19,6 +19,7 @@
           set fish_color_command cyan
           set fish_pager_color_progress brblack --italic
           set fish_pager_color_selected_background -b "2b3b51"
+          fish_add_path -P ${config.home-manager.users.warbacon.programs.npm.settings.prefix}/bin
           fzf --fish | source
         '';
     };

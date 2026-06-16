@@ -91,7 +91,7 @@
     programs.npm = {
       enable = true;
       settings = {
-        prefix = "\${HOME}/.local/share/npm";
+        prefix = "$HOME/.local/share/npm";
       };
     };
   };
