@@ -20,7 +20,15 @@
           tab_bar_edge top
           tab_bar_show_new_tab_button yes
           palette_generate legacy
-          cursor_trail 3
+          ${
+            if hostName != "zenix" then
+              ''
+                background_opacity 0.97
+                background_blur 1
+              ''
+            else
+              ""
+          }
 
           # Performance
           wayland_enable_ime no
