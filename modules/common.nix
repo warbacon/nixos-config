@@ -94,11 +94,6 @@
     enableFishIntegration = false;
   };
 
-  programs.direnv = {
-    enable = true;
-    silent = true;
-  };
-
   programs.zsh = {
     enable = true;
     enableCompletion = false;
@@ -144,6 +139,11 @@
 
   home-manager.users.warbacon = {
     programs.dircolors.enable = true;
+
+    programs.direnv = {
+      enable = true;
+      silent = true;
+    };
   };
 
   system.stateVersion = "25.11";
