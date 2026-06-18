@@ -20,7 +20,7 @@
 
           osd-font=monospace
 
-          ${if hostName != "zenix" then "profile=high-quality" else ""}
+          ${if hostName != "zenix" then "profile=high-quality" else "scale=bicubic"}
 
           slang=es-ES,es,spa
         '';
