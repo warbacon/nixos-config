@@ -101,13 +101,7 @@
         // ====================================================================
 
         layout {
-            gaps 4
-            struts {
-                left 8
-                bottom 8
-                top 8
-                right 8
-            }
+            gaps 10
 
             center-focused-column "never"
             always-center-single-column
@@ -134,7 +128,7 @@
             focus-ring { off; }
 
             border {
-                width 2
+                width 1
                 active-color "#5aaacc"
                 inactive-color "#ffffff30"
                 urgent-color "#ffb58d"
@@ -149,13 +143,20 @@
             }
         }
 
+        blur {
+          passes 4
+          offset 5.0
+          noise 0.03
+          saturation 1.7
+        }
+
         // ====================================================================
         // RECENT WINDOWS
         // https://niri-wm.github.io/niri/Configuration:-Miscellaneous.html#recent-windows
         // ====================================================================
 
         recent-windows {
-            highlight { corner-radius 8; }
+            highlight { corner-radius 12; }
         }
 
         // ====================================================================
@@ -169,7 +170,7 @@
         }
 
         window-rule {
-            // geometry-corner-radius 8
+            geometry-corner-radius 8
             clip-to-geometry true
         }
 
