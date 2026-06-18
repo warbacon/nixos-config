@@ -20,6 +20,7 @@
     loupe
     nautilus
     papers
+    playerctl
     pulsemixer
     wl-clipboard
   ];
@@ -199,6 +200,13 @@
             // Brightness
             XF86MonBrightnessUp   allow-when-locked=true { spawn "brightnessctl" "-e4" "-n2" "set" "5%+"; }
             XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "-e4" "-n2" "set" "5%-"; }
+
+            // Player
+            XF86AudioPlay        allow-when-locked=true { spawn-sh "playerctl play-pause"; }
+            XF86AudioPause       allow-when-locked=true { spawn-sh "playerctl play-pause"; }
+            XF86AudioStop        allow-when-locked=true { spawn-sh "playerctl stop"; }
+            XF86AudioPrev        allow-when-locked=true { spawn-sh "playerctl previous"; }
+            XF86AudioNext        allow-when-locked=true { spawn-sh "playerctl next"; }
 
             // Window Management
             Mod+Tab      repeat=false { toggle-overview; }
