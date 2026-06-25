@@ -40,6 +40,8 @@
       enable = true;
       settings = {
         init.defaultBranch = "main";
+        pull.rebase = true;
+        rebase.autostash = true;
         user = {
           email = "joaquinguerratocino@gmail.com";
           name = "Joaquín Guerra";
