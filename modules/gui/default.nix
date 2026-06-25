@@ -4,7 +4,7 @@ let
 in
 {
   imports = [
-    ./kitty
+    ./alacritty
     ./mpv
     ./qt.nix
     ./niri.nix

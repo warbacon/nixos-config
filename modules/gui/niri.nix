@@ -10,6 +10,11 @@
   services.gvfs.enable = true;
   services.upower.enable = hostName == "zenix";
 
+  programs.nautilus-open-any-terminal = {
+    enable = true;
+    terminal = "alacritty";
+  };
+
   environment.systemPackages = with pkgs; [
     brightnessctl
     ffmpegthumbnailer
@@ -181,13 +186,13 @@
 
         binds {
             // Applications
-            Mod+Q hotkey-overlay-title="Open a Terminal" { spawn "kitty" "-1"; }
-            Mod+D hotkey-overlay-title="Show the launcher: vicinae" repeat=false { spawn "vicinae" "toggle"; }
-            Mod+E hotkey-overlay-title="Open the file explorer: nautilus" { spawn "nautilus"; }
-            Mod+B hotkey-overlay-title="Open the Bluetooth manager: bluetui" { spawn "xdg-terminal-exec" "bluetui"; }
+            Mod+Return hotkey-overlay-title="Open a Terminal" { spawn-sh "alacritty msg create-window || alacritty"; }
+            Mod+D      hotkey-overlay-title="Show the launcher: vicinae" repeat=false { spawn "vicinae" "toggle"; }
+            Mod+E      hotkey-overlay-title="Open the file explorer: nautilus" { spawn "nautilus"; }
+            Mod+B      hotkey-overlay-title="Open the Bluetooth manager: bluetui" { spawn "xdg-terminal-exec" "bluetui"; }
 
             // Utilities
-            Mod+P repeat=false { spawn "vicinae" "vicinae://launch/clipboard/history"; }
+            Mod+V repeat=false { spawn "vicinae" "vicinae://launch/clipboard/history"; }
             Mod+Period repeat=false  hotkey-overlay-title="Show emoji picker" { spawn "vicinae" "vicinae://launch/core/search-emojis"; }
             Mod+Shift+C repeat=false hotkey-overlay-title="Open the color picker" { spawn "hyprpicker" "--autocopy"; }
             Mod+Shift+Y repeat=false hotkey-overlay-title="Toggle caffeine mode" { spawn "qs" "ipc" "call" "caffeine" "toggle"; }
@@ -212,9 +217,9 @@
             // Window Management
             Mod+Tab      repeat=false { toggle-overview; }
             Mod+W        repeat=false { toggle-column-tabbed-display; }
-            Mod+V        repeat=false { toggle-window-floating; }
-            Mod+Shift+V               { switch-focus-between-floating-and-tiling; }
-            Mod+C                     { close-window; }
+            Mod+T        repeat=false { toggle-window-floating; }
+            Mod+Shift+T  repeat=false { switch-focus-between-floating-and-tiling; }
+            Mod+Q                     { close-window; }
 
             // Focus Navigation
             Mod+Left  { focus-column-left; }
@@ -326,13 +331,12 @@
             Mod+Shift+Plus  { set-window-height "+10%"; }
 
             // Screenshots
-            Print       { screenshot-screen; }
-            Shift+Print { screenshot; }
-            Alt+Print   { screenshot-window; }
+            Print       repeat=false { screenshot-screen; }
+            Shift+Print repeat=false { screenshot; }
+            Alt+Print   repeat=false { screenshot-window; }
 
             // System
-            Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
-            Mod+Shift+E                       { quit; }
+            Mod+Shift+E { quit; }
         }
 
         // ====================================================================
