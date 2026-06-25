@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }:
+{ pkgs, ... }:
 {
   environment.sessionVariables = {
     FZF_CTRL_T_COMMAND = "fd -H --color=never";
