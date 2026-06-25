@@ -3,7 +3,7 @@
   fonts = {
     enableDefaultPackages = false;
     packages = with pkgs; [
-      cascadia-code
+      lilex
       adwaita-fonts
       dejavu_fonts
       liberation_ttf
@@ -16,7 +16,7 @@
       enable = true;
       defaultFonts = {
         monospace = [
-          "Cascadia Code"
+          "Lilex"
           "Symbols Nerd Font"
         ];
         sansSerif = [ "Adwaita Sans" ];
@@ -28,22 +28,22 @@
           <!DOCTYPE fontconfig SYSTEM "urn:fontconfig:fonts.dtd">
           <fontconfig>
             <alias>
-                <family>Segoe UI</family>
-                <prefer>
-                    <family>Adwaita Sans</family>
-                </prefer>
+              <family>Segoe UI</family>
+              <prefer>
+                <family>Adwaita Sans</family>
+              </prefer>
             </alias>
             <alias>
-                <family>Arial</family>
-                <prefer>
-                    <family>Liberation Sans</family>
-                </prefer>
+              <family>Arial</family>
+              <prefer>
+                <family>Liberation Sans</family>
+              </prefer>
             </alias>
             <alias>
-                <family>Verdana</family>
-                <prefer>
-                    <family>DejaVu Sans</family>
-                </prefer>
+              <family>Verdana</family>
+              <prefer>
+                <family>DejaVu Sans</family>
+              </prefer>
             </alias>
           </fontconfig>
         '';
