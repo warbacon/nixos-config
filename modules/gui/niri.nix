@@ -27,6 +27,7 @@
     papers
     playerctl
     pulsemixer
+    qt6Packages.qtdeclarative
     wl-clipboard
   ];
 
